@@ -40,8 +40,21 @@ for (const file of ['index.html','styles.css','app.js']) {
 }
 
 const appSource = fs.readFileSync(path.join(root, 'app.js'), 'utf8');
+const htmlSource = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
+const cssSource = fs.readFileSync(path.join(root, 'styles.css'), 'utf8');
+
 for (const token of ['renderClaimSourceRefs', 'sourceAnchorId', 'claim-source-link']) {
   if (!appSource.includes(token)) errors.push(`app.js: missing claim-to-source traceability hook ${token}`);
+}
+
+for (const token of ['theme-toggle', 'theme-toggle-label', 'color-scheme', 'prefers-color-scheme']) {
+  if (!htmlSource.includes(token)) errors.push(`index.html: missing theme hook ${token}`);
+}
+for (const token of ['THEME_STORAGE_KEY', 'applyTheme', 'getActiveTheme', 'systemThemeQuery']) {
+  if (!appSource.includes(token)) errors.push(`app.js: missing theme behavior ${token}`);
+}
+for (const token of ['html[data-theme="dark"]', '.theme-toggle', '.theme-icon-sun']) {
+  if (!cssSource.includes(token)) errors.push(`styles.css: missing night-mode style ${token}`);
 }
 
 if (warnings.length) {
