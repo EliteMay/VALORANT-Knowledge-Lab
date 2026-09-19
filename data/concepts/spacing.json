@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "id": "spacing",
+  "titleJa": "スペーシング",
+  "titleEn": "Spacing",
+  "aliases": [
+    "trade spacing",
+    "間隔"
+  ],
+  "category": "team-coordination",
+  "status": "research-backed-draft",
+  "updated": "2026-09-19",
+  "definition": {
+    "text": "味方と同じFightへすぐ接続できるだけ近く、かつ同じSpray / Utility等でまとめてPunishされにくい位置関係を作ること。",
+    "evidenceType": "Site Synthesis",
+    "strength": "Supported",
+    "sourceIds": [
+      "lothar-drx-ns-analysis",
+      "lothar-g2-edg-analysis",
+      "thwifo-vlr-xset-2021",
+      "kaizens-trade-spacing-2026"
+    ],
+    "siteSynthesis": true
+  },
+  "claims": [
+    {
+      "id": "spacing-fundamental",
+      "text": "SpacingとTradingはプロレベルでもFundamentalとして扱われ、Poor spacingは孤立FightやNo tradeにつながる。",
+      "evidenceType": "Pro / VCT Analyst Practice",
+      "strength": "Supported",
+      "sourceIds": [
+        "lothar-drx-ns-analysis",
+        "lothar-g2-edg-analysis",
+        "thwifo-vlr-xset-2021"
+      ],
+      "siteSynthesis": true,
+      "notes": []
+    },
+    {
+      "id": "spacing-functional-not-fixed-distance",
+      "text": "正しいSpacingは固定距離ではなく、同じThreatへの接続性と同時Punish riskを基準に考える。",
+      "evidenceType": "Site Synthesis",
+      "strength": "Supported",
+      "sourceIds": [
+        "kaizens-trade-spacing-2026",
+        "lothar-g2-edg-analysis"
+      ],
+      "siteSynthesis": true,
+      "notes": [
+        "No universal meter rule adopted"
+      ]
+    }
+  ],
+  "cues": [
+    "味方の進行速度",
+    "次のContact point",
+    "Line of sight",
+    "Choke幅",
+    "敵Utility",
+    "自分のWeapon readiness"
+  ],
+  "mistakes": [
+    "離れすぎてTradeが切れる",
+    "真後ろに重なりSpray/Utilityを共有する",
+    "Minimapの近さだけでTrade可能と判断する",
+    "味方の速度変化に追従できない"
+  ],
+  "practice": {
+    "vodQuestions": [
+      "味方が死んだ瞬間にkillerが見えたか？",
+      "同じEnemy actionで2人ともPunishされたか？",
+      "LOSが切れるCorner前に間隔を調整できたか？"
+    ]
+  },
+  "relatedConceptIds": [
+    "cover-trade",
+    "crossfire",
+    "double-swing",
+    "utility-follow-up"
+  ]
+}
