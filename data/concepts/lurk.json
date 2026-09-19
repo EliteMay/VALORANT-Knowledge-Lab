@@ -19,7 +19,8 @@
       "nats-lurk-youtube-2021",
       "nats-one-lurk-2023",
       "nats-one-cypher-2023",
-      "kaplan-esportsgg-2025"
+      "kaplan-esportsgg-2025",
+      "lothar-t1-tln-analysis"
     ],
     "siteSynthesis": true
   },
@@ -81,6 +82,21 @@
       "siteSynthesis": true,
       "notes": [
         "nAts direct video description says any agent can lurk while he prefers Viper/Cypher"
+      ]
+    },
+    {
+      "id": "lurk-team-pressure-overrotation",
+      "text": "Lurkは単独で成立するのではなく、Main groupが十分なPressureを掛けて相手のRotationを動かしたときに価値が出る場合がある。",
+      "evidenceType": "Pro / Analyst Practice",
+      "strength": "Supported",
+      "sourceIds": [
+        "lothar-t1-tln-analysis",
+        "nats-one-lurk-2023"
+      ],
+      "siteSynthesis": true,
+      "notes": [
+        "Independent cross-check between nAts's information/pattern-based lurk explanation and Lothar's VCT match analysis",
+        "Not every lurk requires an over-rotation; this is a common value mechanism, not a universal trigger"
       ]
     }
   ],
