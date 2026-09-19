@@ -165,5 +165,9 @@
     "spacing",
     "double-swing",
     "unexpected-opponent"
+  ],
+  "domains": [
+    "micro",
+    "aim-training"
   ]
 }
