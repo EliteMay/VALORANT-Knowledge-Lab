@@ -240,6 +240,23 @@
         "Official explanation that very small timing differences can materially change competitive gunfight outcomes",
         "Mechanic context only; does not prescribe trade spacing or double-swing timing"
       ]
+    },
+    {
+      "id": "boettcher-teamwork-2025",
+      "title": "Cultivating teamwork in esports: a framework for assessment and training",
+      "url": "https://www.sciencedirect.com/org/science/article/pii/S135275922500017X",
+      "publisherOrAuthor": "Team Performance Management / 2025 study",
+      "published": "2025-08-11",
+      "sourceTier": "A",
+      "sourceType": "Peer-reviewed Paper",
+      "gameScope": "Professional Counter-Strike / general esports teamwork applicability",
+      "doi": "10.1108/TPM-10-2024-0124",
+      "notes": [
+        "Behavioral trace data from 80 professional gamers across 16 teams",
+        "Validated coordination metrics include convergence, view coverage and co-location",
+        "Metrics were significantly related to nearly all measured defensive and offensive outcomes",
+        "Do not infer an ideal VALORANT spacing distance or that closer co-location is universally better"
+      ]
     }
   ]
 }
