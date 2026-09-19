@@ -71,6 +71,13 @@ Do not copy:
 - Decorative Effect Policy: 強いshadow / glass / glowは使わない。斜めAccent、細いline、selected stateでIdentityを作る
 - Signature: ClaimごとにEvidence strengthとSourceをその場で追跡できる「Evidence Rail」
 
+## Language Contract
+
+- User-facing UIは日本語を基本にする
+- 英語はVALORANTの定着用語、英語表記の補助、選手・媒体名、外部Sourceの原題など必要な場所だけ残す
+- Evidence strength / type / status / source type / game scopeなど内部Schemaの英語値は、画面では日本語へ変換する
+- 日本語だけ読んでも操作・状態・根拠の意味が理解できることを優先する
+
 ## Theme Contract
 
 - Header / Sidebarのdark tactical shellはLight / Nightで共通に保つ
