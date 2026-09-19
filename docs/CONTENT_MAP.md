@@ -16,6 +16,8 @@
 - Anti-lurk
 - Rotation read
 - Info → Action
+- 相手の癖・Round傾向の読み方
+- 定石外・予想外の相手への対応
 
 ### 2. 味方との合わせ
 
@@ -36,9 +38,15 @@
 
 ### 4. Peek / Duel
 
+- 撃ち合いを構成する要素
 - Peek selection
 - Angle isolation
+- Crosshair placement / pre-aim
+- Movement → stop → shoot → re-movement
+- Weapon × distance × armor
 - Swing timing
+- Off-angle / re-peek / reposition
+- Utility-assisted fight
 - Man advantage / disadvantage
 
 ### 5. Mid-round
@@ -87,6 +95,22 @@ Cover / Trade
 ├─ Swing timing
 ├─ Communication
 └─ Utility follow-up
+
+定石外の相手への対応
+├─ Opponent tendency
+├─ 自分の基本形
+├─ Tempo adaptation
+├─ Anti-aggression
+└─ Decision review
+
+撃ち合いの構造
+├─ Information
+├─ Geometry / angle
+├─ Crosshair placement
+├─ Movement / timing
+├─ Weapon / distance
+├─ Visual processing / motor control
+└─ Team coordination
 ```
 
 ## Concept Page Template
