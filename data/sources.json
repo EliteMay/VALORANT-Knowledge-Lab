@@ -443,6 +443,21 @@
         "Useful opposing evidence against overly simple universal mental-focus coaching claims",
         "Not a VALORANT-specific experiment"
       ]
+    },
+    {
+      "id": "yay-fundamentals-youtube-2020",
+      "title": "VALORANT Fundamentals from YAY - Crosshair Placement and Jiggling",
+      "url": "https://www.youtube.com/watch?v=2rUpglPIlQE",
+      "publisherOrAuthor": "yay",
+      "published": "2020-06-08",
+      "sourceTier": "A",
+      "sourceType": "Pro Practice",
+      "gameScope": "VALORANT",
+      "notes": [
+        "Direct pro-player educational source",
+        "Description explicitly frames crosshair placement, jiggling, movement and taking angles/fights as fundamentals",
+        "Older source; exact current mechanic details require current Riot cross-check"
+      ]
     }
   ]
 }
