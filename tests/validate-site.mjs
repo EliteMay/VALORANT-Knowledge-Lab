@@ -64,6 +64,23 @@ for (const token of ['strengthLabels', 'evidenceTypeLabels', 'sourceTypeLabels',
   if (!appSource.includes(token)) errors.push(`app.js: missing Japanese metadata mapping ${token}`);
 }
 
+const unexplainedEnglish = /\b(?:Adaptation|Commit|Hold|Delay|Execute|Threat|Punish|Fight|LOS|Setup|Partner|Pressure|Rotation|Utility|Contact|Route|Timing|Action|Position|Role|Value|Main group)\b/i;
+for (const entry of index.concepts) {
+  const concept = readJson(entry.path);
+  const visibleText = [
+    concept.definition?.text,
+    ...(concept.goal || []),
+    ...(concept.claims || []).map(claim => claim.text),
+    ...(concept.subtypes || []).flatMap(item => [item.label, item.description]),
+    ...(concept.cues || []),
+    ...(concept.mistakes || []),
+    ...Object.values(concept.practice || {}).flatMap(value => Array.isArray(value) ? value : [value])
+  ].filter(Boolean).join('\n');
+  if (unexplainedEnglish.test(visibleText)) {
+    errors.push(`${concept.id}: unexplained English remains in visible learning copy`);
+  }
+}
+
 if (warnings.length) {
   console.log('Warnings:');
   for (const warning of warnings) console.log(`- ${warning}`);
