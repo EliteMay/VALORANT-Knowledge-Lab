@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta id="theme-color" name="theme-color" content="#0f1923">
   <meta name="color-scheme" content="light dark">
-  <meta name="description" content="VALORANTのラーク、アンカー、カバー、トレード、スペーシングなどを根拠付きで学ぶ非公式Knowledge Site。">
+  <meta name="description" content="VALORANTのラーク、アンカー、カバー、トレード、スペーシングなどを根拠付きで学ぶ非公式学習サイト。">
   <title>VALORANT Knowledge Lab</title>
   <script>
     (() => {
@@ -29,13 +29,13 @@
     <div class="brand-lockup">
       <span class="brand-mark" aria-hidden="true"></span>
       <div>
-        <p class="eyebrow">TACTICAL KNOWLEDGE / EVIDENCE FIRST</p>
+        <p class="eyebrow">根拠から学ぶ戦術知識</p>
         <a class="brand-name" href="#lurk" aria-label="VALORANT Knowledge Lab ホーム">VALORANT KNOWLEDGE LAB</a>
       </div>
     </div>
     <div class="header-actions">
       <div class="header-meta">
-        <span>Research-backed</span>
+        <span>根拠付き</span>
         <span>2026.09</span>
       </div>
       <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false" aria-label="ナイトモードに切り替える">
@@ -52,48 +52,48 @@
   </header>
 
   <div class="app-shell">
-    <aside class="sidebar" aria-label="Concept navigation">
+    <aside class="sidebar" aria-label="知識項目ナビゲーション">
       <div class="sidebar-intro">
-        <p class="section-kicker">KNOWLEDGE INDEX</p>
+        <p class="section-kicker">知識一覧</p>
         <h1>知識でラウンドを読む。</h1>
         <p>プロ・コーチ・公式・論文を照合し、判断に使える形へ整理した非公式リファレンス。</p>
       </div>
 
       <label class="search-field" for="concept-search">
-        <span>Conceptを検索</span>
+        <span>知識を検索</span>
         <div class="search-box">
           <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"/></svg>
-          <input id="concept-search" type="search" placeholder="ラーク / trade / spacing" autocomplete="off">
+          <input id="concept-search" type="search" placeholder="ラーク / トレード / スペーシング" autocomplete="off">
         </div>
       </label>
 
       <div class="category-filter" aria-label="カテゴリ絞り込み">
         <button type="button" class="filter-chip is-active" data-category="all">すべて</button>
-        <button type="button" class="filter-chip" data-category="information-map-control">情報・Map</button>
+        <button type="button" class="filter-chip" data-category="information-map-control">情報・マップ</button>
         <button type="button" class="filter-chip" data-category="team-coordination">味方との合わせ</button>
         <button type="button" class="filter-chip" data-category="defense">守り</button>
       </div>
 
-      <nav class="concept-nav" aria-label="Concept一覧">
+      <nav class="concept-nav" aria-label="知識項目一覧">
         <div id="concept-list" class="concept-list" aria-live="polite"></div>
-        <p id="concept-empty" class="empty-state" hidden>該当するConceptがありません。</p>
+        <p id="concept-empty" class="empty-state" hidden>該当する知識項目がありません。</p>
       </nav>
 
       <footer class="sidebar-footer">
         <p>非公式・ファン制作。Riot Gamesとは無関係です。</p>
-        <a href="https://github.com/EliteMay/VALORANT-Knowledge-Lab" target="_blank" rel="noreferrer">GitHub / Sources</a>
+        <a href="https://github.com/EliteMay/VALORANT-Knowledge-Lab" target="_blank" rel="noreferrer">GitHub / 出典</a>
       </footer>
     </aside>
 
     <main id="main-content" class="main-content" tabindex="-1">
       <div id="loading-state" class="loading-state" role="status">
         <span class="loading-line"></span>
-        <span>Knowledge dataを読み込み中...</span>
+        <span>知識データを読み込み中...</span>
       </div>
 
       <div id="error-state" class="error-state" hidden>
-        <p class="section-kicker">LOAD ERROR</p>
-        <h2>Knowledge dataを読み込めませんでした。</h2>
+        <p class="section-kicker">読み込みエラー</p>
+        <h2>知識データを読み込めませんでした。</h2>
         <p>GitHub PagesなどHTTP経由で開いてください。ローカルで確認する場合は簡易HTTPサーバーを使えます。</p>
         <button type="button" id="retry-button" class="action-button">再読み込み</button>
       </div>
@@ -117,7 +117,7 @@
         <section id="goal-section" class="content-section" hidden>
           <div class="section-heading">
             <span class="section-number">01</span>
-            <div><p class="section-kicker">PURPOSE</p><h3>何のために使うか</h3></div>
+            <div><p class="section-kicker">目的</p><h3>何のために使うか</h3></div>
           </div>
           <ul id="concept-goals" class="purpose-list"></ul>
         </section>
@@ -125,7 +125,7 @@
         <section id="subtype-section" class="content-section" hidden>
           <div class="section-heading">
             <span class="section-number">02</span>
-            <div><p class="section-kicker">TYPES</p><h3>種類を分けて考える</h3></div>
+            <div><p class="section-kicker">種類</p><h3>種類を分けて考える</h3></div>
           </div>
           <div id="concept-subtypes" class="subtype-grid"></div>
         </section>
@@ -133,7 +133,7 @@
         <section class="content-section">
           <div class="section-heading">
             <span class="section-number" id="claims-section-number">02</span>
-            <div><p class="section-kicker">KEY CLAIMS</p><h3>判断の核になる知識</h3></div>
+            <div><p class="section-kicker">重要ポイント</p><h3>判断の核になる知識</h3></div>
           </div>
           <div id="concept-claims" class="claim-list"></div>
         </section>
@@ -142,14 +142,14 @@
           <div>
             <div class="section-heading compact">
               <span class="section-number">C</span>
-              <div><p class="section-kicker">CUES</p><h3>何を見るか</h3></div>
+              <div><p class="section-kicker">見るポイント</p><h3>何を見るか</h3></div>
             </div>
             <ul id="concept-cues" class="check-list"></ul>
           </div>
           <div>
             <div class="section-heading compact danger-heading">
               <span class="section-number">!</span>
-              <div><p class="section-kicker">MISTAKES</p><h3>典型的な失敗</h3></div>
+              <div><p class="section-kicker">よくある失敗</p><h3>典型的な失敗</h3></div>
             </div>
             <ul id="concept-mistakes" class="check-list danger-list"></ul>
           </div>
@@ -158,7 +158,7 @@
         <section class="content-section practice-section">
           <div class="section-heading">
             <span class="section-number">P</span>
-            <div><p class="section-kicker">PRACTICE / VOD REVIEW</p><h3>試合後に確認する</h3></div>
+            <div><p class="section-kicker">練習・VOD振り返り</p><h3>試合後に確認する</h3></div>
           </div>
           <div id="concept-practice" class="practice-grid"></div>
         </section>
@@ -166,11 +166,11 @@
         <section class="content-section evidence-section">
           <div class="section-heading">
             <span class="section-number">E</span>
-            <div><p class="section-kicker">EVIDENCE</p><h3>このページの根拠</h3></div>
+            <div><p class="section-kicker">根拠</p><h3>このページの根拠</h3></div>
           </div>
           <div class="evidence-note">
             <strong>読み方</strong>
-            <span>SourceのTier・種類・対象Gameを分けて表示。別Gameの研究はVALORANT固有Ruleとして扱いません。</span>
+            <span>出典の信頼度・種類・対象ゲームを分けて表示します。別ゲームの研究はVALORANT固有ルールとして扱いません。</span>
           </div>
           <div id="concept-sources" class="source-list"></div>
         </section>
@@ -178,7 +178,7 @@
         <section id="related-section" class="content-section related-section" hidden>
           <div class="section-heading compact">
             <span class="section-number">→</span>
-            <div><p class="section-kicker">NEXT CONCEPT</p><h3>関連Concept</h3></div>
+            <div><p class="section-kicker">次に学ぶ</p><h3>関連知識</h3></div>
           </div>
           <div id="related-concepts" class="related-list"></div>
         </section>
@@ -186,6 +186,6 @@
     </main>
   </div>
 
-  <noscript>このサイトは既存のKnowledge JSONを表示するためJavaScriptを使用します。</noscript>
+  <noscript>このサイトは知識データを表示するためJavaScriptを使用します。</noscript>
 </body>
 </html>

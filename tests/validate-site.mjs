@@ -57,6 +57,13 @@ for (const token of ['html[data-theme="dark"]', '.theme-toggle', '.theme-icon-su
   if (!cssSource.includes(token)) errors.push(`styles.css: missing night-mode style ${token}`);
 }
 
+for (const token of ['根拠から学ぶ戦術知識', '知識一覧', '重要ポイント', 'このページの根拠']) {
+  if (!htmlSource.includes(token)) errors.push(`index.html: missing Japanese-first UI label ${token}`);
+}
+for (const token of ['strengthLabels', 'evidenceTypeLabels', 'sourceTypeLabels', 'gameScopeLabels', '根拠付き・草案']) {
+  if (!appSource.includes(token)) errors.push(`app.js: missing Japanese metadata mapping ${token}`);
+}
+
 if (warnings.length) {
   console.log('Warnings:');
   for (const warning of warnings) console.log(`- ${warning}`);

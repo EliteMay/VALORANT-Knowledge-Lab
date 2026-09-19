@@ -7,9 +7,53 @@ const state = {
 };
 
 const categoryLabels = {
-  'information-map-control': '情報・MAP CONTROL',
+  'information-map-control': '情報・マップコントロール',
   'team-coordination': '味方との合わせ',
   'defense': '守り'
+};
+
+const strengthLabels = {
+  'Confirmed': '確認済み',
+  'Supported': '根拠あり',
+  'Context-dependent': '条件次第',
+  'Weak': '根拠弱め',
+  'Unverified': '未確認'
+};
+
+const evidenceTypeLabels = {
+  'Official / Mechanic': '公式仕様・ゲーム仕様',
+  'Expert Practice / Analysis': 'プロ・専門家の実戦分析',
+  'Academic General Principle': '論文から言える一般原理',
+  'Coaching Heuristic': 'コーチング上の目安',
+  'Community Observation': 'コミュニティでの観察',
+  'Site Synthesis': 'サイトによる整理',
+  'Pro / VCT Analyst Practice': 'プロ・VCTアナリストの実戦分析'
+};
+
+const sourceTypeLabels = {
+  'Pro Practice': 'プロの実戦知識',
+  'Pro Interview': 'プロ選手インタビュー',
+  'Pro Coach Interview': 'プロコーチインタビュー',
+  'Coaching / Analysis': 'コーチング・分析',
+  'Pro IGL Interview': 'プロIGLインタビュー',
+  'Coaching Heuristic': 'コーチング上の目安',
+  'Peer-reviewed Paper': '査読論文',
+  'Systematic Review': '系統的レビュー',
+  'VCT Analyst Direct Analysis': 'VCTアナリスト本人の分析',
+  'Official Credential Context': '公式プロフィール確認',
+  'Pro Player Interview': 'プロ選手インタビュー',
+  'Terminology Reference': '用語参照',
+  'Official / Mechanic': '公式仕様・ゲーム仕様'
+};
+
+const gameScopeLabels = {
+  'VALORANT': 'VALORANT',
+  'CS:GO / general tactical-FPS applicability': 'CS:GO / タクティカルFPS全般への応用',
+  'Esports / cross-game': 'eスポーツ全般',
+  'VALORANT / VCT Pacific': 'VALORANT / VCT Pacific',
+  'VALORANT / international pro play': 'VALORANT / 国際プロシーン',
+  'VALORANT esports': 'VALORANT eスポーツ',
+  'Professional Counter-Strike / general esports teamwork applicability': 'Counter-Strikeプロ / eスポーツの連携全般'
 };
 
 const els = {};
@@ -203,7 +247,7 @@ function selectConcept(id, updateHash) {
 function renderConcept(concept) {
   els['concept-category'].textContent = categoryLabels[concept.category] || concept.category;
   els['concept-title'].textContent = concept.titleJa;
-  els['concept-title-en'].textContent = `${concept.titleEn} / ${concept.aliases?.join(' · ') || '—'}`;
+  els['concept-title-en'].textContent = `英語表記: ${concept.titleEn}${concept.aliases?.length ? ` / ${concept.aliases.join(' · ')}` : ''}`;
   els['concept-status'].textContent = formatStatus(concept.status);
   els['concept-definition'].textContent = concept.definition?.text || '';
 
@@ -255,7 +299,7 @@ function renderClaims(claims) {
     const textWrap = document.createElement('div');
     const kicker = document.createElement('p');
     kicker.className = 'section-kicker';
-    kicker.textContent = `CLAIM ${String(index + 1).padStart(2, '0')}`;
+    kicker.textContent = `ポイント ${String(index + 1).padStart(2, '0')}`;
     const text = document.createElement('p');
     text.className = 'claim-text';
     text.textContent = claim.text;
@@ -264,11 +308,11 @@ function renderClaims(claims) {
     const meta = document.createElement('div');
     meta.className = 'claim-meta';
     meta.append(
-      metaRow('Strength', claim.strength, 'strength', claim.strength),
-      metaRow('Type', claim.evidenceType || '—'),
-      metaRow('Sources', String(claim.sourceIds?.length || 0))
+      metaRow('信頼度', formatStrength(claim.strength), 'strength', claim.strength),
+      metaRow('根拠の種類', formatEvidenceType(claim.evidenceType)),
+      metaRow('出典数', String(claim.sourceIds?.length || 0))
     );
-    if (claim.siteSynthesis) meta.append(metaRow('Boundary', 'Site Synthesis', 'site-synthesis'));
+    if (claim.siteSynthesis) meta.append(metaRow('整理方法', 'サイトによる整理', 'site-synthesis'));
 
     const sourceRefs = renderClaimSourceRefs(claim.sourceIds || []);
     if (sourceRefs) textWrap.append(sourceRefs);
@@ -286,7 +330,7 @@ function renderClaimSourceRefs(sourceIds) {
 
   const label = document.createElement('span');
   label.className = 'claim-source-label';
-  label.textContent = 'EVIDENCE';
+  label.textContent = '根拠';
 
   const links = document.createElement('div');
   links.className = 'claim-source-links';
@@ -367,9 +411,9 @@ function renderPractice(practice) {
 
 function practiceLabel(key) {
   const labels = {
-    vodQuestions: 'VOD QUESTIONS',
-    decisionCheck: 'DECISION CHECK',
-    note: 'NOTE'
+    vodQuestions: 'VODで確認すること',
+    decisionCheck: '判断チェック',
+    note: '補足'
   };
   return labels[key] || key.replace(/([a-z])([A-Z])/g, '$1 $2').toUpperCase();
 }
@@ -399,12 +443,12 @@ function renderSources(concept) {
     link.textContent = source.title;
     const sub = document.createElement('p');
     sub.className = 'source-sub';
-    sub.textContent = [source.publisherOrAuthor, source.published, source.gameScope].filter(Boolean).join(' · ');
+    sub.textContent = [source.publisherOrAuthor, source.published, formatGameScope(source.gameScope)].filter(Boolean).join(' · ');
     body.append(link, sub);
 
     const type = document.createElement('div');
     type.className = 'source-type';
-    type.textContent = source.sourceType || 'Source';
+    type.textContent = formatSourceType(source.sourceType);
 
     item.append(tier, body, type);
     return item;
@@ -419,7 +463,7 @@ function renderRelated(ids) {
       link.href = `#${found.id}`;
       link.className = 'related-link';
       link.dataset.relatedId = found.id;
-      link.textContent = `${found.titleJa} / ${found.titleEn}`;
+      link.textContent = `${found.titleJa}（${found.titleEn}）`;
       return link;
     }
     const span = document.createElement('span');
@@ -432,7 +476,26 @@ function renderRelated(ids) {
 }
 
 function formatStatus(status = '') {
-  return status.replaceAll('-', ' ');
+  const labels = {
+    'research-backed-draft': '根拠付き・草案'
+  };
+  return labels[status] || status.replaceAll('-', ' ');
+}
+
+function formatStrength(value = '') {
+  return strengthLabels[value] || value || '—';
+}
+
+function formatEvidenceType(value = '') {
+  return evidenceTypeLabels[value] || value || '—';
+}
+
+function formatSourceType(value = '') {
+  return sourceTypeLabels[value] || value || '出典';
+}
+
+function formatGameScope(value = '') {
+  return gameScopeLabels[value] || value;
 }
 
 function showLoading() {

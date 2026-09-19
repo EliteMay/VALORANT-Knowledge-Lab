@@ -56,6 +56,7 @@ VALORANTをプレイしていて、エイム以外のゲーム理解・ミクロ
 - Source Tier / Source Type / Author / Date / Game Scopeを追跡できる
 - Concept URLは `#concept-id` で直接共有できる
 - DesktopをPrimaryにしつつMobileでも主要ContentとNavigationを失わない
+- User-facing UIは日本語を基本とし、英語はVALORANT用語・固有名詞・原文Source等で意味がある場合のみ補助的に残す
 - ライト / ナイトモードを切り替えられる
 - Themeを明示選択していない初回はOSのlight / dark設定を反映し、Userが切り替えた後は同じBrowserで選択を保持する
 - Account / Auth / Backend / Cloud DBをMVPへ追加しない
