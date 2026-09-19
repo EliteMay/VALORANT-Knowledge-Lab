@@ -103,8 +103,8 @@ Current site is difficult to use and difficult to read.
 - Domain: Conceptを短い説明付きListで比較
 - Concept: Sidebar + readable main column
 - Article内: 重要ポイント / 見る・失敗 / 練習 / 根拠へのshortcut
-- Claim: 本文をPrimary、Evidence detailsは「根拠を見る」で展開
-- Sources: Page末尾で折りたたみ
+- Claim: 本文をPrimaryにしつつ、信頼度 / 根拠の種類 / 出典数は常時表示。個別Source対応だけ「対応する出典を見る」で展開
+- Sources: Page末尾の出典一覧は常時表示し、Research depthを隠しすぎない
 - 本文幅は約60〜70文字相当を上限候補とし、長文の横幅を広げすぎない
 - 赤AccentはNavigation / Focus / Evidence affordanceへ限定する
 
@@ -118,7 +118,7 @@ Current site is difficult to use and difficult to read.
 - Color Rule: dark navy / warm off-whiteを基盤、VALORANTを想起させるred accentは重要箇所だけ。Night modeでは本文面をdeep navyへ反転し、pure blackは使わず階層をborder / surface差で維持する
 - Component Rule: 全情報をCard化しない。Section / dividerを基本とし、EvidenceやPracticeなど独立性の高い情報だけPanel化
 - Decorative Effect Policy: 強いshadow / glass / glowは使わない。斜めAccent、細いline、selected stateでIdentityを作る
-- Signature: Claim本文を読みやすく保ちつつ、必要時だけEvidenceへ展開できる「Evidence Disclosure」
+- Signature: Claim本文の直下でEvidence summaryを確認でき、必要時に対応Sourceまで展開できる「Evidence Summary + Disclosure」
 
 ## Language Contract
 
