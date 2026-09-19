@@ -132,5 +132,8 @@
     "peek-angle-isolation",
     "gunfight-structure",
     "cover-trade"
+  ],
+  "domains": [
+    "macro"
   ]
 }
