@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "id": "gunfight-structure",
+  "titleJa": "撃ち合いの構造",
+  "titleEn": "Gunfight Structure",
+  "aliases": [
+    "撃ち合い",
+    "デュエル",
+    "エイム負け分析",
+    "撃ち合い要素"
+  ],
+  "category": "peek-duel",
+  "status": "research-backed-draft",
+  "updated": "2026-09-19",
+  "definition": {
+    "text": "撃ち合いを、敵が見えてからのマウス操作だけではなく、接敵前の情報・角度・クロスヘア・移動状態・武器と距離・味方の位置まで含む一連の条件として分解して考える枠組み。",
+    "evidenceType": "Site Synthesis",
+    "strength": "Supported",
+    "sourceIds": [
+      "yay-aimlabs-crosshair",
+      "riot-peeking-netcode",
+      "riot-patch-9-10",
+      "riot-data-phantom-vandal-2023",
+      "yang-eye-aiming-2025",
+      "donovan-kinematics-2022",
+      "lothar-drx-ns-analysis"
+    ],
+    "siteSynthesis": true
+  },
+  "goal": [
+    "負けた撃ち合いを「エイムが悪かった」だけで終わらせない",
+    "接敵前・接敵時・射撃中・接敵後のどこで不利を作ったか分ける",
+    "練習する要素を具体化する",
+    "味方との合わせまで含めて撃ち合いの条件を整える"
+  ],
+  "subtypes": [
+    {
+      "id": "pre-contact",
+      "label": "接敵前",
+      "description": "敵情報、角度、遮蔽物、クロスヘア、武器と距離、味方位置を整える段階。"
+    },
+    {
+      "id": "contact",
+      "label": "接敵時",
+      "description": "相手を視認し、移動状態・ピークのタイミング・反応から最初の射撃へつなぐ段階。"
+    },
+    {
+      "id": "shooting",
+      "label": "射撃中",
+      "description": "最初の弾、連射、反動、精度回復、速度と正確さのバランスを扱う段階。"
+    },
+    {
+      "id": "after-contact",
+      "label": "接敵後",
+      "description": "もう一度ピークするか、位置を変えるか、味方のトレードへつなぐかを再判断する段階。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "gunfight-before-enemy-visible",
+      "text": "撃ち合いの条件は敵が画面に出てからではなく、角度の処理・クロスヘア位置・マップ形状など接敵前から作られている。",
+      "evidenceType": "Expert Practice / Analysis",
+      "strength": "Supported",
+      "sourceIds": [
+        "yay-fundamentals-youtube-2020",
+        "yay-aimlabs-crosshair",
+        "riot-map-environments-2020"
+      ],
+      "siteSynthesis": true,
+      "notes": []
+    },
+    {
+      "id": "gunfight-movement-affects-accuracy",
+      "text": "移動状態は射撃精度に関係し、Riotはライフルやショットガンなど武器種ごとに移動中の精度を継続的に調整している。",
+      "evidenceType": "Official / Mechanic",
+      "strength": "Confirmed",
+      "sourceIds": [
+        "riot-patch-3-movement-accuracy-2021",
+        "riot-patch-9-10",
+        "riot-patch-12-09"
+      ],
+      "siteSynthesis": true,
+      "notes": [
+        "Exact values are patch- and weapon-specific"
+      ]
+    },
+    {
+      "id": "gunfight-weapon-range-context",
+      "text": "同じクロスヘア操作でも、武器と距離によって撃ち合いの条件は変わる。Riotの全ランクを含む大規模データでも、ファントムとヴァンダルの結果は距離やアーマー条件で変化している。",
+      "evidenceType": "Official / Mechanic",
+      "strength": "Confirmed",
+      "sourceIds": [
+        "riot-data-phantom-vandal-2023"
+      ],
+      "siteSynthesis": true,
+      "notes": [
+        "Do not generalize Phantom/Vandal findings to every weapon class"
+      ]
+    },
+    {
+      "id": "gunfight-visual-motor-layer",
+      "text": "FPS一般の研究では、経験者の効率的な目の動きや、マウス操作における速さと正確さの両立が成績と関係している。撃ち合いをマウスの最終フリックだけに限定しない根拠になる。",
+      "evidenceType": "Academic General Principle",
+      "strength": "Supported",
+      "sourceIds": [
+        "yang-eye-aiming-2025",
+        "donovan-kinematics-2022"
+      ],
+      "siteSynthesis": true,
+      "notes": [
+        "General FPS evidence; not a VALORANT-specific ranked experiment"
+      ]
+    },
+    {
+      "id": "gunfight-team-layer",
+      "text": "味方との間隔、トレード可能な位置、クロスファイアなどによって、個人同士の1対1ではなくチームとして有利な撃ち合いを作れる。",
+      "evidenceType": "Expert Practice / Analysis",
+      "strength": "Supported",
+      "sourceIds": [
+        "lothar-drx-ns-analysis",
+        "lothar-g2-edg-analysis",
+        "thwifo-vlr-xset-2021",
+        "boettcher-teamwork-2025"
+      ],
+      "siteSynthesis": true,
+      "notes": []
+    }
+  ],
+  "cues": [
+    "敵の位置について何が分かっているか",
+    "同時に何個の角度へ体をさらすか",
+    "クロスヘアが最初に敵が出る位置へ置けているか",
+    "止まって正確に撃てる状態か",
+    "自分の武器と相手までの距離が合っているか",
+    "体力・アーマー・残りアビリティ",
+    "味方がトレードできる位置にいるか",
+    "撃ち合い後に安全に下がる場所があるか"
+  ],
+  "mistakes": [
+    "負けた理由を全部「エイム負け」で片付ける",
+    "敵が見えてから初めてクロスヘアを大きく動かす",
+    "中遠距離でも移動したまま正確に撃てる前提で戦う",
+    "武器の得意距離を無視して同じ撃ち合いを繰り返す",
+    "味方が参加できない孤立した1対1を自分から作る"
+  ],
+  "practice": {
+    "vodQuestions": [
+      "敵が見える前の時点で、自分は何個の角度を処理しようとしていたか？",
+      "最初の弾を撃った時、自分は止まっていたか？",
+      "その距離は自分の武器で戦いたい距離だったか？",
+      "敵を見つけてからクロスヘアをどれだけ動かす必要があったか？",
+      "味方は同じ撃ち合いへ参加できる位置だったか？",
+      "負けた原因は接敵前・接敵時・射撃中・接敵後のどこにあったか？"
+    ]
+  },
+  "relatedConceptIds": [
+    "peek-angle-isolation",
+    "cover-trade",
+    "spacing",
+    "crossfire",
+    "double-swing"
+  ]
+}
