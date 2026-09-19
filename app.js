@@ -86,7 +86,7 @@ function cacheElements() {
     'concept-search', 'concept-list', 'concept-empty', 'loading-state', 'error-state',
     'retry-button', 'concept-view', 'concept-category', 'concept-title', 'concept-title-en',
     'concept-status', 'concept-definition', 'goal-section', 'concept-goals', 'subtype-section',
-    'concept-subtypes', 'claims-section-number', 'concept-claims', 'concept-cues',
+    'concept-subtypes', 'claims-section-number', 'concept-claims', 'deep-dive-section', 'concept-deep-dive', 'concept-cues',
     'concept-mistakes', 'concept-practice', 'concept-sources', 'related-section', 'related-concepts',
     'theme-toggle', 'theme-toggle-label', 'sidebar', 'sidebar-domain-link', 'sidebar-domain-title',
     'sidebar-domain-description', 'home-view', 'domain-grid', 'domain-view', 'domain-title',
@@ -238,7 +238,12 @@ function renderConceptList() {
       concept.titleEn,
       ...(concept.aliases || []),
       concept.definition?.text,
-      ...(concept.claims || []).map(claim => claim.text)
+      ...(concept.claims || []).map(claim => claim.text),
+      ...(concept.deepDive || []).flatMap(section => [
+        section.title,
+        section.summary,
+        ...(section.items || [])
+      ])
     ].filter(Boolean).join(' ').toLocaleLowerCase('ja');
     return haystack.includes(state.query);
   });
@@ -483,6 +488,7 @@ function renderConcept(concept) {
   renderGoals(concept.goal || []);
   renderSubtypes(concept.subtypes || []);
   renderClaims(concept.claims || []);
+  renderDeepDive(concept.deepDive || []);
   renderSimpleList(els['concept-cues'], concept.cues || []);
   renderSimpleList(els['concept-mistakes'], concept.mistakes || []);
   renderPractice(concept.practice || {});
@@ -577,6 +583,47 @@ function renderClaims(claims) {
     article.append(head, text, quickMeta, details);
     return article;
   }));
+}
+
+function renderDeepDive(sections) {
+  els['deep-dive-section'].hidden = sections.length === 0;
+
+  const nodes = sections.map(section => {
+    const article = document.createElement('article');
+    article.className = 'deep-dive-card';
+
+    const head = document.createElement('div');
+    head.className = 'deep-dive-head';
+
+    const title = document.createElement('h4');
+    title.textContent = section.title;
+
+    const meta = document.createElement('span');
+    meta.className = 'deep-dive-meta';
+    meta.textContent = section.siteSynthesis ? '複数の根拠を整理' : '根拠付き';
+
+    head.append(title, meta);
+
+    const summary = document.createElement('p');
+    summary.className = 'deep-dive-summary';
+    summary.textContent = section.summary || '';
+
+    const list = document.createElement('ul');
+    list.className = 'deep-dive-items';
+    list.append(...(section.items || []).map(makeListItem));
+
+    article.append(head, summary, list);
+
+    const refs = renderClaimSourceRefs(section.sourceIds || []);
+    if (refs) {
+      refs.classList.add('deep-dive-sources');
+      article.append(refs);
+    }
+
+    return article;
+  });
+
+  els['concept-deep-dive'].replaceChildren(...nodes);
 }
 
 function renderClaimSourceRefs(sourceIds) {
@@ -679,6 +726,7 @@ function renderSources(concept) {
   const ids = new Set();
   for (const id of concept.definition?.sourceIds || []) ids.add(id);
   for (const claim of concept.claims || []) for (const id of claim.sourceIds || []) ids.add(id);
+  for (const section of concept.deepDive || []) for (const id of section.sourceIds || []) ids.add(id);
 
   const sources = [...ids].map(id => state.sources.get(id)).filter(Boolean);
   if (els['source-count']) els['source-count'].textContent = `${sources.length}件`;
