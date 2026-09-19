@@ -1,0 +1,225 @@
+{
+  "schemaVersion": 1,
+  "id": "info-decision-action",
+  "titleJa": "情報 → 判断 → 実行",
+  "titleEn": "Intel → Decision → Action",
+  "aliases": [
+    "情報判断",
+    "ゲームセンス",
+    "意思決定",
+    "判断更新",
+    "インテル"
+  ],
+  "category": "information-map-control",
+  "status": "research-backed-draft",
+  "updated": "2026-09-20",
+  "definition": {
+    "text": "現在確認できている事実と推測・不明点を分け、目的と選択肢を整理して行動を選び、結果として得た新しい情報でもう一度判断を更新する考え方。",
+    "evidenceType": "Site Synthesis",
+    "strength": "Supported",
+    "sourceIds": [
+      "riot-tac-cycle-2020",
+      "tenz-aimlabs-decision",
+      "yay-aimlabs-gamesense"
+    ],
+    "siteSynthesis": true
+  },
+  "goal": [
+    "「普通はこうする」ではなく、今ある情報から次の行動を決める",
+    "確定情報・推測・不明を混同しない",
+    "判断の結果と実行の良し悪しを分けて振り返る",
+    "新しい情報が出たら最初の作戦へ固執せず更新する"
+  ],
+  "subtypes": [
+    {
+      "id": "confirmed",
+      "label": "確定情報",
+      "description": "視認・音・スパイク・アビリティ反応など、その時点で直接確認できたこと。"
+    },
+    {
+      "id": "inferred",
+      "label": "推測",
+      "description": "複数の手掛かりから可能性が高いと考えているが、まだ確定していないこと。"
+    },
+    {
+      "id": "unknown",
+      "label": "不明",
+      "description": "まだ確認できておらず、判断上のリスクとして残っていること。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "decision-tactical-cycle",
+      "text": "RiotはVALORANTの基本的な戦術循環を、情報を集め、作戦を立て、実行し、その結果から再び情報を得る流れとして説明している。",
+      "evidenceType": "Official / Mechanic",
+      "strength": "Confirmed",
+      "sourceIds": [
+        "riot-tac-cycle-2020"
+      ],
+      "siteSynthesis": true,
+      "notes": [
+        "Riotの設計思想を学習モデルへ日本語で整理したもの"
+      ]
+    },
+    {
+      "id": "decision-intel-includes-territory-history",
+      "text": "判断材料には敵位置だけでなく、それまでに起きたこと、どちらがマップ上の領域を持っているか、残っているエージェント・アビリティ・武器、相手の過去行動も含まれる。",
+      "evidenceType": "Official / Mechanic",
+      "strength": "Confirmed",
+      "sourceIds": [
+        "riot-tac-cycle-2020"
+      ],
+      "siteSynthesis": false,
+      "notes": []
+    },
+    {
+      "id": "decision-decide-and-communicate",
+      "text": "TenZの教材では、高圧な状況で決断することと、その判断を素早く味方へ共有することが同じ意思決定の課題として扱われている。",
+      "evidenceType": "Expert Practice / Analysis",
+      "strength": "Supported",
+      "sourceIds": [
+        "tenz-aimlabs-decision"
+      ],
+      "siteSynthesis": false,
+      "notes": []
+    },
+    {
+      "id": "decision-read-tendencies-not-certainty",
+      "text": "yayの教材では、相手の行動傾向やアビリティの使い方、保持されている角度から位置を推測しつつ、人数不利では計算したリスクを取ることがゲーム理解の一部として扱われている。",
+      "evidenceType": "Expert Practice / Analysis",
+      "strength": "Supported",
+      "sourceIds": [
+        "yay-aimlabs-gamesense"
+      ],
+      "siteSynthesis": true,
+      "notes": [
+        "相手の傾向は確定情報ではなく、次の判断材料として扱う"
+      ]
+    },
+    {
+      "id": "decision-plan-can-update",
+      "text": "実戦では最初の作戦を守り続けることより、新しい情報に応じて必要な部分を更新しながら自分たちの基本方針を保つ考え方がプロ・コーチの発言でも確認できる。",
+      "evidenceType": "Expert Practice / Analysis",
+      "strength": "Supported",
+      "sourceIds": [
+        "bonkar-prx-press-2026",
+        "alecks-esportsdriven-2022"
+      ],
+      "siteSynthesis": true,
+      "notes": []
+    }
+  ],
+  "cues": [
+    "敵の位置・人数・スパイクについて何が確定しているか",
+    "今考えていることのうち、どこまでが推測か",
+    "まだ誰も確認していない場所はどこか",
+    "人数差・残り時間・残りアビリティ・武器状況",
+    "今どの領域を自分たちと相手が使えるか",
+    "相手が直前のラウンドで繰り返していた行動",
+    "現在の目的がキル・時間稼ぎ・設置・解除・生存のどれか"
+  ],
+  "mistakes": [
+    "2人見えただけで「全員いる」と断定する",
+    "数秒前の安全確認を現在も安全だと扱う",
+    "情報を取ったのに、その情報で作戦を何も変えない",
+    "完璧な情報を待ち続けて残り時間を失う",
+    "撃ち負けた結果だけを見て、判断そのものまで間違いだったと決める",
+    "最初の作戦に固執して、新しい情報が出ても更新しない"
+  ],
+  "practice": {
+    "decisionCheck": [
+      "今確定していることは何か？",
+      "自分が推測しているだけのことは何か？",
+      "何がまだ不明か？",
+      "現在の目的は何か？",
+      "今取れる選択肢は何か？",
+      "新しい情報が出た後に判断を更新できたか？"
+    ],
+    "vodQuestions": [
+      "死ぬ直前、自分は何を知っていて何を推測していたか？",
+      "その判断は結果が悪かったのか、判断自体が悪かったのか？",
+      "別の選択肢を考えられる情報は既に出ていたか？"
+    ]
+  },
+  "relatedConceptIds": [
+    "communication",
+    "map-control",
+    "unexpected-opponent",
+    "lurk",
+    "anchor"
+  ],
+  "deepDive": [
+    {
+      "id": "trigger",
+      "title": "いつ判断を更新するか",
+      "summary": "敵位置・スパイク・人数・アビリティ・マップの領域など、ラウンドの状態を変える新しい情報が出た時に再判断する。",
+      "items": [
+        "敵やスパイクの位置が新しく分かった時",
+        "キルが発生して人数差が変わった時",
+        "重要なアビリティが使われた・残っていないと分かった時",
+        "相手がある領域を取った、またはこちらが取り返した時",
+        "残り時間によって選べる行動が減ってきた時"
+      ],
+      "sourceIds": [
+        "riot-tac-cycle-2020",
+        "tenz-aimlabs-decision"
+      ],
+      "siteSynthesis": true
+    },
+    {
+      "id": "action",
+      "title": "情報を行動へ変える",
+      "summary": "確定・推測・不明を分け、目的、選択肢、損失と見返りを見て行動を選び、必要なら味方へ共有する。",
+      "items": [
+        "まず直接確認できた事実だけを切り出す",
+        "推測と不明点を別に残す",
+        "現在のラウンド目的から取れる選択肢を出す",
+        "成功した時に得るものと、失敗した時に失うものを比較する",
+        "行動を決めたら味方へ必要な情報と意図を短く伝える",
+        "実行後の新しい情報で同じ流れをもう一度回す"
+      ],
+      "sourceIds": [
+        "riot-tac-cycle-2020",
+        "tenz-aimlabs-decision",
+        "yay-aimlabs-gamesense"
+      ],
+      "siteSynthesis": true
+    },
+    {
+      "id": "conditions",
+      "title": "同じ情報でも答えは変わる",
+      "summary": "人数、時間、アビリティ、武器、領域、相手の傾向によって同じ行動の損失と見返りが変わる。",
+      "items": [
+        "人数有利なら不要な高リスク行動を取る価値が下がることがある",
+        "人数不利や時間不足では、何もしないこと自体のリスクが高くなる",
+        "相手の傾向は判断材料になるが、確定情報としては扱わない",
+        "相手対策を細かくしすぎて自分たちの基本形を壊さない",
+        "判断が良くても射撃やタイミングの実行で失敗することはある"
+      ],
+      "sourceIds": [
+        "riot-tac-cycle-2020",
+        "yay-aimlabs-gamesense",
+        "nfx-gamewith-own-game-2025",
+        "alecks-esportsdriven-2022"
+      ],
+      "siteSynthesis": true
+    },
+    {
+      "id": "example",
+      "title": "「Aに来た」を分解する",
+      "summary": "複数の敵やアビリティをA側で見ても、まだ見えていない情報を残して段階的に守備を更新する。",
+      "items": [
+        "A側で敵2人と複数のアビリティを確認する",
+        "『A本命』はまだ推測で、スパイクと残りの敵は不明と整理する",
+        "A側は遅延しつつ、反対側を即座に全員空けない",
+        "スパイクまで確認できたら判断の確度が上がり、ローテーションを強める",
+        "途中で別側の情報が出たら最初の読みを捨てて更新する"
+      ],
+      "sourceIds": [
+        "riot-tac-cycle-2020",
+        "tenz-aimlabs-decision"
+      ],
+      "siteSynthesis": true
+    }
+  ]
+}
