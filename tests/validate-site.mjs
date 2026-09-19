@@ -5,6 +5,7 @@ const root = process.cwd();
 const readJson = rel => JSON.parse(fs.readFileSync(path.join(root, rel), 'utf8'));
 const index = readJson('data/concept-index.json');
 const sources = readJson('data/sources.json');
+const domains = readJson('data/domains.json');
 const sourceIds = new Set(sources.sources.map(source => source.id));
 const errors = [];
 const warnings = [];
@@ -43,11 +44,31 @@ const appSource = fs.readFileSync(path.join(root, 'app.js'), 'utf8');
 const htmlSource = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 const cssSource = fs.readFileSync(path.join(root, 'styles.css'), 'utf8');
 
-const conceptCategories = new Set(index.concepts.map(entry => readJson(entry.path).category).filter(Boolean));
-for (const category of conceptCategories) {
-  if (!htmlSource.includes(`data-category="${category}"`)) {
-    errors.push(`index.html: missing category filter ${category}`);
+
+const knownConceptIds = new Set(index.concepts.map(entry => entry.id));
+const domainIds = new Set();
+const coveredConceptIds = new Set();
+for (const domain of domains.domains || []) {
+  if (!domain.id || !domain.title || !domain.description) errors.push('data/domains.json: domain missing required fields');
+  if (domainIds.has(domain.id)) errors.push(`data/domains.json: duplicate domain ${domain.id}`);
+  domainIds.add(domain.id);
+  if (!Array.isArray(domain.conceptIds) || domain.conceptIds.length === 0) errors.push(`data/domains.json: empty domain ${domain.id}`);
+  for (const conceptId of domain.conceptIds || []) {
+    if (!knownConceptIds.has(conceptId)) errors.push(`data/domains.json: unknown concept ${conceptId} in ${domain.id}`);
+    coveredConceptIds.add(conceptId);
   }
+}
+for (const conceptId of knownConceptIds) {
+  if (!coveredConceptIds.has(conceptId)) errors.push(`data/domains.json: concept not reachable from home ${conceptId}`);
+}
+for (const id of ['micro','macro','aim-mechanics','positioning','information-decision','teamplay']) {
+  if (!domainIds.has(id)) errors.push(`data/domains.json: missing learning domain ${id}`);
+}
+for (const token of ['home-view','domain-grid','domain-view','domain-concept-list','sidebar-domain-link']) {
+  if (!htmlSource.includes(token)) errors.push(`index.html: missing learning hub hook ${token}`);
+}
+for (const token of ['renderHomeDomains','renderDomainView','routeFromHash','showHomeView','showDomainView']) {
+  if (!appSource.includes(token)) errors.push(`app.js: missing learning hub behavior ${token}`);
 }
 
 for (const token of ['renderClaimSourceRefs', 'sourceAnchorId', 'claim-source-link']) {
