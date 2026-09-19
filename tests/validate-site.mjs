@@ -120,6 +120,9 @@ for (const token of ['window.__vklDataReady', '8000', 'error-detail']) {
 for (const token of ['THEME_STORAGE_KEY', 'applyTheme', 'getActiveTheme', 'systemThemeQuery']) {
   if (!appSource.includes(token)) errors.push(`app.js: missing theme behavior ${token}`);
 }
+for (const token of ['Night-mode contrast contract', '#b9c5cd', '#edf3f6', '#ff6b76']) {
+  if (!cssSource.includes(token)) errors.push(`styles.css: missing night contrast token ${token}`);
+}
 for (const token of ['html[data-theme="dark"]', '.theme-toggle', '.theme-icon-sun']) {
   if (!cssSource.includes(token)) errors.push(`styles.css: missing night-mode style ${token}`);
 }

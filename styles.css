@@ -1432,3 +1432,62 @@ html[data-theme="dark"] .domain-start-card {
   .domain-grid { grid-template-columns: 1fr; }
   .domain-card { min-height: 0; }
 }
+
+
+/* Night-mode contrast contract */
+html[data-theme="dark"] .home-heading > p:last-child,
+html[data-theme="dark"] .domain-heading > p:last-child,
+html[data-theme="dark"] .domain-card p,
+html[data-theme="dark"] .domain-count,
+html[data-theme="dark"] .home-note,
+html[data-theme="dark"] .overview-back,
+html[data-theme="dark"] .domain-concept-row p,
+html[data-theme="dark"] .loading-state,
+html[data-theme="dark"] .error-state p,
+html[data-theme="dark"] .concept-title-en,
+html[data-theme="dark"] .subtype-card p,
+html[data-theme="dark"] .claim-source-label,
+html[data-theme="dark"] .meta-label,
+html[data-theme="dark"] .evidence-note span,
+html[data-theme="dark"] .source-sub,
+html[data-theme="dark"] .article-jump-nav button,
+html[data-theme="dark"] .claim-index,
+html[data-theme="dark"] .claim-strength,
+html[data-theme="dark"] .claim-evidence > summary,
+html[data-theme="dark"] .practice-block h4,
+html[data-theme="dark"] .practice-note,
+html[data-theme="dark"] .source-heading-row span,
+html[data-theme="dark"] .domain-start-card p,
+html[data-theme="dark"] .domain-section-head p {
+  color: #b9c5cd;
+}
+
+html[data-theme="dark"] .domain-prompt,
+html[data-theme="dark"] .domain-examples,
+html[data-theme="dark"] .status-badge,
+html[data-theme="dark"] .section-number,
+html[data-theme="dark"] .practice-block {
+  color: #edf3f6 !important;
+}
+
+html[data-theme="dark"] .domain-first,
+html[data-theme="dark"] .domain-number,
+html[data-theme="dark"] .domain-start-label,
+html[data-theme="dark"] .site-synthesis,
+html[data-theme="dark"] .domain-arrow,
+html[data-theme="dark"] .domain-concept-row > span,
+html[data-theme="dark"] .overview-back:hover,
+html[data-theme="dark"] .sidebar-back:hover,
+html[data-theme="dark"] .claim-evidence > summary:hover,
+html[data-theme="dark"] .claim-source-link:hover,
+html[data-theme="dark"] .source-title:hover,
+html[data-theme="dark"] .related-link:hover {
+  color: #ff6b76 !important;
+}
+
+html[data-theme="dark"] .domain-card {
+  border-color: #344754;
+}
+html[data-theme="dark"] .domain-card:hover {
+  border-color: #627987;
+}
