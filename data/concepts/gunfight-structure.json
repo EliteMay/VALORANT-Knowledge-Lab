@@ -160,5 +160,9 @@
     "spacing",
     "crossfire",
     "double-swing"
+  ],
+  "domains": [
+    "micro",
+    "aim-training"
   ]
 }
