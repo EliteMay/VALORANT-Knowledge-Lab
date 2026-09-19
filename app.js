@@ -1,8 +1,9 @@
 const state = {
   concepts: [],
+  domains: [],
   sources: new Map(),
   activeId: null,
-  category: 'all',
+  activeDomainId: null,
   query: ''
 };
 
@@ -84,7 +85,9 @@ function cacheElements() {
     'concept-status', 'concept-definition', 'goal-section', 'concept-goals', 'subtype-section',
     'concept-subtypes', 'claims-section-number', 'concept-claims', 'concept-cues',
     'concept-mistakes', 'concept-practice', 'concept-sources', 'related-section', 'related-concepts',
-    'theme-toggle', 'theme-toggle-label'
+    'theme-toggle', 'theme-toggle-label', 'sidebar', 'sidebar-domain-link', 'sidebar-domain-title',
+    'sidebar-domain-description', 'home-view', 'domain-grid', 'domain-view', 'domain-title',
+    'domain-description', 'domain-concept-list'
   ];
   for (const id of ids) els[id] = document.getElementById(id);
 }
@@ -148,14 +151,6 @@ function bindEvents() {
     renderConceptList();
   });
 
-  document.querySelector('.category-filter').addEventListener('click', event => {
-    const button = event.target.closest('[data-category]');
-    if (!button) return;
-    state.category = button.dataset.category;
-    document.querySelectorAll('.filter-chip').forEach(chip => chip.classList.toggle('is-active', chip === button));
-    renderConceptList();
-  });
-
   els['concept-list'].addEventListener('click', event => {
     const button = event.target.closest('[data-concept-id]');
     if (!button) return;
@@ -172,32 +167,25 @@ function bindEvents() {
 
   els['retry-button'].addEventListener('click', loadKnowledge);
 
-  window.addEventListener('hashchange', () => {
-    const id = decodeURIComponent(location.hash.replace(/^#/, ''));
-    if (id && id !== state.activeId && state.concepts.some(concept => concept.id === id)) {
-      selectConcept(id, false);
-    }
-  });
+  window.addEventListener('hashchange', routeFromHash);
 }
 
 async function loadKnowledge() {
   showLoading();
   try {
-    const [indexData, sourceData] = await Promise.all([
+    const [indexData, sourceData, domainData] = await Promise.all([
       fetchJson('data/concept-index.json'),
-      fetchJson('data/sources.json')
+      fetchJson('data/sources.json'),
+      fetchJson('data/domains.json')
     ]);
 
     const concepts = await Promise.all(indexData.concepts.map(entry => fetchJson(entry.path)));
     state.concepts = concepts;
+    state.domains = domainData.domains || [];
     state.sources = new Map(sourceData.sources.map(source => [source.id, source]));
 
-    renderConceptList();
-    const requested = decodeURIComponent(location.hash.replace(/^#/, ''));
-    const firstId = state.concepts.some(concept => concept.id === requested) ? requested : state.concepts[0]?.id;
-    if (!firstId) throw new Error('No concepts found');
-    selectConcept(firstId, false);
-    showContent();
+    renderHomeDomains();
+    routeFromHash();
   } catch (error) {
     console.error(error);
     showError();
@@ -211,8 +199,10 @@ async function fetchJson(path) {
 }
 
 function renderConceptList() {
+  const domain = getDomain(state.activeDomainId);
+  const allowed = new Set(domain?.conceptIds || state.concepts.map(concept => concept.id));
   const items = state.concepts.filter(concept => {
-    if (state.category !== 'all' && concept.category !== state.category) return false;
+    if (!allowed.has(concept.id)) return false;
     if (!state.query) return true;
     const haystack = [
       concept.titleJa,
@@ -232,13 +222,9 @@ function renderConceptList() {
     button.classList.toggle('is-active', concept.id === state.activeId);
     button.setAttribute('aria-current', concept.id === state.activeId ? 'page' : 'false');
 
-    const labels = document.createElement('span');
     const strong = document.createElement('strong');
     strong.textContent = concept.titleJa;
-    const small = document.createElement('small');
-    small.textContent = concept.titleEn;
-    labels.append(strong, small);
-    button.append(labels);
+    button.append(strong);
     return button;
   }));
 
@@ -248,10 +234,158 @@ function renderConceptList() {
 function selectConcept(id, updateHash) {
   const concept = state.concepts.find(item => item.id === id);
   if (!concept) return;
+  const currentDomain = getDomain(state.activeDomainId);
+  if (!currentDomain?.conceptIds?.includes(id)) {
+    state.activeDomainId = getDomainsForConcept(id)[0]?.id || null;
+  }
   state.activeId = id;
   if (updateHash && location.hash !== `#${id}`) history.pushState(null, '', `#${id}`);
+  renderSidebarContext();
   renderConceptList();
   renderConcept(concept);
+  showConceptView();
+}
+
+function getDomain(id) {
+  return state.domains.find(domain => domain.id === id) || null;
+}
+
+function getDomainsForConcept(conceptId) {
+  return state.domains.filter(domain => domain.conceptIds?.includes(conceptId));
+}
+
+function conceptsForDomain(domain) {
+  const ids = new Set(domain?.conceptIds || []);
+  return state.concepts.filter(concept => ids.has(concept.id));
+}
+
+function renderHomeDomains() {
+  const nodes = state.domains.map((domain, index) => {
+    const link = document.createElement('a');
+    link.className = 'domain-card';
+    link.href = `#domain-${domain.id}`;
+
+    const number = document.createElement('span');
+    number.className = 'domain-number';
+    number.textContent = String(index + 1).padStart(2, '0');
+
+    const body = document.createElement('div');
+    const title = document.createElement('h2');
+    title.textContent = domain.title;
+    const description = document.createElement('p');
+    description.textContent = domain.description;
+    const examples = document.createElement('p');
+    examples.className = 'domain-examples';
+    examples.textContent = (domain.examples || []).join(' ・ ');
+    const count = document.createElement('span');
+    count.className = 'domain-count';
+    count.textContent = `${conceptsForDomain(domain).length}件の知識`;
+    body.append(title, description, examples, count);
+
+    const arrow = document.createElement('span');
+    arrow.className = 'domain-arrow';
+    arrow.setAttribute('aria-hidden', 'true');
+    arrow.textContent = '→';
+
+    link.append(number, body, arrow);
+    return link;
+  });
+  els['domain-grid'].replaceChildren(...nodes);
+}
+
+function renderDomainView(domain) {
+  els['domain-title'].textContent = domain.title;
+  els['domain-description'].textContent = domain.description;
+  const nodes = conceptsForDomain(domain).map(concept => {
+    const link = document.createElement('a');
+    link.className = 'domain-concept-row';
+    link.href = `#${concept.id}`;
+
+    const body = document.createElement('div');
+    const title = document.createElement('h2');
+    title.textContent = concept.titleJa;
+    const description = document.createElement('p');
+    description.textContent = concept.definition?.text || '';
+    body.append(title, description);
+
+    const arrow = document.createElement('span');
+    arrow.setAttribute('aria-hidden', 'true');
+    arrow.textContent = '→';
+
+    link.append(body, arrow);
+    return link;
+  });
+  els['domain-concept-list'].replaceChildren(...nodes);
+}
+
+function renderSidebarContext() {
+  const domain = getDomain(state.activeDomainId);
+  els['sidebar-domain-title'].textContent = domain?.title || '知識一覧';
+  els['sidebar-domain-description'].textContent = domain?.description || '関連する知識を表示します。';
+  els['sidebar-domain-link'].href = domain ? `#domain-${domain.id}` : '#home';
+  els['sidebar-domain-link'].textContent = domain ? `← ${domain.title}一覧へ` : '← ホームへ';
+}
+
+function routeFromHash() {
+  const route = decodeURIComponent(location.hash.replace(/^#/, ''));
+  if (!route || route === 'home') {
+    showHomeView();
+    return;
+  }
+
+  if (route.startsWith('domain-')) {
+    const domain = getDomain(route.slice('domain-'.length));
+    if (domain) {
+      state.activeDomainId = domain.id;
+      state.activeId = null;
+      state.query = '';
+      if (els['concept-search']) els['concept-search'].value = '';
+      renderDomainView(domain);
+      showDomainView();
+      return;
+    }
+  }
+
+  const concept = state.concepts.find(item => item.id === route);
+  if (concept) {
+    selectConcept(concept.id, false);
+    return;
+  }
+
+  showHomeView();
+}
+
+function showHomeView() {
+  document.querySelector('.app-shell')?.classList.add('overview-mode');
+  els['sidebar'].hidden = true;
+  els['loading-state'].hidden = true;
+  els['error-state'].hidden = true;
+  els['home-view'].hidden = false;
+  els['domain-view'].hidden = true;
+  els['concept-view'].hidden = true;
+  document.title = 'VALORANT Knowledge Lab';
+}
+
+function showDomainView() {
+  document.querySelector('.app-shell')?.classList.add('overview-mode');
+  els['sidebar'].hidden = true;
+  els['loading-state'].hidden = true;
+  els['error-state'].hidden = true;
+  els['home-view'].hidden = true;
+  els['domain-view'].hidden = false;
+  els['concept-view'].hidden = true;
+  const domain = getDomain(state.activeDomainId);
+  document.title = domain ? `${domain.title} | VALORANT Knowledge Lab` : 'VALORANT Knowledge Lab';
+}
+
+function showConceptView() {
+  document.querySelector('.app-shell')?.classList.remove('overview-mode');
+  els['sidebar'].hidden = false;
+  els['loading-state'].hidden = true;
+  els['error-state'].hidden = true;
+  els['home-view'].hidden = true;
+  els['domain-view'].hidden = true;
+  els['concept-view'].hidden = false;
 }
 
 function renderConcept(concept) {
@@ -509,20 +643,22 @@ function formatGameScope(value = '') {
 }
 
 function showLoading() {
+  document.querySelector('.app-shell')?.classList.add('overview-mode');
+  if (els['sidebar']) els['sidebar'].hidden = true;
   els['loading-state'].hidden = false;
   els['error-state'].hidden = true;
+  if (els['home-view']) els['home-view'].hidden = true;
+  if (els['domain-view']) els['domain-view'].hidden = true;
   els['concept-view'].hidden = true;
 }
 
-function showContent() {
-  els['loading-state'].hidden = true;
-  els['error-state'].hidden = true;
-  els['concept-view'].hidden = false;
-}
-
 function showError() {
+  document.querySelector('.app-shell')?.classList.add('overview-mode');
+  if (els['sidebar']) els['sidebar'].hidden = true;
   els['loading-state'].hidden = true;
   els['error-state'].hidden = false;
+  if (els['home-view']) els['home-view'].hidden = true;
+  if (els['domain-view']) els['domain-view'].hidden = true;
   els['concept-view'].hidden = true;
 }
 
