@@ -411,7 +411,7 @@ function renderPractice(practice) {
 
 function practiceLabel(key) {
   const labels = {
-    vodQuestions: 'VODで確認すること',
+    vodQuestions: '試合動画で確認すること',
     decisionCheck: '判断チェック',
     note: '補足'
   };
