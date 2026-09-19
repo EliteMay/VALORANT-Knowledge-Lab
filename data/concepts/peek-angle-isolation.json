@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "id": "peek-angle-isolation",
+  "titleJa": "ピーク / 角度分離",
+  "titleEn": "Peek / Angle Isolation",
+  "aliases": [
+    "ピーク",
+    "角度分離",
+    "アングルクリア",
+    "ジグル",
+    "ジャンプピーク"
+  ],
+  "category": "peek-duel",
+  "status": "research-backed-draft",
+  "updated": "2026-09-19",
+  "definition": {
+    "text": "遮蔽物から出る前に何を得たいかを決め、一度に処理する敵の角度を増やしすぎず、クロスヘア位置・移動・撃てる状態を合わせて接敵する考え方。",
+    "evidenceType": "Site Synthesis",
+    "strength": "Supported",
+    "sourceIds": [
+      "yay-fundamentals-youtube-2020",
+      "yay-aimlabs-crosshair",
+      "riot-peeking-netcode",
+      "riot-map-environments-2020"
+    ],
+    "siteSynthesis": true
+  },
+  "goal": [
+    "一度に複数の敵角度へ体をさらすのを減らす",
+    "敵位置が不明な時に処理する角度を整理する",
+    "敵が見えた瞬間に撃てるクロスヘアと移動状態を作る",
+    "情報を取りたいピークと、撃ち合いたいピークを混同しない"
+  ],
+  "subtypes": [
+    {
+      "id": "info-peek",
+      "label": "情報を取る",
+      "description": "敵がいるか、撃ってくるか、アビリティを使うかなど、次の判断材料を得ることを主目的にする。"
+    },
+    {
+      "id": "fight-peek",
+      "label": "撃ち合う",
+      "description": "敵位置や狙う角度をある程度絞り、最初から射撃までつなげることを主目的にする。"
+    },
+    {
+      "id": "supported-peek",
+      "label": "味方と合わせる",
+      "description": "トレードやアビリティ支援を受けられるタイミングと位置で出ることを主目的にする。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "peek-fundamentals-linked",
+      "text": "クロスヘア配置、細かいピーク、移動、角度の取り方は別々の小技ではなく、撃ち合いを作る基礎として一緒に扱われている。",
+      "evidenceType": "Expert Practice / Analysis",
+      "strength": "Supported",
+      "sourceIds": [
+        "yay-fundamentals-youtube-2020"
+      ],
+      "siteSynthesis": false,
+      "notes": [
+        "Direct pro educational source; terminology summarized into Japanese"
+      ]
+    },
+    {
+      "id": "peek-clear-angles-by-map",
+      "text": "角度のクリア方法やクロスヘアの置き方はマップ形状で変わる。プロと低ランクでは角度処理の仕方に差があるとyayの教材でも扱われている。",
+      "evidenceType": "Expert Practice / Analysis",
+      "strength": "Supported",
+      "sourceIds": [
+        "yay-aimlabs-crosshair",
+        "riot-map-environments-2020"
+      ],
+      "siteSynthesis": true,
+      "notes": []
+    },
+    {
+      "id": "peek-timing-geometry-network",
+      "text": "遮蔽物から出る側と待つ側の反応条件には、マップ上の位置関係と通信の時間差が関係するため、どのピークでも同じ条件にはならない。",
+      "evidenceType": "Official / Mechanic",
+      "strength": "Confirmed",
+      "sourceIds": [
+        "riot-peeking-netcode"
+      ],
+      "siteSynthesis": true,
+      "notes": [
+        "Does not claim a universal peeker advantage amount"
+      ]
+    },
+    {
+      "id": "peek-jump-is-situational",
+      "text": "ジャンプピークは使い所がある一方、着地直後の射撃精度などには制約がある。情報取りと撃ち合いを同じ動作として考えない。",
+      "evidenceType": "Site Synthesis",
+      "strength": "Context-dependent",
+      "sourceIds": [
+        "yay-aimlabs-crosshair",
+        "riot-patch-1-09"
+      ],
+      "siteSynthesis": true,
+      "notes": [
+        "Older Riot patch establishes landing-accuracy constraint; current exact values are not adopted"
+      ]
+    },
+    {
+      "id": "peek-no-universal-exact-geometry",
+      "text": "壁からの距離、角度、出る幅を固定の数値ルールにはしない。目的、敵位置、武器、味方支援、マップ形状で適切な出方が変わる。",
+      "evidenceType": "Site Synthesis",
+      "strength": "Context-dependent",
+      "sourceIds": [
+        "yay-aimlabs-crosshair",
+        "riot-peeking-netcode",
+        "riot-map-environments-2020"
+      ],
+      "siteSynthesis": true,
+      "notes": [
+        "No universal exact wall-distance or angle rule is adopted"
+      ]
+    }
+  ],
+  "cues": [
+    "今回のピークで欲しいのは情報・スペース・キルのどれか",
+    "敵位置は確定しているか、まだ複数候補があるか",
+    "体を出した瞬間に何個の角度から撃たれる可能性があるか",
+    "クロスヘアは最初に処理する角度へ置けているか",
+    "止まって正確に撃てる状態へ移れるか",
+    "自分と相手の武器・距離",
+    "味方のトレードやアビリティ支援があるか",
+    "オペレーターなど一発の危険が高い武器が見えているか"
+  ],
+  "mistakes": [
+    "敵位置が不明なのに一度に広く出て複数角度へ体をさらす",
+    "ピークしてからクロスヘアを合わせ始める",
+    "情報だけ欲しいのに撃ち合いまで続けてしまう",
+    "一つのピーク方法をどの場面でも正解として使う",
+    "味方が参加できない位置で単独の撃ち合いを始める"
+  ],
+  "practice": {
+    "decisionCheck": [
+      "角から出る前に、今回何を得たいか決めていたか？",
+      "出た瞬間に何個の敵角度へ体をさらしていたか？",
+      "最初に見る角度へクロスヘアを置いてから出たか？",
+      "情報を取った後、本当に撃ち合い続ける必要があったか？",
+      "味方がトレードできるピークだったか？"
+    ]
+  },
+  "relatedConceptIds": [
+    "gunfight-structure",
+    "cover-trade",
+    "spacing",
+    "double-swing",
+    "unexpected-opponent"
+  ]
+}
