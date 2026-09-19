@@ -47,7 +47,7 @@
     {
       "id": "trade-pro-relevance",
       "text": "Trading / teamfightingはプロチームでも継続的な改善対象になるFundamental。",
-      "evidenceType": "Pro Practice",
+      "evidenceType": "Expert Practice / Analysis",
       "strength": "Supported",
       "sourceIds": [
         "boaster-dotesports-2026"
@@ -101,7 +101,7 @@
     {
       "id": "trade-spacing-pro-analysis",
       "text": "VCT-level match analysisでも、良いSpacingとTradingは相手のミスをPunishし、孤立したFightを減らすFundamentalとして評価されている。",
-      "evidenceType": "VCT Analyst Practice",
+      "evidenceType": "Expert Practice / Analysis",
       "strength": "Supported",
       "sourceIds": [
         "lothar-g2-edg-analysis",
@@ -115,7 +115,7 @@
     {
       "id": "crossfire-doublepeek-related-fundamentals",
       "text": "Spacingは単独Conceptではなく、well-timed double peekやcrossfire setupと組み合わさってTeam fightの形を作る。",
-      "evidenceType": "VCT Analyst Practice",
+      "evidenceType": "Expert Practice / Analysis",
       "strength": "Supported",
       "sourceIds": [
         "lothar-drx-ns-analysis",
