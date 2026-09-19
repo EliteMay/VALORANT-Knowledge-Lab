@@ -561,6 +561,37 @@
         "Riot explicitly describes jump peeking as having utility while limiting how quickly full accuracy returns after landing",
         "Historic exact values are not treated as current values"
       ]
+    },
+    {
+      "id": "royalg-peeking-youtube-2023",
+      "title": "This is why you suck at Peeking (and how to fix it).",
+      "url": "https://www.youtube.com/watch?v=bv6V9hoL8TY",
+      "publisherOrAuthor": "royalG",
+      "published": "2023-01-15",
+      "sourceTier": "A",
+      "sourceType": "Pro Practice",
+      "gameScope": "VALORANT",
+      "notes": [
+        "Direct high-Radiant coach/player educational source",
+        "Video chapters explicitly cover having purpose, enemy perspective, isolating fights and preparing to fight",
+        "Use for peeking decision structure rather than universal exact geometry"
+      ]
+    },
+    {
+      "id": "riot-patch-11-08",
+      "title": "VALORANT パッチノート 11.08",
+      "url": "https://playvalorant.com/ja-jp/news/game-updates/valorant-patch-notes-11-08/",
+      "publisherOrAuthor": "Riot Games",
+      "published": "2025-10-14",
+      "sourceTier": "A",
+      "sourceType": "Official / Mechanic",
+      "gameScope": "VALORANT / PC",
+      "notes": [
+        "Riot states tap-strafing had been generally the most viable rifle shooting style",
+        "Patch goal was to make tap, burst and spray selection a more meaningful situational optimization",
+        "Spray changes targeted close and mid-range rifle fights",
+        "Exact recoil values are patch-specific"
+      ]
     }
   ]
 }
