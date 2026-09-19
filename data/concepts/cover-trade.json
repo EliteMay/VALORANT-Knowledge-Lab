@@ -20,7 +20,9 @@
       "boaster-dotesports-2026",
       "kaizens-trade-spacing-2026",
       "eldadi-communication-2025",
-      "rusk-callouts-2024"
+      "rusk-callouts-2024",
+      "lothar-g2-edg-analysis",
+      "lothar-drx-ns-analysis"
     ],
     "siteSynthesis": true
   },
@@ -94,6 +96,34 @@
       "siteSynthesis": true,
       "notes": [
         "Evidence is CS:GO/cross-esports, not a VALORANT-specific experiment"
+      ]
+    },
+    {
+      "id": "trade-spacing-pro-analysis",
+      "text": "VCT-level match analysisでも、良いSpacingとTradingは相手のミスをPunishし、孤立したFightを減らすFundamentalとして評価されている。",
+      "evidenceType": "VCT Analyst Practice",
+      "strength": "Supported",
+      "sourceIds": [
+        "lothar-g2-edg-analysis",
+        "lothar-drx-ns-analysis"
+      ],
+      "siteSynthesis": true,
+      "notes": [
+        "Independent from coaching-site heuristics; still expert match analysis rather than experimental evidence"
+      ]
+    },
+    {
+      "id": "crossfire-doublepeek-related-fundamentals",
+      "text": "Spacingは単独Conceptではなく、well-timed double peekやcrossfire setupと組み合わさってTeam fightの形を作る。",
+      "evidenceType": "VCT Analyst Practice",
+      "strength": "Supported",
+      "sourceIds": [
+        "lothar-drx-ns-analysis",
+        "lothar-g2-edg-analysis"
+      ],
+      "siteSynthesis": true,
+      "notes": [
+        "Exact geometry/timing remains context-dependent"
       ]
     }
   ],
