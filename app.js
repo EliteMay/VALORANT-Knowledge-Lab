@@ -213,9 +213,51 @@ function renderClaims(claims) {
     );
     if (claim.siteSynthesis) meta.append(metaRow('Boundary', 'Site Synthesis', 'site-synthesis'));
 
+    const sourceRefs = renderClaimSourceRefs(claim.sourceIds || []);
+    if (sourceRefs) textWrap.append(sourceRefs);
+
     article.append(textWrap, meta);
     return article;
   }));
+}
+
+function renderClaimSourceRefs(sourceIds) {
+  if (!sourceIds.length) return null;
+
+  const wrap = document.createElement('div');
+  wrap.className = 'claim-source-refs';
+
+  const label = document.createElement('span');
+  label.className = 'claim-source-label';
+  label.textContent = 'EVIDENCE';
+
+  const links = document.createElement('div');
+  links.className = 'claim-source-links';
+
+  for (const id of sourceIds) {
+    const source = state.sources.get(id);
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'claim-source-link';
+    button.textContent = source ? `${source.sourceTier || '?'} · ${source.publisherOrAuthor || source.title}` : id;
+    button.title = source?.title || id;
+    button.addEventListener('click', () => {
+      const target = document.getElementById(sourceAnchorId(id));
+      if (!target) return;
+      target.scrollIntoView({behavior: reducedMotion() ? 'auto' : 'smooth', block: 'center'});
+      target.classList.remove('is-highlighted');
+      requestAnimationFrame(() => target.classList.add('is-highlighted'));
+      window.setTimeout(() => target.classList.remove('is-highlighted'), 1800);
+    });
+    links.append(button);
+  }
+
+  wrap.append(label, links);
+  return wrap;
+}
+
+function sourceAnchorId(id) {
+  return `source-${String(id).replace(/[^a-zA-Z0-9_-]/g, '-')}`;
 }
 
 function metaRow(label, value, valueClass = '', dataStrength = '') {
@@ -284,6 +326,7 @@ function renderSources(concept) {
   els['concept-sources'].replaceChildren(...sources.map(source => {
     const item = document.createElement('article');
     item.className = 'source-item';
+    item.id = sourceAnchorId(source.id);
 
     const tier = document.createElement('span');
     tier.className = 'source-tier';

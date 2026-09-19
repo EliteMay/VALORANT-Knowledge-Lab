@@ -39,6 +39,11 @@ for (const file of ['index.html','styles.css','app.js']) {
   if (!fs.existsSync(path.join(root,file))) errors.push(`Missing site file: ${file}`);
 }
 
+const appSource = fs.readFileSync(path.join(root, 'app.js'), 'utf8');
+for (const token of ['renderClaimSourceRefs', 'sourceAnchorId', 'claim-source-link']) {
+  if (!appSource.includes(token)) errors.push(`app.js: missing claim-to-source traceability hook ${token}`);
+}
+
 if (warnings.length) {
   console.log('Warnings:');
   for (const warning of warnings) console.log(`- ${warning}`);
