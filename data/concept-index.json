@@ -38,6 +38,10 @@
     {
       "id": "peek-angle-isolation",
       "path": "data/concepts/peek-angle-isolation.json"
+    },
+    {
+      "id": "movement-shooting-cycle",
+      "path": "data/concepts/movement-shooting-cycle.json"
     }
   ]
 }
