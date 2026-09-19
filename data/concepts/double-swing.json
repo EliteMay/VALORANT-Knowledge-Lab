@@ -9,7 +9,7 @@
   ],
   "category": "team-coordination",
   "status": "research-backed-draft",
-  "updated": "2026-09-19",
+  "updated": "2026-09-20",
   "definition": {
     "text": "2人が同時またはほぼ同時に遮蔽物から出て同じ撃ち合いを始め、キルまたはトレードを狙う動き。",
     "evidenceType": "Site Synthesis",
@@ -72,7 +72,9 @@
     "spacing",
     "cover-trade",
     "crossfire",
-    "utility-follow-up"
+    "utility-follow-up",
+    "communication",
+    "positioning"
   ],
   "deepDive": [
     {
@@ -139,5 +141,11 @@
       ],
       "siteSynthesis": true
     }
+  ],
+  "goal": [
+    "1人の敵へ2人でほぼ同時に圧力をかける",
+    "先頭だけが孤立して倒される形を減らす",
+    "相手へ複数の狙い先を同時に処理させる",
+    "間隔と短いコールを使って2人の接敵タイミングをそろえる"
   ]
 }
