@@ -1,0 +1,211 @@
+{
+  "schemaVersion": 1,
+  "id": "crosshair-placement",
+  "titleJa": "クロスヘア配置 / プリエイム",
+  "titleEn": "Crosshair Placement / Pre-aim",
+  "aliases": [
+    "クロスヘアプレイスメント",
+    "プリエイム",
+    "ヘッドライン",
+    "照準位置",
+    "置きエイム"
+  ],
+  "category": "peek-duel",
+  "status": "research-backed-draft",
+  "updated": "2026-09-20",
+  "definition": {
+    "text": "敵を見てから大きく照準を動かすのではなく、次に敵が現れる可能性の高い位置へ接敵前からクロスヘアを準備し、見えた後の修正量を小さくする考え方。",
+    "evidenceType": "Site Synthesis",
+    "strength": "Supported",
+    "sourceIds": [
+      "yay-aimlabs-crosshair",
+      "yay-fundamentals-youtube-2020",
+      "tenz-aimlabs-aim",
+      "riot-map-environments-2020"
+    ],
+    "siteSynthesis": true
+  },
+  "goal": [
+    "敵を見てから必要になる大きな照準修正を減らす",
+    "次に処理する角度へクロスヘアを先に準備する",
+    "マップの高低差や敵の出方に合わせて頭の位置を予測する",
+    "角度をクリアした後、次の脅威へ素早く照準を移す"
+  ],
+  "subtypes": [
+    {
+      "id": "head-level",
+      "label": "高さを合わせる",
+      "description": "敵の頭が現れる予測位置へ縦方向の照準を準備し、接敵後の上下修正を減らす。"
+    },
+    {
+      "id": "pre-aim",
+      "label": "プリエイム",
+      "description": "マップや敵情報から次の角度を予測し、体を晒す前からそこへ照準を合わせる。"
+    },
+    {
+      "id": "angle-clearing",
+      "label": "角度を順に処理する",
+      "description": "複数候補をぼんやり見るのではなく、危険な角度へ順番にクロスヘアを通して確認する。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "crosshair-yay-fundamental",
+      "text": "yayはクロスヘア配置をVALORANTの重要なエイム基礎として扱い、低ランクとプロの角度処理の違いや、マップ形状に応じた調整を教材で説明している。",
+      "evidenceType": "Expert Practice / Analysis",
+      "strength": "Supported",
+      "sourceIds": [
+        "yay-aimlabs-crosshair",
+        "yay-fundamentals-youtube-2020"
+      ],
+      "siteSynthesis": true,
+      "notes": []
+    },
+    {
+      "id": "crosshair-tenz-angle-clear",
+      "text": "TenZのエイム教材でも、クロスヘア配置と角度のクリア、武器に合わせた撃ち合い方が同じ学習単位で扱われている。",
+      "evidenceType": "Expert Practice / Analysis",
+      "strength": "Supported",
+      "sourceIds": [
+        "tenz-aimlabs-aim"
+      ],
+      "siteSynthesis": false,
+      "notes": []
+    },
+    {
+      "id": "crosshair-map-cues",
+      "text": "Riotはマップ環境を設計する際、角度や視認性を明瞭にし、プレイヤーがクロスヘアを置く位置を分かりやすくする環境設計を行っていると説明している。",
+      "evidenceType": "Official / Mechanic",
+      "strength": "Confirmed",
+      "sourceIds": [
+        "riot-map-environments-2020"
+      ],
+      "siteSynthesis": false,
+      "notes": []
+    },
+    {
+      "id": "crosshair-not-fixed-gap",
+      "text": "壁からの固定距離を万能ルールにはせず、敵がどの幅で出る可能性があるか、距離、高低差、マップ形状、得ている情報に合わせて横方向の余白を調整する。",
+      "evidenceType": "Site Synthesis",
+      "strength": "Context-dependent",
+      "sourceIds": [
+        "yay-aimlabs-crosshair",
+        "tenz-aimlabs-aim",
+        "riot-map-environments-2020"
+      ],
+      "siteSynthesis": true,
+      "notes": [
+        "普遍的なピクセル数や固定幅は採用しない"
+      ]
+    }
+  ],
+  "cues": [
+    "次に敵がいる可能性が高い角度はどこか",
+    "その場所で敵の頭が現れる高さはどこか",
+    "高低差で頭の高さが変わるか",
+    "敵が狭く出るか大きく出るか、どちらを警戒しているか",
+    "今クリアしている角度以外へ体を晒していないか",
+    "敵がいなかった後、次の角度へすぐ照準を移せているか",
+    "敵を見た瞬間の照準修正が毎回大きくなっていないか"
+  ],
+  "mistakes": [
+    "床や不要な壁を見ながら移動して、接敵後に大きく上下修正する",
+    "敵が出る場所ではなく角の壁そのものへクロスヘアを置く",
+    "どの距離でも角から同じ幅だけ離して照準を置く",
+    "マップの坂・階段・段差を無視して同じ高さに固定する",
+    "複数の危険な角度を一度に視界へ入れ、クロスヘアが迷う",
+    "一つの角度を確認した後に照準が中央へ漂い、次の脅威へ準備できない",
+    "接敵前の準備不足を毎回大きなフリックだけで補おうとする"
+  ],
+  "practice": {
+    "rankedFocus": [
+      "デスマッチ1試合はキル数より「敵が出る前のクロスヘア位置」だけを見る",
+      "敵がいなかった角度を確認した瞬間、次の危険角度へクロスヘアを移す"
+    ],
+    "vodQuestions": [
+      "敵が見える直前、クロスヘアはどこにあった？",
+      "敵の頭の高さへ近かった？",
+      "敵が出る角度を事前に見ていた？",
+      "敵発見後の照準修正は大きかった？",
+      "一つの角度を確認した後、次の角度へ準備できた？"
+    ]
+  },
+  "relatedConceptIds": [
+    "gunfight-structure",
+    "peek-angle-isolation",
+    "movement-shooting-cycle",
+    "positioning"
+  ],
+  "deepDive": [
+    {
+      "id": "trigger",
+      "title": "新しい角度へ接触する前に準備する",
+      "summary": "敵が見えてからではなく、次に危険な角度へ体を出す前に照準位置を決める。",
+      "items": [
+        "角を曲がる前に次の敵候補を決める",
+        "マップの高低差から頭が出る高さを予測する",
+        "相手の位置情報があるなら最も可能性の高い場所を優先する",
+        "一つの角度を確認したら次の危険角度へ準備を移す"
+      ],
+      "sourceIds": [
+        "yay-aimlabs-crosshair",
+        "tenz-aimlabs-aim",
+        "riot-map-environments-2020"
+      ],
+      "siteSynthesis": true
+    },
+    {
+      "id": "action",
+      "title": "予測 → 先置き → 角度を開く → 小さく修正",
+      "summary": "照準と体の動きを別々にせず、敵が現れる場所へ先に合わせた状態で角度を少しずつ開く。",
+      "items": [
+        "次に処理する角度を1つ選ぶ",
+        "敵の頭が現れる予測位置へクロスヘアを置く",
+        "その照準を保ちながら必要な範囲だけ角度を開く",
+        "敵が見えたら大きなフリックではなく小さい修正で射撃へつなぐ",
+        "敵がいなければ次の角度へ照準を移して同じ流れを繰り返す"
+      ],
+      "sourceIds": [
+        "yay-aimlabs-crosshair",
+        "yay-fundamentals-youtube-2020",
+        "tenz-aimlabs-aim"
+      ],
+      "siteSynthesis": true
+    },
+    {
+      "id": "conditions",
+      "title": "高さと横幅は固定しない",
+      "summary": "頭の高さは重要でも、坂・段差・距離・敵の出方によって画面上の正しい位置は変わる。",
+      "items": [
+        "階段や坂では敵の頭が画面上で同じ高さに出るとは限らない",
+        "狭いピークを警戒する時と大きく出る相手を警戒する時では横方向の余白が変わる",
+        "敵位置が確定している時は事前照準を強く使いやすい",
+        "複数角度へ同時に晒されているなら、クロスヘア配置だけで問題を解決しようとしない",
+        "武器や距離によって最初の射撃へ必要な準備も変わる"
+      ],
+      "sourceIds": [
+        "yay-aimlabs-crosshair",
+        "riot-map-environments-2020",
+        "tenz-aimlabs-aim"
+      ],
+      "siteSynthesis": true
+    },
+    {
+      "id": "example",
+      "title": "角を一つずつ事前照準で処理する",
+      "summary": "複数の敵候補を同時に見るのではなく、次の角度へ照準を置いてから体を動かす。",
+      "items": [
+        "最初の角へ頭の高さで照準を置く",
+        "体を少し動かしてその角だけ確認する",
+        "敵がいなければ照準を次の候補へ移す",
+        "次の角度を開いて同じ処理を繰り返す",
+        "敵を見つけた時の修正量が大きければ、接敵前の照準位置を見直す"
+      ],
+      "sourceIds": [
+        "yay-aimlabs-crosshair",
+        "tenz-aimlabs-aim"
+      ],
+      "siteSynthesis": true
+    }
+  ]
+}
