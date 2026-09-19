@@ -156,5 +156,8 @@
     "double-swing",
     "utility-follow-up",
     "communication"
+  ],
+  "domains": [
+    "micro"
   ]
 }
