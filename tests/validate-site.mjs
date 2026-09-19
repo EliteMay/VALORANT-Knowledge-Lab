@@ -72,10 +72,10 @@ for (const token of ['renderHomeDomains','renderDomainView','routeFromHash','sho
 }
 
 
-for (const token of ['article-jump-nav', 'source-disclosure', 'claims-section', 'cues-mistakes-section', 'practice-section', 'evidence-section']) {
+for (const token of ['article-jump-nav', 'source-heading-row', 'claims-section', 'cues-mistakes-section', 'practice-section', 'evidence-section', 'error-detail']) {
   if (!htmlSource.includes(token)) errors.push(`index.html: missing readability hook ${token}`);
 }
-for (const token of ['claim-evidence', 'claim-head', 'source-disclosure', 'Readability foundation reset']) {
+for (const token of ['claim-evidence', 'claim-head', 'claim-summary-meta', 'source-heading-row', 'Readability foundation reset']) {
   if (!cssSource.includes(token)) errors.push(`styles.css: missing readability style ${token}`);
 }
 
@@ -86,6 +86,13 @@ for (const token of ['renderClaimSourceRefs', 'sourceAnchorId', 'claim-source-li
 for (const token of ['theme-toggle', 'theme-toggle-label', 'color-scheme', 'prefers-color-scheme']) {
   if (!htmlSource.includes(token)) errors.push(`index.html: missing theme hook ${token}`);
 }
+for (const token of ['SITE_DATA_VERSION', 'FETCH_TIMEOUT_MS', 'formatLoadError', 'AbortController']) {
+  if (!appSource.includes(token)) errors.push(`app.js: missing resilient loading behavior ${token}`);
+}
+for (const token of ['window.__vklDataReady', '8000', 'error-detail']) {
+  if (!htmlSource.includes(token) && !appSource.includes(token)) errors.push(`site: missing loading failsafe ${token}`);
+}
+
 for (const token of ['THEME_STORAGE_KEY', 'applyTheme', 'getActiveTheme', 'systemThemeQuery']) {
   if (!appSource.includes(token)) errors.push(`app.js: missing theme behavior ${token}`);
 }

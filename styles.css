@@ -1295,3 +1295,47 @@ html[data-theme="dark"] .practice-block {
 html[data-theme="dark"] .practice-note { color: #aab6bf; }
 html[data-theme="dark"] .evidence-note { background: transparent; border-color: #2c3d49; }
 html[data-theme="dark"] .domain-examples { color: #d8e0e5 !important; }
+
+
+/* Density correction: keep research depth visible without restoring visual noise. */
+.claim-summary-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem;
+  margin-top: .55rem;
+}
+.claim-summary-meta span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: .2rem .42rem;
+  color: var(--muted);
+  background: rgba(15,25,35,.035);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: .66rem;
+  line-height: 1.2;
+}
+.source-heading-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: .8rem 0 .45rem;
+  border-top: 1px solid var(--line);
+}
+.source-heading-row strong { font-size: .82rem; }
+.source-heading-row span {
+  color: var(--muted);
+  font-size: .7rem;
+}
+.source-list { margin-top: 0; }
+
+html[data-theme="dark"] .claim-summary-meta span {
+  color: #aeb9c2;
+  background: #0f1922;
+  border-color: #344652;
+}
+html[data-theme="dark"] .source-heading-row {
+  border-top-color: #2c3d49;
+}
