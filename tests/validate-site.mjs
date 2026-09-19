@@ -65,8 +65,28 @@ for (const domain of domains.domains || []) {
 for (const conceptId of knownConceptIds) {
   if (!coveredConceptIds.has(conceptId)) errors.push(`data/domains.json: concept not reachable from home ${conceptId}`);
 }
-for (const id of ['micro','macro','aim-mechanics','positioning','information-decision','weapon-range','teamplay']) {
-  if (!domainIds.has(id)) errors.push(`data/domains.json: missing learning domain ${id}`);
+for (const id of ['micro','macro','aim-training']) {
+  if (!domainIds.has(id)) errors.push(`data/domains.json: missing primary learning domain ${id}`);
+}
+if ((domains.domains || []).length !== 3) errors.push(`data/domains.json: expected 3 primary domains, got ${(domains.domains || []).length}`);
+for (const domain of domains.domains || []) {
+  if (!domain.startConceptId || !knownConceptIds.has(domain.startConceptId)) {
+    errors.push(`data/domains.json: invalid startConceptId for ${domain.id}`);
+  }
+  if (!Array.isArray(domain.sections) || domain.sections.length === 0) {
+    errors.push(`data/domains.json: missing sections for ${domain.id}`);
+  }
+  for (const section of domain.sections || []) {
+    if (!section.title || !Array.isArray(section.conceptIds) || section.conceptIds.length === 0) {
+      errors.push(`data/domains.json: invalid section in ${domain.id}`);
+    }
+    for (const conceptId of section.conceptIds || []) {
+      if (!domain.conceptIds.includes(conceptId)) errors.push(`data/domains.json: section concept ${conceptId} is outside ${domain.id}`);
+    }
+  }
+}
+for (const token of ['domain-start-card','domain-section','domain-prompt','domain-first']) {
+  if (!appSource.includes(token) && !cssSource.includes(token)) errors.push(`site: missing guided learning hook ${token}`);
 }
 for (const token of ['home-view','domain-grid','domain-view','domain-concept-list','sidebar-domain-link']) {
   if (!htmlSource.includes(token)) errors.push(`index.html: missing learning hub hook ${token}`);
