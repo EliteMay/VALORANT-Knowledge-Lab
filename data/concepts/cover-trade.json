@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "id": "cover-trade",
+  "titleJa": "カバー / トレード",
+  "titleEn": "Cover / Trade",
+  "aliases": [
+    "trade",
+    "refrag",
+    "トレードキル",
+    "カバー"
+  ],
+  "category": "team-coordination",
+  "status": "research-backed-draft",
+  "updated": "2026-09-19",
+  "definition": {
+    "text": "味方のContactに対して、同じThreatへすぐActionできる位置・視線・Timingを事前に作り、味方が倒された場合も相手をReset前にPunishできる状態を作ること。",
+    "evidenceType": "Site Synthesis",
+    "strength": "Supported",
+    "sourceIds": [
+      "boaster-dotesports-2026",
+      "kaizens-trade-spacing-2026",
+      "eldadi-communication-2025",
+      "rusk-callouts-2024"
+    ],
+    "siteSynthesis": true
+  },
+  "subtypes": [
+    {
+      "id": "trade-cover",
+      "label": "Trade cover",
+      "description": "味方のContact直後に同じThreatへRefragできる状態。"
+    },
+    {
+      "id": "angle-cover",
+      "label": "Angle cover",
+      "description": "味方が処理できない別Danger angleを担当する。"
+    },
+    {
+      "id": "utility-cover",
+      "label": "Utility cover",
+      "description": "Flash / Recon / Smoke等で味方のActionを成立させる。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "trade-pro-relevance",
+      "text": "Trading / teamfightingはプロチームでも継続的な改善対象になるFundamental。",
+      "evidenceType": "Pro Practice",
+      "strength": "Supported",
+      "sourceIds": [
+        "boaster-dotesports-2026"
+      ],
+      "siteSynthesis": false,
+      "notes": [
+        "Interview establishes relevance, not exact technique"
+      ]
+    },
+    {
+      "id": "trade-spacing-context",
+      "text": "Trade spacingは単純な距離ではなく、Contact間の時間、同じThreatへのLine of sight、同じSpray / Utilityで同時にPunishされるRiskを合わせて考える。",
+      "evidenceType": "Coaching Heuristic",
+      "strength": "Supported",
+      "sourceIds": [
+        "kaizens-trade-spacing-2026"
+      ],
+      "siteSynthesis": true,
+      "notes": [
+        "Current specialist coaching source; needs stronger pro-technique source in later research"
+      ]
+    },
+    {
+      "id": "trade-no-fixed-meter",
+      "text": "普遍的な『正しい距離○m』を現時点では採用しない。",
+      "evidenceType": "Site Synthesis",
+      "strength": "Supported",
+      "sourceIds": [
+        "kaizens-trade-spacing-2026"
+      ],
+      "siteSynthesis": true,
+      "notes": [
+        "Source itself says ideal distance is contextual"
+      ]
+    },
+    {
+      "id": "trade-communication-general",
+      "text": "Tactical FPSでは、事実・Action中心のCommunicationとOpponent location / movementの共有がTeam coordinationに関係する。",
+      "evidenceType": "Academic General Principle",
+      "strength": "Supported",
+      "sourceIds": [
+        "eldadi-communication-2025",
+        "rusk-callouts-2024",
+        "esports-team-systematic-review-2024"
+      ],
+      "siteSynthesis": true,
+      "notes": [
+        "Evidence is CS:GO/cross-esports, not a VALORANT-specific experiment"
+      ]
+    }
+  ],
+  "cues": [
+    "味方のFirst contact",
+    "同じThreatが見えるか",
+    "味方とのPath差",
+    "敵Utility",
+    "自分がWeapon readyか",
+    "敵がReset / escapeできるRoute"
+  ],
+  "mistakes": [
+    "味方のすぐ後ろにいるだけでTrade可能だと思う",
+    "同じSpray / Utilityで2人まとめてPunishされるほど重なる",
+    "遠すぎて敵にReset / repositionする時間を与える",
+    "味方がContactしてから初めてCrosshair / Angleを探す",
+    "カバーとBaitを混同する"
+  ],
+  "practice": {
+    "decisionCheck": [
+      "味方がContactした瞬間、同じThreatへすぐActionできるか？",
+      "同じEnemy actionで2人ともPunishされないか？",
+      "自分はWeapon readyで、別の不要なAngleを見ていないか？"
+    ],
+    "note": "『1秒』等はDrill cueとして使えても公式固定Ruleとして表示しない。"
+  },
+  "relatedConceptIds": [
+    "spacing",
+    "crossfire",
+    "double-swing",
+    "utility-follow-up",
+    "communication"
+  ]
+}
