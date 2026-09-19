@@ -36,7 +36,7 @@ function cacheElements() {
 }
 
 function initThemeControls() {
-  syncThemeControl(getActiveTheme());
+  applyTheme(getActiveTheme(), false);
   systemThemeQuery.addEventListener?.('change', event => {
     if (getStoredTheme()) return;
     applyTheme(event.matches ? 'dark' : 'light', false);
