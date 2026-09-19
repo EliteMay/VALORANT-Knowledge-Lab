@@ -12,7 +12,7 @@
   "updated": "2026-09-19",
   "definition": {
     "text": "2人が同時またはほぼ同時にCoverから出て同じFightを開始し、KillまたはTradeを狙うPlay。",
-    "evidenceType": "Terminology + VCT Analyst Practice",
+    "evidenceType": "Site Synthesis",
     "strength": "Supported",
     "sourceIds": [
       "redbull-valorant-terms-double-swing",
@@ -24,7 +24,7 @@
     {
       "id": "doublepeek-welltimed-fundamental",
       "text": "Well-timed double peeksはVCT match analysisでGood fundamentalsの一部として評価されている。",
-      "evidenceType": "VCT Analyst Practice",
+      "evidenceType": "Expert Practice / Analysis",
       "strength": "Supported",
       "sourceIds": [
         "lothar-drx-ns-analysis"
