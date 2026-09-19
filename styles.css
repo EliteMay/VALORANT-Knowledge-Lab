@@ -100,6 +100,11 @@ a { color: inherit; }
   font-weight: 900;
   letter-spacing: .055em;
 }
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
 .header-meta {
   display: flex;
   gap: .75rem;
@@ -110,6 +115,34 @@ a { color: inherit; }
   letter-spacing: .08em;
 }
 .header-meta span + span::before { content: "/"; margin-right: .75rem; color: #53616d; }
+.theme-toggle {
+  min-height: 36px;
+  display: inline-flex;
+  align-items: center;
+  gap: .42rem;
+  padding: .42rem .62rem;
+  color: #d5dde3;
+  background: #101b24;
+  border: 1px solid #41515e;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: .68rem;
+  line-height: 1;
+}
+.theme-toggle:hover { color: #fff; border-color: var(--accent); }
+.theme-icon {
+  width: 15px;
+  height: 15px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.theme-icon-sun { display: none; }
+html[data-theme="dark"] .theme-icon-moon { display: none; }
+html[data-theme="dark"] .theme-icon-sun { display: block; }
 
 .app-shell {
   display: grid;
@@ -497,3 +530,86 @@ button:focus-visible, a:focus-visible, input:focus-visible {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+
+/* Night mode keeps the tactical shell intact and darkens the reading surface. */
+html[data-theme="dark"] body {
+  background: #081018;
+  color: #e7edf1;
+}
+
+html[data-theme="dark"] .main-content {
+  background:
+    linear-gradient(90deg, rgba(235,242,246,.028) 1px, transparent 1px) 0 0 / 64px 64px,
+    linear-gradient(rgba(235,242,246,.02) 1px, transparent 1px) 0 0 / 64px 64px,
+    #0a131b;
+}
+
+html[data-theme="dark"] .concept-header { border-bottom-color: #354754; }
+html[data-theme="dark"] .concept-title-en,
+html[data-theme="dark"] .meta-label,
+html[data-theme="dark"] .source-sub,
+html[data-theme="dark"] .error-state p,
+html[data-theme="dark"] .evidence-note span,
+html[data-theme="dark"] .claim-source-label { color: #9dabb5; }
+
+html[data-theme="dark"] .status-badge {
+  color: #dce4e9;
+  border-color: #526471;
+}
+
+html[data-theme="dark"] .section-number { color: #e7edf1; }
+html[data-theme="dark"] .content-section { border-bottom-color: #243541; }
+
+html[data-theme="dark"] .subtype-grid {
+  background: #2b3b47;
+  border-color: #2b3b47;
+}
+html[data-theme="dark"] .subtype-card { background: #101c26; }
+html[data-theme="dark"] .subtype-card p { color: #a8b4bd; }
+
+html[data-theme="dark"] .claim { border-color: #30424f; }
+html[data-theme="dark"] .claim-source-link {
+  color: #c8d3db;
+  background: #111f2a;
+  border-color: #435460;
+  border-left-color: var(--accent);
+}
+html[data-theme="dark"] .claim-source-link:hover {
+  color: #ff7a85;
+  border-color: var(--accent);
+}
+html[data-theme="dark"] .meta-row { border-bottom-color: #3b4d59; }
+html[data-theme="dark"] .strength[data-strength="Confirmed"] { color: #6fc6a3; }
+html[data-theme="dark"] .strength[data-strength="Supported"] { color: #79a8ca; }
+html[data-theme="dark"] .strength[data-strength="Context-dependent"] { color: #d2a268; }
+html[data-theme="dark"] .site-synthesis { color: #ff7a85; }
+
+html[data-theme="dark"] .practice-section::after { color: rgba(235,242,246,.04); }
+html[data-theme="dark"] .practice-block {
+  background: #111f2a;
+  border-color: var(--accent);
+}
+html[data-theme="dark"] .practice-block h4 { color: #aebbc4; }
+html[data-theme="dark"] .practice-note { color: #d5dde2; }
+
+html[data-theme="dark"] .evidence-note {
+  background: #13232e;
+  border-left-color: #526471;
+}
+html[data-theme="dark"] .source-item { border-top-color: #30424f; }
+html[data-theme="dark"] .source-item.is-highlighted { background: rgba(255,70,85,.11); }
+html[data-theme="dark"] .source-tier { background: #172733; }
+html[data-theme="dark"] .source-tier[data-tier="A"] { background: var(--accent-dark); }
+html[data-theme="dark"] .source-title:hover { color: #ff7a85; }
+html[data-theme="dark"] .source-type { color: #8d9ba5; }
+
+html[data-theme="dark"] .related-link,
+html[data-theme="dark"] .related-missing { border-color: #435460; }
+html[data-theme="dark"] .related-link:hover {
+  color: #ff7a85;
+  border-color: var(--accent);
+}
+html[data-theme="dark"] .related-missing { color: #8c9aa4; }
+html[data-theme="dark"] .concept-signal span { background: #314654; }
+html[data-theme="dark"] .action-button { background: #162632; }

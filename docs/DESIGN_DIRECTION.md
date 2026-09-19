@@ -66,10 +66,20 @@ Do not copy:
 - Navigation Type: Search + category filter + concept list
 - Content Density: Medium。VLRより緩く、一般Blogより高密度
 - Typography: 本文可読性優先。見出しのみ太く直線的にする
-- Color Rule: dark navy / warm off-whiteを基盤、VALORANTを想起させるred accentは重要箇所だけ
+- Color Rule: dark navy / warm off-whiteを基盤、VALORANTを想起させるred accentは重要箇所だけ。Night modeでは本文面をdeep navyへ反転し、pure blackは使わず階層をborder / surface差で維持する
 - Component Rule: 全情報をCard化しない。Section / dividerを基本とし、EvidenceやPracticeなど独立性の高い情報だけPanel化
 - Decorative Effect Policy: 強いshadow / glass / glowは使わない。斜めAccent、細いline、selected stateでIdentityを作る
 - Signature: ClaimごとにEvidence strengthとSourceをその場で追跡できる「Evidence Rail」
+
+## Theme Contract
+
+- Header / Sidebarのdark tactical shellはLight / Nightで共通に保つ
+- Light modeは既存のwarm off-white reading surfaceを維持する
+- Night modeは本文・Evidence・Card相当Surfaceをdeep navy系へ変え、red accentの意味を変えない
+- Theme未選択時はOSの `prefers-color-scheme` を初期値として使う
+- UserがLight / Nightを明示切替した後はBrowser localStorageで保持する
+- Theme切替でContent、Navigation、Evidence hierarchy、Layoutを変えない
+- Browser form controls / scrollbar等のUA surfaceにも現在Themeを伝えるため `color-scheme` を合わせる
 
 ## Structure Decision
 

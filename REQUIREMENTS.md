@@ -56,6 +56,8 @@ VALORANTをプレイしていて、エイム以外のゲーム理解・ミクロ
 - Source Tier / Source Type / Author / Date / Game Scopeを追跡できる
 - Concept URLは `#concept-id` で直接共有できる
 - DesktopをPrimaryにしつつMobileでも主要ContentとNavigationを失わない
+- ライト / ナイトモードを切り替えられる
+- Themeを明示選択していない初回はOSのlight / dark設定を反映し、Userが切り替えた後は同じBrowserで選択を保持する
 - Account / Auth / Backend / Cloud DBをMVPへ追加しない
 
 ## 5. Later Content Candidates
@@ -159,6 +161,8 @@ Glossaryは補助導線として利用できるが、サイト全体を用語辞
 
 Canonical Contentから検索Index等を再生成可能にし、Derived Indexを第二Source of Truthにしない。
 
+Theme preferenceのみBrowserのlocalStorageへ保存してよい。Knowledge ContentのSource of Truthや学習DataをlocalStorageへ複製しない。
+
 初期MVPでAccount / Cloud DB / Authは導入しない。
 
 ## 12. Non-breakable Contracts
@@ -196,6 +200,7 @@ Canonical Contentから検索Index等を再生成可能にし、Derived Indexを
 - ClaimとSourceを画面上で追跡できる
 - Missing / loading / error stateを持つ
 - Keyboard focusと主要Responsive Layoutが定義されている
+- ライト / ナイトモードの切替、OS初期設定、明示選択の保持が実装されている
 - Static validationでConcept file / Source ID参照が壊れていない
 - 最終状態をBrowser / Screenshotで確認する。確認できない場合はUnverifiedとして明示する
 
