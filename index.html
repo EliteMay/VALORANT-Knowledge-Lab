@@ -3,9 +3,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0f1923">
+  <meta id="theme-color" name="theme-color" content="#0f1923">
+  <meta name="color-scheme" content="light dark">
   <meta name="description" content="VALORANTのラーク、アンカー、カバー、トレード、スペーシングなどを根拠付きで学ぶ非公式Knowledge Site。">
   <title>VALORANT Knowledge Lab</title>
+  <script>
+    (() => {
+      const key = 'vkl-theme';
+      let saved = null;
+      try { saved = localStorage.getItem(key); } catch {}
+      const theme = saved === 'dark' || saved === 'light'
+        ? saved
+        : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.dataset.theme = theme;
+      document.documentElement.style.colorScheme = theme;
+    })();
+  </script>
   <link rel="stylesheet" href="styles.css">
   <script src="app.js" defer></script>
 </head>
@@ -20,9 +33,21 @@
         <a class="brand-name" href="#lurk" aria-label="VALORANT Knowledge Lab ホーム">VALORANT KNOWLEDGE LAB</a>
       </div>
     </div>
-    <div class="header-meta">
-      <span>Research-backed</span>
-      <span>2026.09</span>
+    <div class="header-actions">
+      <div class="header-meta">
+        <span>Research-backed</span>
+        <span>2026.09</span>
+      </div>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false" aria-label="ナイトモードに切り替える">
+        <svg class="theme-icon theme-icon-moon" aria-hidden="true" viewBox="0 0 24 24">
+          <path d="M20.5 14.2A8 8 0 0 1 9.8 3.5 8.5 8.5 0 1 0 20.5 14.2Z"/>
+        </svg>
+        <svg class="theme-icon theme-icon-sun" aria-hidden="true" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="3.5"/>
+          <path d="M12 2v2.2M12 19.8V22M4.93 4.93l1.56 1.56M17.51 17.51l1.56 1.56M2 12h2.2M19.8 12H22M4.93 19.07l1.56-1.56M17.51 6.49l1.56-1.56"/>
+        </svg>
+        <span id="theme-toggle-label">ナイト</span>
+      </button>
     </div>
   </header>
 
