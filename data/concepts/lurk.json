@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "id": "lurk",
+  "titleJa": "ラーク",
+  "titleEn": "Lurk",
+  "aliases": [
+    "lurking",
+    "ルーク",
+    "裏取り"
+  ],
+  "category": "information-map-control",
+  "status": "research-backed-draft",
+  "updated": "2026-09-19",
+  "definition": {
+    "text": "Main groupと離れた位置で相手の配置・空いたSpace・Rotation timingを読み、得た情報やMap controlをTeamのRound planへ繋げる動き。",
+    "evidenceType": "Site Synthesis",
+    "strength": "Supported",
+    "sourceIds": [
+      "nats-lurk-youtube-2021",
+      "nats-one-lurk-2023",
+      "nats-one-cypher-2023",
+      "kaplan-esportsgg-2025"
+    ],
+    "siteSynthesis": true
+  },
+  "goal": [
+    "相手のRotationやDefender pushをPunishする",
+    "空いたSpaceを取る",
+    "相手の守り方・位置・移動から情報を得る",
+    "Main groupの圧力と組み合わせて相手にMap全体を意識させる"
+  ],
+  "claims": [
+    {
+      "id": "lurk-pattern-read",
+      "text": "固定Routeをなぞるより、相手の担当Areaや過去Roundの傾向をTrackしてTimingを作ることが重要。",
+      "evidenceType": "Pro Practice",
+      "strength": "Supported",
+      "sourceIds": [
+        "nats-one-lurk-2023",
+        "nats-one-cypher-2023"
+      ],
+      "siteSynthesis": false,
+      "notes": [
+        "Both sources originate from nAts; strong expert evidence but not independent-player consensus"
+      ]
+    },
+    {
+      "id": "lurk-team-information",
+      "text": "Lurk側とMain groupの情報共有は重要で、離れた場所で起きている状況を正確に同期する必要がある。",
+      "evidenceType": "Pro Practice",
+      "strength": "Supported",
+      "sourceIds": [
+        "nats-one-cypher-2023",
+        "kaplan-esportsgg-2025"
+      ],
+      "siteSynthesis": true,
+      "notes": [
+        "Independent expert cross-check: nAts and Sentinels coach kaplan"
+      ]
+    },
+    {
+      "id": "lurk-unpredictability",
+      "text": "同じLurk patternを繰り返すと読まれやすくなるため、相手のAdaptationに合わせて変化させる。",
+      "evidenceType": "Pro Practice",
+      "strength": "Supported",
+      "sourceIds": [
+        "nats-one-lurk-2023"
+      ],
+      "siteSynthesis": false,
+      "notes": []
+    },
+    {
+      "id": "lurk-agent-not-fixed",
+      "text": "LurkをSentinel / Controllerだけの固定Roleとは扱わない。Agent abilityとMain groupで必要な役割に応じて適性が変わる。",
+      "evidenceType": "Site Synthesis",
+      "strength": "Context-dependent",
+      "sourceIds": [
+        "nats-lurk-youtube-2021",
+        "nats-one-lurk-2023"
+      ],
+      "siteSynthesis": true,
+      "notes": [
+        "nAts direct video description says any agent can lurk while he prefers Viper/Cypher"
+      ]
+    }
+  ],
+  "cues": [
+    "敵の過去Round配置",
+    "現在見えている敵位置",
+    "Main groupのContact / Utility",
+    "足音・Ability音",
+    "空いたLane",
+    "残り時間"
+  ],
+  "mistakes": [
+    "目的なしでTeamと離れる",
+    "Main groupの状況を見ずに自分だけTimingを待つ",
+    "毎Round同じRoute / Timingを使う",
+    "価値がなくなった後もRegroupしない"
+  ],
+  "practice": {
+    "vodQuestions": [
+      "Lurk開始時点で何の情報を持っていたか？",
+      "Main groupのActionと自分のTimingは繋がっていたか？",
+      "相手の過去Round patternを使ったか？",
+      "取ったSpace / InfoはRoundにどう使われたか？",
+      "RegroupすべきTimingを逃していないか？"
+    ]
+  },
+  "relatedConceptIds": [
+    "map-control",
+    "rotation-read",
+    "communication",
+    "regroup",
+    "default"
+  ]
+}
