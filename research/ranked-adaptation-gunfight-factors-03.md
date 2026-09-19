@@ -513,3 +513,81 @@ Source batch:
 - Crouch sprayは常に悪い
 - Tap / Burstの普遍的な固定距離
 - AimではExternal focusが必ず優れる
+
+
+
+---
+
+# Priority 1 初回深掘り — Peek / Angle Clearing
+
+## P1-1. 強く言えること
+
+### Crosshair placement / Jiggling / Movement / Angle takingは別々ではない
+
+Source: `yay-fundamentals-youtube-2020`
+
+yay本人のFundamentals教材は、Crosshair placement、Jiggling、Movement、Angle / Fightの取り方を同じ基礎セットとして扱っている。
+
+### Map側もAngle / Peek / Crosshair placementを前提に作られている
+
+Sources:
+- `riot-map-environments-2020`
+- `riot-peeking-netcode`
+
+RiotはMapのAngles / Peeksを明瞭にし、Crosshair placementをGuideできるEnvironment designを行っている。
+またNetcode articleでは、Holder / Peekerの見え方とMap geometryがReaction条件へ影響すると説明している。
+
+### Moving fireは距離・武器によって成立度が違うが、意図したMovementを優先する方向
+
+Sources:
+- `riot-patch-3-movement-accuracy-2021`
+- Riot Patch 9.10（Research cross-check）
+
+Riotは複数PatchでMovement speedとAccuracyの関係を意図的に調整している。
+
+## P1-2. まだ弱いこと
+
+Current primary evidenceだけでは次をUniversal Ruleへしない。
+
+- Wide peekは常にJiggleに勝つ
+- Jiggleは必ずOperator相手に使う
+- Wallから必ず○m離れる
+- CrosshairをCornerから必ず○Head分離す
+- Slice the pieを必ず一定幅で行う
+- Shoulder peekとJiggle peekを厳密な固定動作として区別する
+
+これらはCoaching guideでは頻出するが、Primary pro / Riot sourceでExact conditionをまだ十分Cross-checkできていない。
+
+## P1-3. 現段階の安全な学習モデル
+
+これは **Site Synthesis**。
+
+```text
+Peekする前
+↓
+何を得たい？
+├─ 情報
+├─ Shotを誘いたい
+├─ Spaceを取りたい
+└─ Kill / Tradeを取りたい
+↓
+敵位置は分かる？
+├─ No → 一度に複数Angleを晒さないClearを優先
+└─ Yes → Crosshair / Movement / Utility / TradeをそのThreatへ合わせる
+↓
+自分は止まって正確に撃てる？
+↓
+味方はTrade / Utilityで参加できる？
+```
+
+Peek名を先に選ぶのではなく、
+**目的 → 情報量 → 晒すAngle数 → 射撃可能状態 → 味方Support**
+の順で判断するモデルとして今後検証する。
+
+## Next Evidence Needed
+
+- Current pro / coachによるWide / Jiggle / Jump peekの直接解説
+- Operator対策としてのPeek選択
+- Wallからの距離とPerspective advantageのCurrent VALORANT verification
+- Angle isolationのPro VOD example
+- Peek後のStop / Shoot / Re-movementのCurrent mechanic
