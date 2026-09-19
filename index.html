@@ -19,8 +19,8 @@
       document.documentElement.style.colorScheme = theme;
     })();
   </script>
-  <link rel="stylesheet" href="styles.css?v=20260919-contrastfix">
-  <script src="app.js?v=20260919-threepaths" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20260920-depth">
+  <script src="app.js?v=20260920-depth" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">本文へ移動</a>
@@ -132,6 +132,7 @@
 
         <nav class="article-jump-nav" aria-label="記事内メニュー">
           <button type="button" data-scroll-target="claims-section">重要ポイント</button>
+          <button type="button" data-scroll-target="deep-dive-section">深掘り</button>
           <button type="button" data-scroll-target="cues-mistakes-section">見る・失敗</button>
           <button type="button" data-scroll-target="practice-section">練習</button>
           <button type="button" data-scroll-target="evidence-section">根拠</button>
@@ -159,6 +160,14 @@
             <div><p class="section-kicker">重要ポイント</p><h3>判断の核になる知識</h3></div>
           </div>
           <div id="concept-claims" class="claim-list"></div>
+        </section>
+
+        <section id="deep-dive-section" class="content-section deep-dive-section" hidden>
+          <div class="section-heading">
+            <span class="section-number">D</span>
+            <div><p class="section-kicker">深掘り</p><h3>状況ごとの判断まで理解する</h3></div>
+          </div>
+          <div id="concept-deep-dive" class="deep-dive-list"></div>
         </section>
 
         <section id="cues-mistakes-section" class="content-section split-section">

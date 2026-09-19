@@ -73,5 +73,71 @@
     "cover-trade",
     "crossfire",
     "utility-follow-up"
+  ],
+  "deepDive": [
+    {
+      "id": "trigger",
+      "title": "ダブルスイングを使う場面",
+      "summary": "1人の敵へ2人で同時に圧力をかけ、相手に複数の狙い先を同時処理させたい時に使う。",
+      "items": [
+        "敵位置がある程度分かっていて、2人とも同じ敵へ参加できる時",
+        "味方1人だけのピークでは孤立した1対1になりやすい時",
+        "リテイクやサイト取りで、同じ角度を2人で一気に突破したい時",
+        "人数有利を活かして相手に1人ずつ撃ち合いを渡したくない時"
+      ],
+      "sourceIds": [
+        "lothar-drx-ns-analysis",
+        "redbull-valorant-terms-double-swing"
+      ],
+      "siteSynthesis": true
+    },
+    {
+      "id": "action",
+      "title": "どう合わせるか",
+      "summary": "完全に同じ位置へ重なるのではなく、ほぼ同じタイミングで同じ敵へ参加する。",
+      "items": [
+        "出る前に2人が同じ敵・同じ目的を見ているか確認する",
+        "片方だけが先に出て処理される時間差を作らない",
+        "同じスプレーで2人まとめて倒されないよう、少し違うラインから出る",
+        "フラッシュやスタンと合わせるなら、アビリティ終了前後のタイミングを2人で合わせる"
+      ],
+      "sourceIds": [
+        "lothar-drx-ns-analysis",
+        "riot-peeking-netcode"
+      ],
+      "siteSynthesis": true
+    },
+    {
+      "id": "conditions",
+      "title": "条件で変わるポイント",
+      "summary": "固定の秒数やカウントで決めるものではなく、距離・遮蔽物・敵武器で成立条件が変わる。",
+      "items": [
+        "2人の開始位置が違えば、同時にボタンを押しても敵視点の接敵タイミングはズレる",
+        "オペレーター相手では、同じラインへ順番に出るだけだと2回の1対1になる",
+        "通路が狭いと2人が同じ射線へ重なりやすい",
+        "敵が複数角度にいるなら、2人とも同じ敵だけを見ることが逆に危険な場合がある"
+      ],
+      "sourceIds": [
+        "riot-peeking-netcode",
+        "lothar-drx-ns-analysis"
+      ],
+      "siteSynthesis": true
+    },
+    {
+      "id": "example",
+      "title": "実戦イメージ",
+      "summary": "1人目を囮にするのではなく、敵が最初から2人へ対応しないといけない形を作る。",
+      "items": [
+        "敵位置を確認した2人が同じ合図で遮蔽物から出る",
+        "2人は少し違うラインを通り、敵から見て複数ターゲットになる",
+        "敵が片方へ照準を合わせる間にもう片方も射撃できる",
+        "どちらかが倒されても、もう片方がすぐトレードできる"
+      ],
+      "sourceIds": [
+        "lothar-drx-ns-analysis",
+        "redbull-valorant-terms-double-swing"
+      ],
+      "siteSynthesis": true
+    }
   ]
 }

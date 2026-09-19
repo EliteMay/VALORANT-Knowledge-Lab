@@ -26,7 +26,25 @@ for (const entry of index.concepts) {
 
   const refs = new Set([...(concept.definition?.sourceIds || [])]);
   for (const claim of concept.claims || []) for (const id of claim.sourceIds || []) refs.add(id);
+  for (const section of concept.deepDive || []) for (const id of section.sourceIds || []) refs.add(id);
   for (const ref of refs) if (!sourceIds.has(ref)) errors.push(`${concept.id}: missing source ${ref}`);
+
+  if (!Array.isArray(concept.deepDive) || concept.deepDive.length < 4) {
+    errors.push(`${concept.id}: deepDive must contain at least 4 sections`);
+  } else {
+    const deepIds = new Set(concept.deepDive.map(section => section.id));
+    for (const required of ['trigger','action','conditions','example']) {
+      if (!deepIds.has(required)) errors.push(`${concept.id}: deepDive missing ${required}`);
+    }
+    for (const section of concept.deepDive) {
+      if (!section.title || !section.summary || !Array.isArray(section.items) || section.items.length < 2) {
+        errors.push(`${concept.id}: invalid deepDive section ${section.id || 'unknown'}`);
+      }
+      if (!Array.isArray(section.sourceIds) || section.sourceIds.length === 0) {
+        errors.push(`${concept.id}: deepDive section ${section.id || 'unknown'} has no sources`);
+      }
+    }
+  }
 }
 
 for (const entry of index.concepts) {
@@ -96,6 +114,13 @@ for (const token of ['renderHomeDomains','renderDomainView','routeFromHash','sho
 }
 
 
+for (const token of ['deep-dive-section', 'concept-deep-dive']) {
+  if (!htmlSource.includes(token)) errors.push(`index.html: missing deep-dive hook ${token}`);
+}
+for (const token of ['renderDeepDive', 'deep-dive-card', 'deep-dive-items']) {
+  if (!appSource.includes(token) && !cssSource.includes(token)) errors.push(`site: missing deep-dive behavior/style ${token}`);
+}
+
 for (const token of ['article-jump-nav', 'source-heading-row', 'claims-section', 'cues-mistakes-section', 'practice-section', 'evidence-section', 'error-detail']) {
   if (!htmlSource.includes(token)) errors.push(`index.html: missing readability hook ${token}`);
 }
@@ -144,6 +169,7 @@ for (const entry of index.concepts) {
     ...(concept.subtypes || []).flatMap(item => [item.label, item.description]),
     ...(concept.cues || []),
     ...(concept.mistakes || []),
+    ...(concept.deepDive || []).flatMap(section => [section.title, section.summary, ...(section.items || [])]),
     ...Object.values(concept.practice || {}).flatMap(value => Array.isArray(value) ? value : [value])
   ].filter(Boolean).join('\n');
   if (unexplainedEnglish.test(visibleText)) {

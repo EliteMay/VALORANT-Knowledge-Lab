@@ -56,7 +56,7 @@ VALORANTをプレイしていて、エイム以外のゲーム理解・ミクロ
 - Static HTML / CSS / JavaScriptで動作する
 - Homeで大枠の学習分野を選び、その分野に属するConcept一覧から記事へ進める
 - Concept詳細では選択中の大枠に属するConceptをSearchできる
-- ConceptごとにDefinition / Goal / Claims / Cues / Mistakes / Practice / Evidence / Related Conceptsを表示する
+- ConceptごとにDefinition / Goal / Claims / Deep Dive / Cues / Mistakes / Practice / Evidence / Related Conceptsを表示する
 - ClaimのEvidence strength / typeを表示する
 - Claim本文に加えて、信頼度・根拠の種類・出典数は常時確認できる。個別の出典対応だけProgressive Disclosureで開閉する
 - Concept記事には主要Sectionへのページ内Shortcutを置き、長い縦スクロールでも目的位置へ移動しやすくする
@@ -105,6 +105,8 @@ Concept Pageは原則として次を持つ。
 11. Related Concepts
 
 定義だけ、または「こうすると強い」という結論だけでLesson完成扱いにしない。
+
+Current Conceptは、上部の短い要約に加えて、Trigger / Action / Conditions・Exceptions / ExampleをDeep Diveとして持つ。読みやすさのために要約しても、Researchで確認できた判断条件・例外・実戦適用を削りすぎない。
 
 ## 7. Evidence Contract
 
@@ -214,6 +216,7 @@ Theme preferenceのみBrowserのlocalStorageへ保存してよい。Knowledge Co
 ## 15. Completion Conditions for Static Site MVP
 
 - 10ConceptをCanonical JSONから表示できる
+- Current 10ConceptすべてにDeep Diveがあり、Trigger / Action / Conditions・Exceptions / Example相当の情報を確認できる
 - Home → Learning Domain → Conceptの主要導線が動く
 - 全Current Conceptが少なくとも1つのLearning Domainから到達できる
 - Domain内Search / Related Concept navigationが動く

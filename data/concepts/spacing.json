@@ -77,5 +77,74 @@
     "crossfire",
     "double-swing",
     "utility-follow-up"
+  ],
+  "deepDive": [
+    {
+      "id": "trigger",
+      "title": "スペーシングを意識する場面",
+      "summary": "味方と同じエリアを進み、次の接敵へ複数人で参加したい時は常に関係する。",
+      "items": [
+        "チョークや曲がり角を連続して進む時",
+        "先頭がピークし、2人目がトレードしたい時",
+        "ダブルピークやクロスファイアへ移行する前",
+        "味方の進行速度が急に変わった時"
+      ],
+      "sourceIds": [
+        "lothar-drx-ns-analysis",
+        "lothar-g2-edg-analysis",
+        "thwifo-vlr-xset-2021"
+      ],
+      "siteSynthesis": true
+    },
+    {
+      "id": "action",
+      "title": "どう間隔を合わせるか",
+      "summary": "『何メートル』ではなく、同じ撃ち合いに接続できるかを基準にする。",
+      "items": [
+        "味方が今接敵したら、自分もすぐ同じ敵へ撃てるかを確認する",
+        "射線が切れる曲がり角へ入る前に、味方との間隔を調整する",
+        "味方が止まる・加速する・アビリティを使う変化に合わせて速度を変える",
+        "真後ろへ重ならず、同じ攻撃で2人同時に倒されないラインを作る"
+      ],
+      "sourceIds": [
+        "kaizens-trade-spacing-2026",
+        "lothar-drx-ns-analysis",
+        "lothar-g2-edg-analysis"
+      ],
+      "siteSynthesis": true
+    },
+    {
+      "id": "conditions",
+      "title": "マップ形状で正解が変わる",
+      "summary": "同じ距離でも、角・通路幅・射線によってトレード可能性は変わる。",
+      "items": [
+        "狭いチョークでは重なりやすく、同じアビリティを受ける危険が高い",
+        "広いレーンでは横方向にズレても同じ敵へ射線を通しやすい",
+        "曲がり角では数歩の差で射線が完全に切れることがある",
+        "味方が別角度を担当しているなら、近くても同じ敵をトレードする役割ではない場合がある"
+      ],
+      "sourceIds": [
+        "kaizens-trade-spacing-2026",
+        "lothar-g2-edg-analysis"
+      ],
+      "siteSynthesis": true
+    },
+    {
+      "id": "example",
+      "title": "実戦イメージ",
+      "summary": "先頭と同じ敵へ参加できるが、同じスプレーでは2人とも倒されない間隔を保つ。",
+      "items": [
+        "先頭が次の角をクリアする前に、2人目が遅れすぎていないか確認する",
+        "先頭が接敵すると2人目も同じ敵を見られる",
+        "2人は完全には重ならず、敵が片方からもう片方へ狙いを移す必要がある",
+        "この状態がトレードやダブルピークへつながる土台になる"
+      ],
+      "sourceIds": [
+        "lothar-drx-ns-analysis",
+        "lothar-g2-edg-analysis",
+        "thwifo-vlr-xset-2021"
+      ],
+      "siteSynthesis": true
+    }
   ]
 }
