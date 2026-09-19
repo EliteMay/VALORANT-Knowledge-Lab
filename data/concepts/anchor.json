@@ -113,5 +113,9 @@
     "retake",
     "rotate-timing",
     "angle-isolation"
+  ],
+  "domains": [
+    "micro",
+    "macro"
   ]
 }
