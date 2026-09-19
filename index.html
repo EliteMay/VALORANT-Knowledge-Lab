@@ -130,6 +130,13 @@
           <div class="concept-signal" aria-hidden="true"><span></span></div>
         </header>
 
+        <nav class="article-jump-nav" aria-label="記事内メニュー">
+          <button type="button" data-scroll-target="claims-section">重要ポイント</button>
+          <button type="button" data-scroll-target="cues-mistakes-section">見る・失敗</button>
+          <button type="button" data-scroll-target="practice-section">練習</button>
+          <button type="button" data-scroll-target="evidence-section">根拠</button>
+        </nav>
+
         <section id="goal-section" class="content-section" hidden>
           <div class="section-heading">
             <span class="section-number">01</span>
@@ -146,7 +153,7 @@
           <div id="concept-subtypes" class="subtype-grid"></div>
         </section>
 
-        <section class="content-section">
+        <section id="claims-section" class="content-section">
           <div class="section-heading">
             <span class="section-number" id="claims-section-number">02</span>
             <div><p class="section-kicker">重要ポイント</p><h3>判断の核になる知識</h3></div>
@@ -154,7 +161,7 @@
           <div id="concept-claims" class="claim-list"></div>
         </section>
 
-        <section class="content-section split-section">
+        <section id="cues-mistakes-section" class="content-section split-section">
           <div>
             <div class="section-heading compact">
               <span class="section-number">C</span>
@@ -171,7 +178,7 @@
           </div>
         </section>
 
-        <section class="content-section practice-section">
+        <section id="practice-section" class="content-section practice-section">
           <div class="section-heading">
             <span class="section-number">P</span>
             <div><p class="section-kicker">練習・試合動画の振り返り</p><h3>試合後に確認する</h3></div>
@@ -179,7 +186,7 @@
           <div id="concept-practice" class="practice-grid"></div>
         </section>
 
-        <section class="content-section evidence-section">
+        <section id="evidence-section" class="content-section evidence-section">
           <div class="section-heading">
             <span class="section-number">E</span>
             <div><p class="section-kicker">根拠</p><h3>このページの根拠</h3></div>
@@ -188,7 +195,10 @@
             <strong>読み方</strong>
             <span>出典の信頼度・種類・対象ゲームを分けて表示します。別ゲームの研究はVALORANT固有ルールとして扱いません。</span>
           </div>
-          <div id="concept-sources" class="source-list"></div>
+          <details id="source-disclosure" class="source-disclosure">
+            <summary>出典一覧を見る <span id="source-count"></span></summary>
+            <div id="concept-sources" class="source-list"></div>
+          </details>
         </section>
 
         <section id="related-section" class="content-section related-section" hidden>
