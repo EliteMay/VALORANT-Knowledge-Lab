@@ -198,6 +198,48 @@
         "Riot lists Jakub 'Lothar' Szygulski as a colour caster and notes his professional G2 player background",
         "Credential/context source only; not tactical evidence"
       ]
+    },
+    {
+      "id": "thwifo-vlr-xset-2021",
+      "title": "Assembling the Pretty Boyz: the building of XSET with thwifo",
+      "url": "https://www.vlr.gg/12988/assembling-the-pretty-boyz-the-building-of-xset-with-thwifo",
+      "publisherOrAuthor": "VLR.gg / interview with thwifo",
+      "published": null,
+      "sourceTier": "B",
+      "sourceType": "Pro Player Interview",
+      "gameScope": "VALORANT",
+      "notes": [
+        "thwifo describes strong trading, communication and spacing as the basic foundation that made the team solid",
+        "Direct player interview; exact posting date not stored in current research record"
+      ]
+    },
+    {
+      "id": "redbull-valorant-terms-double-swing",
+      "title": "VALORANT: Terms and slang for players aiming for the world stage",
+      "url": "https://www.redbull.com/jp-ja/valorant-terms-slang",
+      "publisherOrAuthor": "Red Bull",
+      "published": null,
+      "sourceTier": "C",
+      "sourceType": "Terminology Reference",
+      "gameScope": "VALORANT",
+      "notes": [
+        "Defines Double Swing as two players emerging from cover together to seek a kill or trade",
+        "Definition/reference only; not evidence for exact timing or optimal use"
+      ]
+    },
+    {
+      "id": "riot-peeking-netcode",
+      "title": "Peeking into VALORANT's Netcode",
+      "url": "https://www.riotgames.com/en/news/peeking-valorants-netcode",
+      "publisherOrAuthor": "Riot Games",
+      "published": null,
+      "sourceTier": "A",
+      "sourceType": "Official / Mechanic",
+      "gameScope": "VALORANT",
+      "notes": [
+        "Official explanation that very small timing differences can materially change competitive gunfight outcomes",
+        "Mechanic context only; does not prescribe trade spacing or double-swing timing"
+      ]
     }
   ]
 }
