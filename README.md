@@ -24,7 +24,7 @@ VALORANTを「エイムだけ」ではなく、**判断・情報・連携・ポ�
 
 現在は **Static Site MVP Implementation** です。
 
-サイトでは次の9Conceptを閲覧できます。
+サイトでは次の10Conceptを閲覧できます。
 
 1. ラーク
 2. アンカー
@@ -35,6 +35,7 @@ VALORANTを「エイムだけ」ではなく、**判断・情報・連携・ポ�
 7. 定石外の相手への対応
 8. 撃ち合いの構造
 9. ピーク / 角度分離
+10. 移動・停止・射撃
 
 Contentの正本は `data/concepts/*.json` と `data/sources.json` です。HTMLへ戦術本文を複製せず、`app.js` がJSONを読み込んで画面を生成します。
 
