@@ -237,3 +237,30 @@ CrossfireはTradeやDouble Swingと排他的ではなく、CrossfireからContac
 - 「1秒以内なら必ずTrade」
 - 「Double Swingは○ms差」
 - 「Crossfireは必ず90°」
+
+
+---
+
+## Academic Cross-check — Spatial Coordination
+
+Source record: [spacing-academic-crosscheck-2026-09-19.md](spacing-academic-crosscheck-2026-09-19.md)
+
+A 2025 peer-reviewed study using behavioral trace data from 80 professional gamers across 16 teams validated spatial coordination metrics including convergence, view coverage and co-location. These metrics were significantly related to nearly all measured offensive and defensive outcomes.
+
+### Project use
+
+This is used only as an **Academic General Principle**:
+
+- spatial relationships between players are a measurable component of team coordination;
+- Spacing should not be reduced to an individual player's position in isolation.
+
+### Boundary
+
+The study is not VALORANT-specific and does not establish:
+
+- an ideal VALORANT distance;
+- a fixed trade window;
+- an optimal Crossfire angle;
+- a universal rule that closer players are always better.
+
+Therefore the current VALORANT-specific Spacing model remains grounded primarily in the pro / analyst / coaching evidence already listed above.
