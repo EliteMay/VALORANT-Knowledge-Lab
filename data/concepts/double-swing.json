@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "id": "double-swing",
+  "titleJa": "ダブルスイング",
+  "titleEn": "Double Swing",
+  "aliases": [
+    "double peek",
+    "ダブルピーク"
+  ],
+  "category": "team-coordination",
+  "status": "research-backed-draft",
+  "updated": "2026-09-19",
+  "definition": {
+    "text": "2人が同時またはほぼ同時にCoverから出て同じFightを開始し、KillまたはTradeを狙うPlay。",
+    "evidenceType": "Terminology + VCT Analyst Practice",
+    "strength": "Supported",
+    "sourceIds": [
+      "redbull-valorant-terms-double-swing",
+      "lothar-drx-ns-analysis"
+    ],
+    "siteSynthesis": true
+  },
+  "claims": [
+    {
+      "id": "doublepeek-welltimed-fundamental",
+      "text": "Well-timed double peeksはVCT match analysisでGood fundamentalsの一部として評価されている。",
+      "evidenceType": "VCT Analyst Practice",
+      "strength": "Supported",
+      "sourceIds": [
+        "lothar-drx-ns-analysis"
+      ],
+      "siteSynthesis": false,
+      "notes": []
+    },
+    {
+      "id": "double-swing-no-fixed-timing",
+      "text": "Double Swingの正解Timingを固定秒数・固定msでは定義しない。",
+      "evidenceType": "Site Synthesis",
+      "strength": "Supported",
+      "sourceIds": [
+        "riot-peeking-netcode",
+        "lothar-drx-ns-analysis"
+      ],
+      "siteSynthesis": true,
+      "notes": [
+        "Riot confirms small timing differences matter in gunfights but does not prescribe double-swing timing"
+      ]
+    }
+  ],
+  "cues": [
+    "Partner readiness",
+    "同じThreatへのLOS",
+    "敵が孤立しているか",
+    "Utility timing",
+    "人数状況",
+    "Weapon / Operator threat"
+  ],
+  "mistakes": [
+    "片方だけ先に出て2回の1v1になる",
+    "2人が同じLineへ重なる",
+    "UtilityとSwing timingがズレる",
+    "別Threatを見て同じFightになっていない"
+  ],
+  "practice": {
+    "vodQuestions": [
+      "2人のContactはOpponent視点で同時圧力になったか？",
+      "片方だけ先に処理されるGapがあったか？",
+      "同じSpray lineへ重なっていなかったか？"
+    ]
+  },
+  "relatedConceptIds": [
+    "spacing",
+    "cover-trade",
+    "crossfire",
+    "utility-follow-up"
+  ]
+}
