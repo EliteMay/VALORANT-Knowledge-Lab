@@ -59,6 +59,55 @@ Do not copy:
 
 そのためFirst ViewをHeroに使わず、Concept selectionと本文に使う。
 
+
+## Readability Reset — 2026-09-19
+
+### User Feedback
+
+Current site is difficult to use and difficult to read.
+
+### KEEP / FIX / REMOVE
+
+**KEEP**
+- Home → Learning Domain → Concept の大枠
+- Night mode
+- Claim → Sourceの追跡可能性
+- Domain内Search
+- 日本語優先
+
+**FIX**
+- Article titleが大きすぎて本文開始まで遠い
+- Sidebarが太く本文幅を圧迫する
+- ClaimのEvidence metadataが常時表示され、本文と同じ強さに見える
+- Home / Domainの選択要素が大きく、一覧性が低い
+- Section間のVisual hierarchyが強すぎる
+
+**REMOVE / REDUCE**
+- Background grid
+- 大きなDecorative signal
+- 巨大なVOD装飾文字
+- Evidence metadataの常時展開
+- English subtitleの常時表示
+
+### Representative Reference Findings
+
+- Mobalytics VALORANT: 最初に学ぶ対象を選ばせ、全情報を一度に露出しない
+- Skill Capped: Random guide一覧より「何を次に学ぶか」の順序を強くする
+- Aimlabs Courses: Course → Lessonの階層で、学習単位を段階的に見せる
+
+### Selected Direction
+
+**Compact Documentation / Progressive Disclosure**
+
+- Home: 7 Domainをcompactな選択単位として表示
+- Domain: Conceptを短い説明付きListで比較
+- Concept: Sidebar + readable main column
+- Article内: 重要ポイント / 見る・失敗 / 練習 / 根拠へのshortcut
+- Claim: 本文をPrimary、Evidence detailsは「根拠を見る」で展開
+- Sources: Page末尾で折りたたみ
+- 本文幅は約60〜70文字相当を上限候補とし、長文の横幅を広げすぎない
+- 赤AccentはNavigation / Focus / Evidence affordanceへ限定する
+
 ## Design Direction Contract
 
 - Design Concept: Tactical Field Manual
@@ -69,7 +118,7 @@ Do not copy:
 - Color Rule: dark navy / warm off-whiteを基盤、VALORANTを想起させるred accentは重要箇所だけ。Night modeでは本文面をdeep navyへ反転し、pure blackは使わず階層をborder / surface差で維持する
 - Component Rule: 全情報をCard化しない。Section / dividerを基本とし、EvidenceやPracticeなど独立性の高い情報だけPanel化
 - Decorative Effect Policy: 強いshadow / glass / glowは使わない。斜めAccent、細いline、selected stateでIdentityを作る
-- Signature: ClaimごとにEvidence strengthとSourceをその場で追跡できる「Evidence Rail」
+- Signature: Claim本文を読みやすく保ちつつ、必要時だけEvidenceへ展開できる「Evidence Disclosure」
 
 ## Language Contract
 
