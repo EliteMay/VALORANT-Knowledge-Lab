@@ -69,9 +69,12 @@ const gameScopeLabels = {
 
 const els = {};
 const THEME_STORAGE_KEY = 'vkl-theme';
+const SITE_DATA_VERSION = '20260919-2308';
+const FETCH_TIMEOUT_MS = 6000;
 const systemThemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
 window.addEventListener('DOMContentLoaded', () => {
+  window.__vklAppReady = true;
   cacheElements();
   initThemeControls();
   bindEvents();
@@ -87,7 +90,7 @@ function cacheElements() {
     'concept-mistakes', 'concept-practice', 'concept-sources', 'related-section', 'related-concepts',
     'theme-toggle', 'theme-toggle-label', 'sidebar', 'sidebar-domain-link', 'sidebar-domain-title',
     'sidebar-domain-description', 'home-view', 'domain-grid', 'domain-view', 'domain-title',
-    'domain-description', 'domain-concept-list', 'source-count', 'source-disclosure'
+    'domain-description', 'domain-concept-list', 'source-count', 'error-detail'
   ];
   for (const id of ids) els[id] = document.getElementById(id);
 }
@@ -192,18 +195,36 @@ async function loadKnowledge() {
     state.domains = domainData.domains || [];
     state.sources = new Map(sourceData.sources.map(source => [source.id, source]));
 
+    window.__vklDataReady = true;
     renderHomeDomains();
     routeFromHash();
   } catch (error) {
     console.error(error);
-    showError();
+    window.__vklDataReady = false;
+    showError(formatLoadError(error));
   }
 }
 
 async function fetchJson(path) {
-  const response = await fetch(path, {cache: 'no-store'});
-  if (!response.ok) throw new Error(`Failed to load ${path}: ${response.status}`);
-  return response.json();
+  const controller = new AbortController();
+  const timer = window.setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
+  try {
+    const url = new URL(path, document.baseURI);
+    url.searchParams.set('v', SITE_DATA_VERSION);
+    const response = await fetch(url, {cache: 'no-store', signal: controller.signal});
+    if (!response.ok) throw new Error(`${path} の取得に失敗しました（HTTP ${response.status}）`);
+    return await response.json();
+  } catch (error) {
+    if (error?.name === 'AbortError') throw new Error(`${path} の読み込みがタイムアウトしました`);
+    throw error;
+  } finally {
+    window.clearTimeout(timer);
+  }
+}
+
+function formatLoadError(error) {
+  const message = error?.message || '不明な読み込みエラー';
+  return `${message}。再試行しても直らない場合は、ページを更新してください。`;
 }
 
 function renderConceptList() {
@@ -466,31 +487,38 @@ function renderClaims(claims) {
     text.className = 'claim-text';
     text.textContent = claim.text;
 
+    const quickMeta = document.createElement('div');
+    quickMeta.className = 'claim-summary-meta';
+
+    const type = document.createElement('span');
+    type.textContent = formatEvidenceType(claim.evidenceType);
+
+    const sourceCount = document.createElement('span');
+    sourceCount.textContent = `出典 ${claim.sourceIds?.length || 0}件`;
+
+    quickMeta.append(type, sourceCount);
+
+    if (claim.siteSynthesis) {
+      const synthesis = document.createElement('span');
+      synthesis.textContent = 'サイト整理';
+      quickMeta.append(synthesis);
+    }
+
     const details = document.createElement('details');
     details.className = 'claim-evidence';
 
     const summary = document.createElement('summary');
-    const sourceCount = claim.sourceIds?.length || 0;
-    summary.textContent = `根拠を見る（${sourceCount}件）`;
+    summary.textContent = '対応する出典を見る';
     details.append(summary);
 
     const evidenceBody = document.createElement('div');
     evidenceBody.className = 'claim-evidence-body';
 
-    const meta = document.createElement('div');
-    meta.className = 'claim-meta';
-    meta.append(
-      metaRow('根拠の種類', formatEvidenceType(claim.evidenceType)),
-      metaRow('信頼度', formatStrength(claim.strength), 'strength', claim.strength)
-    );
-    if (claim.siteSynthesis) meta.append(metaRow('整理方法', 'サイトによる整理', 'site-synthesis'));
-
     const sourceRefs = renderClaimSourceRefs(claim.sourceIds || []);
-    evidenceBody.append(meta);
     if (sourceRefs) evidenceBody.append(sourceRefs);
     details.append(evidenceBody);
 
-    article.append(head, text, details);
+    article.append(head, text, quickMeta, details);
     return article;
   }));
 }
@@ -516,7 +544,6 @@ function renderClaimSourceRefs(sourceIds) {
     button.textContent = source ? `${source.sourceTier || '?'} · ${source.publisherOrAuthor || source.title}` : id;
     button.title = source?.title || id;
     button.addEventListener('click', () => {
-      if (els['source-disclosure']) els['source-disclosure'].open = true;
       const target = document.getElementById(sourceAnchorId(id));
       if (!target) return;
       target.scrollIntoView({behavior: reducedMotion() ? 'auto' : 'smooth', block: 'center'});
@@ -598,8 +625,7 @@ function renderSources(concept) {
   for (const claim of concept.claims || []) for (const id of claim.sourceIds || []) ids.add(id);
 
   const sources = [...ids].map(id => state.sources.get(id)).filter(Boolean);
-  if (els['source-count']) els['source-count'].textContent = `（${sources.length}件）`;
-  if (els['source-disclosure']) els['source-disclosure'].open = false;
+  if (els['source-count']) els['source-count'].textContent = `${sources.length}件`;
   els['concept-sources'].replaceChildren(...sources.map(source => {
     const item = document.createElement('article');
     item.className = 'source-item';
@@ -684,7 +710,7 @@ function showLoading() {
   els['concept-view'].hidden = true;
 }
 
-function showError() {
+function showError(message = '') {
   document.querySelector('.app-shell')?.classList.add('overview-mode');
   if (els['sidebar']) els['sidebar'].hidden = true;
   els['loading-state'].hidden = true;
@@ -692,6 +718,7 @@ function showError() {
   if (els['home-view']) els['home-view'].hidden = true;
   if (els['domain-view']) els['domain-view'].hidden = true;
   els['concept-view'].hidden = true;
+  if (els['error-detail'] && message) els['error-detail'].textContent = message;
 }
 
 function reducedMotion() {
