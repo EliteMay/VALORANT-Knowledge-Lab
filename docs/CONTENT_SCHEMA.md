@@ -54,7 +54,7 @@ Search indexや一覧用Dataは将来このCanonical Dataから生成する。
 ## evidenceType
 
 - `Official / Mechanic`
-- `Pro Practice`
+- `Expert Practice / Analysis`
 - `Academic General Principle`
 - `Coaching Heuristic`
 - `Community Observation`
