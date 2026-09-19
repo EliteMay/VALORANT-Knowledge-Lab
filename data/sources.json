@@ -458,6 +458,94 @@
         "Description explicitly frames crosshair placement, jiggling, movement and taking angles/fights as fundamentals",
         "Older source; exact current mechanic details require current Riot cross-check"
       ]
+    },
+    {
+      "id": "yay-aimlabs-crosshair",
+      "title": "yay Course Lesson 3 - Aim & Crosshair Placement",
+      "url": "https://aimlabs.com/courses/5Pm481fQj3Z6K7SYTuCZmg/lessons/3k78HhqHRKzKj8QGLX8UEg?gameTag=VALORANT%2F1000",
+      "publisherOrAuthor": "Aimlabs / lesson taught by yay",
+      "published": null,
+      "sourceTier": "B",
+      "sourceType": "Pro Practice",
+      "gameScope": "VALORANT",
+      "notes": [
+        "Lesson summary says yay teaches crosshair placement, differences between lower-rank and pro angle clearing, map-layout adaptation, and jump-peek situations",
+        "Platform-hosted lesson summary; use alongside yay's direct YouTube source and Riot mechanics"
+      ]
+    },
+    {
+      "id": "yay-aimlabs-gamesense",
+      "title": "yay Course Lesson 7 - Game Sense",
+      "url": "https://aimlabs.com/courses/5Pm481fQj3Z6K7SYTuCZmg/lessons/3U4k1ybUuxvoIKcXJo7nuK",
+      "publisherOrAuthor": "Aimlabs / lesson taught by yay",
+      "published": null,
+      "sourceTier": "B",
+      "sourceType": "Pro Practice",
+      "gameScope": "VALORANT",
+      "notes": [
+        "Lesson focuses on enemy tendencies, utility patterns, inferring locations from held/unheld angles, calculated risk and utility mind-games",
+        "Ranked challenge asks the player to identify opponent tendencies each round"
+      ]
+    },
+    {
+      "id": "riot-patch-9-10",
+      "title": "VALORANT パッチノート 9.10",
+      "url": "https://playvalorant.com/ja-jp/news/game-updates/valorant-patch-notes-9-10/",
+      "publisherOrAuthor": "Riot Games",
+      "published": "2024-11-19",
+      "sourceTier": "A",
+      "sourceType": "Official / Mechanic",
+      "gameScope": "VALORANT",
+      "notes": [
+        "Official movement-accuracy update",
+        "Rifle walking and running inaccuracy were increased; exact values are patch-specific",
+        "Use as recent rifle movement-accuracy evidence, not as a universal exact-number rule"
+      ]
+    },
+    {
+      "id": "riot-patch-4-0",
+      "title": "VALORANT Patch Notes 4.0",
+      "url": "https://playvalorant.com/en-us/news/game-updates/valorant-patch-notes-4-0/",
+      "publisherOrAuthor": "Riot Games",
+      "published": "2022-01-11",
+      "sourceTier": "A",
+      "sourceType": "Official / Mechanic",
+      "gameScope": "VALORANT",
+      "notes": [
+        "Official recoil and recovery context",
+        "Explains that refiring before full gun recovery accumulates inaccuracy for burst fire",
+        "Historic exact values must not be presented as current without a current mechanic cross-check"
+      ]
+    },
+    {
+      "id": "riot-patch-0-50",
+      "title": "VALORANT Patch Notes 0.50",
+      "url": "https://playvalorant.com/en-gb/news/game-updates/valorant-patch-notes-0-50/",
+      "publisherOrAuthor": "Riot Games",
+      "published": "2020-05-12",
+      "sourceTier": "A",
+      "sourceType": "Official / Mechanic",
+      "gameScope": "VALORANT",
+      "notes": [
+        "Historic official explanation of run-to-stop accuracy and rifle gun recovery time",
+        "States that refiring before the weapon's recovery duration accrues inaccuracy",
+        "Use only for the underlying mechanic concept, not current numeric values"
+      ]
+    },
+    {
+      "id": "riot-patch-12-09",
+      "title": "VALORANT パッチノート 12.09",
+      "url": "https://playvalorant.com/ja-jp/news/game-updates/valorant-patch-notes-12-09/",
+      "publisherOrAuthor": "Riot Games",
+      "published": "2026-05-12",
+      "sourceTier": "A",
+      "sourceType": "Official / Mechanic",
+      "gameScope": "VALORANT",
+      "notes": [
+        "Current-era official shotgun movement-accuracy update",
+        "Shows that movement accuracy remains weapon-class-specific and actively tuned",
+        "Do not generalize shotgun values to rifles"
+      ]
     }
   ]
 }
