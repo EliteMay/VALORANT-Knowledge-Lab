@@ -164,6 +164,8 @@ User-facing Top-level Learning Domains:
 
 1つのConceptは複数Domainへ所属できる。ピーク / 角度分離のように複数の学習目的へ関係する知識を無理に1分類へ固定しない。
 
+Learning Domainの所属関係は `data/domains.json` をCanonical Dataとし、各Concept JSONへ重複保存しない。
+
 既存の information-map-control / team-coordination / defense / peek-duel 等はContent管理・記事内文脈用の細分類として維持できるが、Primary Home Navigationにはしない。
 
 撃ち合いを構成する主要軸として、Current Homeでは「ミクロ / マクロ / エイム・メカニクス / ポジショニング・角度 / 情報・判断 / 武器・距離 / 連携」を扱う。
