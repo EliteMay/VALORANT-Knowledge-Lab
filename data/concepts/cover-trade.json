@@ -85,7 +85,7 @@
     },
     {
       "id": "trade-communication-general",
-      "text": "タクティカルFPSでは、事実と行動を中心にした報告や、敵の位置・移動の共有がチーム連携に関係する。",
+      "text": "タクティカルFPS（VALORANTのように情報共有と連携が重要な対戦シューター）では、事実と行動を中心にした報告や、敵の位置・移動の共有がチーム連携に関係する。",
       "evidenceType": "Academic General Principle",
       "strength": "Supported",
       "sourceIds": [
@@ -100,7 +100,7 @@
     },
     {
       "id": "trade-spacing-pro-analysis",
-      "text": "VCTレベルの試合分析でも、良いスペーシングとトレードは相手のミスに付け込み、孤立した撃ち合いを減らす基礎要素として評価されている。",
+      "text": "VALORANTのプロ大会レベルの試合分析でも、良いスペーシングとトレードは相手のミスに付け込み、孤立した撃ち合いを減らす基礎要素として評価されている。",
       "evidenceType": "Expert Practice / Analysis",
       "strength": "Supported",
       "sourceIds": [
