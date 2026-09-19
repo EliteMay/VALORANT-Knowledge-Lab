@@ -11,7 +11,7 @@
   "status": "research-backed-draft",
   "updated": "2026-09-19",
   "definition": {
-    "text": "Siteに残って敵のCommitを見極め、HoldまたはDelayし、簡単に完全なSite controlを渡さない守備役割。",
+    "text": "サイトに残って敵が本当に本命で攻めているかを見極め、守る・時間を稼ぐなどして、簡単にサイト全体を明け渡さない守備役割。",
     "evidenceType": "Expert Practice / Analysis",
     "strength": "Supported",
     "sourceIds": [
@@ -21,16 +21,16 @@
     "siteSynthesis": true
   },
   "goal": [
-    "敵の本命Hitを確認する",
-    "Executeを遅らせる",
-    "Fightを分割して有利な接敵を作る",
-    "味方Rotateまで時間を作る",
-    "Retake可能な状態を残す"
+    "敵の本命の攻めを確認する",
+    "サイトへの本格的な攻めを遅らせる",
+    "撃ち合いを分けて有利な接敵を作る",
+    "味方がローテーションしてくるまで時間を作る",
+    "リテイク可能な状態を残す"
   ],
   "claims": [
     {
       "id": "anchor-delay-not-hero",
-      "text": "Anchorの成功をKill数だけで評価せず、Delay・情報・生存・Rotateまでの時間もValueとして見る。",
+      "text": "アンカーの成功をキル数だけで評価せず、時間を稼いだ量・得た情報・生存・味方のローテーションまで作れた時間も価値として見る。",
       "evidenceType": "Site Synthesis",
       "strength": "Supported",
       "sourceIds": [
@@ -44,7 +44,7 @@
     },
     {
       "id": "anchor-isolate-fights",
-      "text": "UtilityとPositioningを使い、可能なら複数人との同時Fightではなく連続した小さいFightへ分割する。",
+      "text": "アビリティと立ち位置を使い、可能なら複数人との同時戦闘ではなく、連続した小さい撃ち合いへ分割する。",
       "evidenceType": "Expert Practice / Analysis",
       "strength": "Supported",
       "sourceIds": [
@@ -57,7 +57,7 @@
     },
     {
       "id": "anchor-confirm-commit",
-      "text": "敵が本当にSiteへCommitしているかを情報Utility等で確認してからDefense actionを選ぶ考え方がある。",
+      "text": "敵が本当にサイトへ本命で攻めているかを情報系アビリティなどで確認してから、守り方を選ぶ考え方がある。",
       "evidenceType": "Expert Practice / Analysis",
       "strength": "Context-dependent",
       "sourceIds": [
@@ -71,7 +71,7 @@
     },
     {
       "id": "anchor-not-sentinel-only",
-      "text": "Sentinelが代表的でも、AnchorをSentinel専用Roleとは断定しない。",
+      "text": "センチネルが代表的でも、アンカーをセンチネル専用の役割とは断定しない。",
       "evidenceType": "Site Synthesis",
       "strength": "Context-dependent",
       "sourceIds": [
@@ -85,26 +85,26 @@
   ],
   "cues": [
     "敵人数の見え方",
-    "Spike情報",
-    "Main / Mid pressure",
-    "Entry utility",
-    "味方Rotate距離",
-    "自分の残Utility",
+    "スパイク情報",
+    "メイン / ミッド側の圧力",
+    "エントリー時のアビリティ",
+    "味方のローテーション距離",
+    "自分に残っているアビリティ",
     "退路"
   ],
   "mistakes": [
     "5人を一人で全員止めようとして早死にする",
-    "Utilityを同じ入口だけに重ねて別Route情報を失う",
-    "最初のContact後も同じPositionに残り続ける",
-    "敵のMobility / UtilityでSetupを越えられる可能性を無視する"
+    "アビリティを同じ入口だけに重ねて別ルートの情報を失う",
+    "最初の接敵後も同じ位置に残り続ける",
+    "敵の移動系アビリティなどで守備配置を越えられる可能性を無視する"
   ],
   "practice": {
     "vodQuestions": [
-      "敵のCommitを何で確認したか？",
-      "何をDelayできたか？",
-      "味方Rotateまで生存できるPositionだったか？",
-      "同時に何人とFightしていたか？",
-      "Retake用の情報 / Utility /生存Valueを残せたか？"
+      "敵の本命の攻めを何で確認したか？",
+      "どれだけ時間を稼げたか？",
+      "味方がローテーションしてくるまで生存できる位置だったか？",
+      "同時に何人と撃ち合っていたか？",
+      "リテイク用の情報 / アビリティ / 生存価値を残せたか？"
     ]
   },
   "relatedConceptIds": [
