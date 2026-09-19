@@ -69,7 +69,7 @@ const gameScopeLabels = {
 
 const els = {};
 const THEME_STORAGE_KEY = 'vkl-theme';
-const SITE_DATA_VERSION = '20260919-2308';
+const SITE_DATA_VERSION = '20260920-depth';
 const FETCH_TIMEOUT_MS = 6000;
 const systemThemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
