@@ -61,7 +61,7 @@ for (const domain of domains.domains || []) {
 for (const conceptId of knownConceptIds) {
   if (!coveredConceptIds.has(conceptId)) errors.push(`data/domains.json: concept not reachable from home ${conceptId}`);
 }
-for (const id of ['micro','macro','aim-mechanics','positioning','information-decision','teamplay']) {
+for (const id of ['micro','macro','aim-mechanics','positioning','information-decision','weapon-range','teamplay']) {
   if (!domainIds.has(id)) errors.push(`data/domains.json: missing learning domain ${id}`);
 }
 for (const token of ['home-view','domain-grid','domain-view','domain-concept-list','sidebar-domain-link']) {
