@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "id": "positioning",
+  "titleJa": "ポジショニング",
+  "titleEn": "Positioning",
+  "aliases": [
+    "立ち位置",
+    "オフアングル",
+    "位置変更",
+    "リピーク",
+    "逃げ道"
+  ],
+  "category": "peek-duel",
+  "status": "research-backed-draft",
+  "updated": "2026-09-20",
+  "definition": {
+    "text": "現在の目的・敵の脅威・遮蔽物・味方の位置・逃げ道を見て、撃ち合いをどこから始め、接敵後にどこへ動けるかまで含めて立ち位置を選ぶ考え方。",
+    "evidenceType": "Site Synthesis",
+    "strength": "Supported",
+    "sourceIds": [
+      "tenz-aimlabs-positioning",
+      "riot-patch-4-04-positioning",
+      "boettcher-teamwork-2025"
+    ],
+    "siteSynthesis": true
+  },
+  "goal": [
+    "エイムだけで解決しにくい不利な立ち位置を減らす",
+    "一度に複数方向から撃たれる状況を減らす",
+    "最初の撃ち合い後に逃げる・位置を変える選択肢を残す",
+    "味方からトレードできる位置関係を作る"
+  ],
+  "subtypes": [
+    {
+      "id": "standard",
+      "label": "基本位置",
+      "description": "遮蔽物・味方の支援・退路などを使いやすく、相手からも予測されやすい一般的な立ち位置。"
+    },
+    {
+      "id": "off-angle",
+      "label": "ずらした位置",
+      "description": "相手の最初の照準位置から外して追加の修正を要求できる一方、退路や味方支援が弱くなることもある立ち位置。"
+    },
+    {
+      "id": "reposition",
+      "label": "位置変更",
+      "description": "接敵や射撃で自分の位置が知られた後、同じ場所の価値低下を見て別の遮蔽物や射線へ移る判断。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "positioning-affects-fights",
+      "text": "TenZの教材では、良い・悪い立ち位置が撃ち合い結果へ影響すること、ずらした位置や位置変更を使い分けることが独立した学習課題として扱われている。",
+      "evidenceType": "Expert Practice / Analysis",
+      "strength": "Supported",
+      "sourceIds": [
+        "tenz-aimlabs-positioning"
+      ],
+      "siteSynthesis": false,
+      "notes": []
+    },
+    {
+      "id": "positioning-cover-isolates-threats",
+      "text": "Riotのマップ調整では、遮蔽物や地形を変えることで敵の角度を分離しやすくしたり、守備側が立てる空間を増やしたりする設計意図が明示されている。",
+      "evidenceType": "Official / Mechanic",
+      "strength": "Confirmed",
+      "sourceIds": [
+        "riot-patch-4-04-positioning"
+      ],
+      "siteSynthesis": true,
+      "notes": []
+    },
+    {
+      "id": "positioning-team-relative",
+      "text": "eスポーツ一般の研究では、選手同士の位置関係や視線範囲の協調指標が攻守の結果と関連しており、立ち位置を個人だけでなく味方との関係で見る補助根拠になる。",
+      "evidenceType": "Academic General Principle",
+      "strength": "Supported",
+      "sourceIds": [
+        "boettcher-teamwork-2025"
+      ],
+      "siteSynthesis": true,
+      "notes": [
+        "Counter-Strike中心の一般研究であり、VALORANTの最適距離を示すものではない"
+      ]
+    },
+    {
+      "id": "positioning-mix-up",
+      "text": "同じ場所を繰り返すより、状況に応じて位置を変えて相手の予測を外すことがTenZのポジショニング教材で推奨されている。",
+      "evidenceType": "Expert Practice / Analysis",
+      "strength": "Supported",
+      "sourceIds": [
+        "tenz-aimlabs-positioning"
+      ],
+      "siteSynthesis": false,
+      "notes": []
+    }
+  ],
+  "cues": [
+    "今の目的はキル・時間稼ぎ・情報・設置・解除のどれか",
+    "この位置から敵が何方向同時に自分を撃てるか",
+    "すぐ隠れられる遮蔽物があるか",
+    "最初の射撃後に逃げる場所があるか",
+    "自分が倒された時に味方が同じ敵へ反応できるか",
+    "敵のアビリティを受けた時に位置を変えられるか",
+    "自分の位置がすでに相手へ知られているか",
+    "同じ場所を前のラウンドでも見せているか"
+  ],
+  "mistakes": [
+    "「強い場所」と覚えた位置へ条件を見ず毎回立つ",
+    "遮蔽物から遠く、外した後も撃ち合い続けるしかない場所へ出る",
+    "複数方向へ同時に体を晒す",
+    "味方から遠すぎてトレード不能になる",
+    "味方と完全に重なり同じ射撃やアビリティを受ける",
+    "一度撃って位置が知られた後も、同じ場所へ無条件に残る",
+    "ずらした位置を退路なしで毎回使う"
+  ],
+  "practice": {
+    "rankedFocus": [
+      "敵を見る前に「外したらどこへ逃げるか」を1つ決める",
+      "1キルまたは最初の接敵後、同じ位置へ残る理由があるか一度考える"
+    ],
+    "vodQuestions": [
+      "なぜその場所に立った？",
+      "そこから何方向に撃たれる可能性があった？",
+      "遮蔽物へ戻れた？",
+      "味方はトレードできた？",
+      "位置が割れた後に別の場所へ移る選択肢はあった？"
+    ]
+  },
+  "relatedConceptIds": [
+    "gunfight-structure",
+    "peek-angle-isolation",
+    "spacing",
+    "crossfire",
+    "anchor",
+    "cover-trade"
+  ],
+  "deepDive": [
+    {
+      "id": "trigger",
+      "title": "いつ立ち位置を考え直すか",
+      "summary": "ラウンド開始時だけでなく、味方・敵・領域・アビリティ・自分の位置情報が変わるたびに立ち位置の価値を見直す。",
+      "items": [
+        "次の接敵が起きそうな場所へ入る前",
+        "味方が移動してトレード関係が変わった時",
+        "自分が撃って位置を知られた時",
+        "敵のアビリティで今の遮蔽物が安全でなくなった時",
+        "人数差やラウンド目的が変わった時"
+      ],
+      "sourceIds": [
+        "tenz-aimlabs-positioning",
+        "riot-patch-4-04-positioning"
+      ],
+      "siteSynthesis": true
+    },
+    {
+      "id": "action",
+      "title": "目的 → 脅威 → 遮蔽物 → 味方 → 退路",
+      "summary": "「どこが強いか」ではなく、今の目的を達成しながら処理する脅威を減らし、次の行動を残せる場所を選ぶ。",
+      "items": [
+        "現在の目的を先に決める",
+        "その位置から敵が来る可能性のある方向を数える",
+        "遮蔽物で不要な方向を切り、撃ち合う方向を絞る",
+        "味方が同じ敵へ反応できる位置関係を確認する",
+        "外した時、アビリティを受けた時、1キルした時の次の位置を考える"
+      ],
+      "sourceIds": [
+        "tenz-aimlabs-positioning",
+        "riot-patch-4-04-positioning",
+        "boettcher-teamwork-2025"
+      ],
+      "siteSynthesis": true
+    },
+    {
+      "id": "conditions",
+      "title": "基本位置とずらした位置を強弱だけで決めない",
+      "summary": "予測を外す価値、遮蔽物、退路、味方支援、相手のアビリティによって適した位置は変わる。",
+      "items": [
+        "基本位置は予測されやすい一方、遮蔽物や味方支援を使いやすいことがある",
+        "ずらした位置は相手の最初の照準を外せても、退路が弱ければ一度きりの撃ち合いになりやすい",
+        "同じ位置を繰り返すと事前照準やアビリティで対処されやすくなる",
+        "武器や残り体力が変われば、同じ位置でも取りたい撃ち合いが変わる"
+      ],
+      "sourceIds": [
+        "tenz-aimlabs-positioning",
+        "riot-patch-4-04-positioning"
+      ],
+      "siteSynthesis": true
+    },
+    {
+      "id": "example",
+      "title": "接敵後に位置の価値を更新する",
+      "summary": "最初は強かった場所でも、一度撃って場所を知られた後は同じ条件ではない。",
+      "items": [
+        "遮蔽物から最初の敵と接敵する",
+        "射撃したことで自分の位置が相手へ伝わる",
+        "次の敵は事前照準やアビリティを準備できる",
+        "そのまま残る理由が弱ければ別の遮蔽物へ位置を変える",
+        "味方との射線やラウンド目的を保ちながら次の接敵を作る"
+      ],
+      "sourceIds": [
+        "tenz-aimlabs-positioning"
+      ],
+      "siteSynthesis": true
+    }
+  ]
+}
