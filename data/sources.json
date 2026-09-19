@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 1,
+  "updated": "2026-09-19",
+  "sources": [
+    {
+      "id": "nats-lurk-youtube-2021",
+      "title": "GAMBIT NATS TEACHES HOW TO LURK IN VALORANT",
+      "url": "https://www.youtube.com/watch?v=dp1FBVDz1ZI",
+      "publisherOrAuthor": "nAts",
+      "published": "2021-11-25",
+      "sourceTier": "A",
+      "sourceType": "Pro Practice",
+      "gameScope": "VALORANT",
+      "notes": [
+        "Direct pro-player source",
+        "Older source; do not use as evidence of current agent meta"
+      ]
+    },
+    {
+      "id": "nats-one-lurk-2023",
+      "title": "Exclusive: Learn how to lurk like a Valorant pro from nAts himself",
+      "url": "https://www.oneesports.gg/valorant/how-to-lurk-like-a-pro-from-nats-guide/",
+      "publisherOrAuthor": "ONE Esports / interview with nAts",
+      "published": "2023-07-22",
+      "sourceTier": "B",
+      "sourceType": "Pro Interview",
+      "gameScope": "VALORANT",
+      "notes": [
+        "Same expert as nats-lurk-youtube-2021; not independent player consensus"
+      ]
+    },
+    {
+      "id": "nats-one-cypher-2023",
+      "title": "Exclusive: NAts explains how to successfully lurk and anchor sites as Cypher",
+      "url": "https://www.oneesports.gg/valorant/how-to-play-cypher-lurk-anchor-nats/",
+      "publisherOrAuthor": "ONE Esports / interview with nAts",
+      "published": "2023-04-25",
+      "sourceTier": "B",
+      "sourceType": "Pro Interview",
+      "gameScope": "VALORANT",
+      "notes": [
+        "Cypher-specific details must not be generalized to every agent"
+      ]
+    },
+    {
+      "id": "kaplan-esportsgg-2025",
+      "title": "SEN coach kaplan discusses letting his guard down as coach and the team's atmosphere",
+      "url": "https://esports.gg/news/valorant/sen-coach-kaplan-discusses-letting-his-guard-down-as-coach-and-the-teams-atmosphere/",
+      "publisherOrAuthor": "esports.gg / interview with kaplan",
+      "published": null,
+      "sourceTier": "B",
+      "sourceType": "Pro Coach Interview",
+      "gameScope": "VALORANT",
+      "notes": [
+        "Interview context: VCT Americas Kickoff 2025",
+        "Relevant to information-sharing burden when IGL is lurking"
+      ]
+    },
+    {
+      "id": "bo3-anchor-2026",
+      "title": "How to Anchor a Site as a Sentinel: Cypher and Killjoy Setups",
+      "url": "https://bo3.gg/valorant/articles/how-to-anchor-a-site-as-a-sentinel-cypher-and-killjoy-setups",
+      "publisherOrAuthor": "bo3.gg / leencek",
+      "published": "2026-08-21",
+      "sourceTier": "C",
+      "sourceType": "Coaching / Analysis",
+      "gameScope": "VALORANT",
+      "notes": [
+        "Current secondary cross-check; lower weight than direct pro evidence"
+      ]
+    },
+    {
+      "id": "boaster-dotesports-2026",
+      "title": "FNC Boaster on possible VALORANT meta shift",
+      "url": "https://dotesports.com/valorant/news/vct-2026-stage-1-boaster-interview",
+      "publisherOrAuthor": "Dot Esports / interview with Boaster",
+      "published": "2026-04-10",
+      "sourceTier": "B",
+      "sourceType": "Pro IGL Interview",
+      "gameScope": "VALORANT",
+      "notes": [
+        "Confirms teamfighting/trading as an active pro-team improvement area; not a spacing tutorial"
+      ]
+    },
+    {
+      "id": "kaizens-trade-spacing-2026",
+      "title": "Valorant trade spacing: a 20-minute duo drill",
+      "url": "https://kaizensclan.com/guides/guide-valorant-trade-spacing/",
+      "publisherOrAuthor": "Kaizensclan / Lena Ortiz",
+      "published": "2026-07-25",
+      "sourceTier": "C",
+      "sourceType": "Coaching Heuristic",
+      "gameScope": "VALORANT",
+      "notes": [
+        "Updated 2026-07-31",
+        "Approximate one-second drill cue is not an official mechanic"
+      ]
+    },
+    {
+      "id": "eldadi-communication-2025",
+      "title": "Verbal Communication, Coordinated Effort, and Performance in Esports Teams: An Expert-Nonexpert Paradigm Study",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40882969/",
+      "publisherOrAuthor": "Eldadi, Fitoussi, Tenenbaum",
+      "published": "2025-08-29",
+      "sourceTier": "A",
+      "sourceType": "Peer-reviewed Paper",
+      "gameScope": "CS:GO / general tactical-FPS applicability",
+      "doi": "10.1123/jsep.2024-0343",
+      "notes": [
+        "8 matches; 4,040 statements; 22,490 words",
+        "Do not present as VALORANT-specific experimental evidence"
+      ]
+    },
+    {
+      "id": "rusk-callouts-2024",
+      "title": "Callouts as a coordinating device in a team-based networked first-person shooter game",
+      "url": "https://www.sciencedirect.com/science/article/pii/S2590291123003583",
+      "publisherOrAuthor": "Rusk, Ståhl, Taylor",
+      "published": "2024-01",
+      "sourceTier": "A",
+      "sourceType": "Peer-reviewed Paper",
+      "gameScope": "CS:GO / general tactical-FPS applicability",
+      "doi": "10.1016/j.ssaho.2023.100753",
+      "notes": [
+        "Open-access peer-reviewed article",
+        "Callouts studied as coordination and distributed-knowledge practice"
+      ]
+    },
+    {
+      "id": "esports-team-systematic-review-2024",
+      "title": "Key structure and processes in esports teams: a systematic review",
+      "url": "https://link.springer.com/article/10.1007/s12144-024-05858-0",
+      "publisherOrAuthor": "Current Psychology",
+      "published": "2024",
+      "sourceTier": "A",
+      "sourceType": "Systematic Review",
+      "gameScope": "Esports / cross-game",
+      "doi": "10.1007/s12144-024-05858-0",
+      "notes": [
+        "Use for general team-process principles, not VALORANT-specific mechanics"
+      ]
+    }
+  ]
+}
