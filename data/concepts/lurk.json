@@ -129,5 +129,8 @@
     "communication",
     "regroup",
     "default"
+  ],
+  "domains": [
+    "macro"
   ]
 }
