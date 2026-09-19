@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "derived": true,
+  "updated": "2026-09-19",
+  "concepts": [
+    {"id":"lurk","path":"data/concepts/lurk.json"},
+    {"id":"anchor","path":"data/concepts/anchor.json"},
+    {"id":"cover-trade","path":"data/concepts/cover-trade.json"},
+    {"id":"spacing","path":"data/concepts/spacing.json"},
+    {"id":"crossfire","path":"data/concepts/crossfire.json"},
+    {"id":"double-swing","path":"data/concepts/double-swing.json"}
+  ]
+}
