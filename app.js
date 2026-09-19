@@ -87,7 +87,7 @@ function cacheElements() {
     'concept-mistakes', 'concept-practice', 'concept-sources', 'related-section', 'related-concepts',
     'theme-toggle', 'theme-toggle-label', 'sidebar', 'sidebar-domain-link', 'sidebar-domain-title',
     'sidebar-domain-description', 'home-view', 'domain-grid', 'domain-view', 'domain-title',
-    'domain-description', 'domain-concept-list'
+    'domain-description', 'domain-concept-list', 'source-count', 'source-disclosure'
   ];
   for (const id of ids) els[id] = document.getElementById(id);
 }
@@ -163,6 +163,14 @@ function bindEvents() {
     event.preventDefault();
     selectConcept(link.dataset.relatedId, true);
     document.getElementById('main-content').scrollIntoView({behavior: reducedMotion() ? 'auto' : 'smooth'});
+  });
+
+  document.querySelector('.article-jump-nav')?.addEventListener('click', event => {
+    const button = event.target.closest('[data-scroll-target]');
+    if (!button) return;
+    const target = document.getElementById(button.dataset.scrollTarget);
+    if (!target) return;
+    target.scrollIntoView({behavior: reducedMotion() ? 'auto' : 'smooth', block: 'start'});
   });
 
   els['retry-button'].addEventListener('click', loadKnowledge);
@@ -440,28 +448,49 @@ function renderClaims(claims) {
     const article = document.createElement('article');
     article.className = 'claim';
 
-    const textWrap = document.createElement('div');
-    const kicker = document.createElement('p');
-    kicker.className = 'section-kicker';
-    kicker.textContent = `ポイント ${String(index + 1).padStart(2, '0')}`;
+    const head = document.createElement('div');
+    head.className = 'claim-head';
+
+    const indexLabel = document.createElement('span');
+    indexLabel.className = 'claim-index';
+    indexLabel.textContent = String(index + 1).padStart(2, '0');
+
+    const strength = document.createElement('span');
+    strength.className = 'claim-strength';
+    strength.dataset.strength = claim.strength || '';
+    strength.textContent = formatStrength(claim.strength);
+
+    head.append(indexLabel, strength);
+
     const text = document.createElement('p');
     text.className = 'claim-text';
     text.textContent = claim.text;
-    textWrap.append(kicker, text);
+
+    const details = document.createElement('details');
+    details.className = 'claim-evidence';
+
+    const summary = document.createElement('summary');
+    const sourceCount = claim.sourceIds?.length || 0;
+    summary.textContent = `根拠を見る（${sourceCount}件）`;
+    details.append(summary);
+
+    const evidenceBody = document.createElement('div');
+    evidenceBody.className = 'claim-evidence-body';
 
     const meta = document.createElement('div');
     meta.className = 'claim-meta';
     meta.append(
-      metaRow('信頼度', formatStrength(claim.strength), 'strength', claim.strength),
       metaRow('根拠の種類', formatEvidenceType(claim.evidenceType)),
-      metaRow('出典数', String(claim.sourceIds?.length || 0))
+      metaRow('信頼度', formatStrength(claim.strength), 'strength', claim.strength)
     );
     if (claim.siteSynthesis) meta.append(metaRow('整理方法', 'サイトによる整理', 'site-synthesis'));
 
     const sourceRefs = renderClaimSourceRefs(claim.sourceIds || []);
-    if (sourceRefs) textWrap.append(sourceRefs);
+    evidenceBody.append(meta);
+    if (sourceRefs) evidenceBody.append(sourceRefs);
+    details.append(evidenceBody);
 
-    article.append(textWrap, meta);
+    article.append(head, text, details);
     return article;
   }));
 }
@@ -487,6 +516,7 @@ function renderClaimSourceRefs(sourceIds) {
     button.textContent = source ? `${source.sourceTier || '?'} · ${source.publisherOrAuthor || source.title}` : id;
     button.title = source?.title || id;
     button.addEventListener('click', () => {
+      if (els['source-disclosure']) els['source-disclosure'].open = true;
       const target = document.getElementById(sourceAnchorId(id));
       if (!target) return;
       target.scrollIntoView({behavior: reducedMotion() ? 'auto' : 'smooth', block: 'center'});
@@ -568,6 +598,8 @@ function renderSources(concept) {
   for (const claim of concept.claims || []) for (const id of claim.sourceIds || []) ids.add(id);
 
   const sources = [...ids].map(id => state.sources.get(id)).filter(Boolean);
+  if (els['source-count']) els['source-count'].textContent = `（${sources.length}件）`;
+  if (els['source-disclosure']) els['source-disclosure'].open = false;
   els['concept-sources'].replaceChildren(...sources.map(source => {
     const item = document.createElement('article');
     item.className = 'source-item';
