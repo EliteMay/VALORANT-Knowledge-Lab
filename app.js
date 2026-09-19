@@ -13,9 +13,12 @@ const categoryLabels = {
 };
 
 const els = {};
+const THEME_STORAGE_KEY = 'vkl-theme';
+const systemThemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
 window.addEventListener('DOMContentLoaded', () => {
   cacheElements();
+  initThemeControls();
   bindEvents();
   loadKnowledge();
 });
@@ -26,12 +29,66 @@ function cacheElements() {
     'retry-button', 'concept-view', 'concept-category', 'concept-title', 'concept-title-en',
     'concept-status', 'concept-definition', 'goal-section', 'concept-goals', 'subtype-section',
     'concept-subtypes', 'claims-section-number', 'concept-claims', 'concept-cues',
-    'concept-mistakes', 'concept-practice', 'concept-sources', 'related-section', 'related-concepts'
+    'concept-mistakes', 'concept-practice', 'concept-sources', 'related-section', 'related-concepts',
+    'theme-toggle', 'theme-toggle-label'
   ];
   for (const id of ids) els[id] = document.getElementById(id);
 }
 
+function initThemeControls() {
+  syncThemeControl(getActiveTheme());
+  systemThemeQuery.addEventListener?.('change', event => {
+    if (getStoredTheme()) return;
+    applyTheme(event.matches ? 'dark' : 'light', false);
+  });
+}
+
+function getStoredTheme() {
+  try {
+    const value = localStorage.getItem(THEME_STORAGE_KEY);
+    return value === 'dark' || value === 'light' ? value : null;
+  } catch {
+    return null;
+  }
+}
+
+function getActiveTheme() {
+  const current = document.documentElement.dataset.theme;
+  if (current === 'dark' || current === 'light') return current;
+  return systemThemeQuery.matches ? 'dark' : 'light';
+}
+
+function applyTheme(theme, persist) {
+  document.documentElement.dataset.theme = theme;
+  document.documentElement.style.colorScheme = theme;
+
+  const themeColor = document.getElementById('theme-color');
+  if (themeColor) themeColor.content = theme === 'dark' ? '#081018' : '#0f1923';
+
+  if (persist) {
+    try { localStorage.setItem(THEME_STORAGE_KEY, theme); } catch {}
+  }
+
+  syncThemeControl(theme);
+}
+
+function syncThemeControl(theme) {
+  const isDark = theme === 'dark';
+  const nextLabel = isDark ? 'ライト' : 'ナイト';
+  const accessibleLabel = isDark ? 'ライトモードに切り替える' : 'ナイトモードに切り替える';
+
+  els['theme-toggle']?.setAttribute('aria-pressed', String(isDark));
+  els['theme-toggle']?.setAttribute('aria-label', accessibleLabel);
+  if (els['theme-toggle']) els['theme-toggle'].title = accessibleLabel;
+  if (els['theme-toggle-label']) els['theme-toggle-label'].textContent = nextLabel;
+}
+
 function bindEvents() {
+  els['theme-toggle'].addEventListener('click', () => {
+    const nextTheme = getActiveTheme() === 'dark' ? 'light' : 'dark';
+    applyTheme(nextTheme, true);
+  });
+
   els['concept-search'].addEventListener('input', event => {
     state.query = event.target.value.trim().toLocaleLowerCase('ja');
     renderConceptList();
