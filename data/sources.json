@@ -257,6 +257,207 @@
         "Metrics were significantly related to nearly all measured defensive and offensive outcomes",
         "Do not infer an ideal VALORANT spacing distance or that closer co-location is universally better"
       ]
+    },
+    {
+      "id": "alecks-esportsdriven-2022",
+      "title": "Interview With Paper Rex’s Coach Alecks",
+      "url": "https://esportsdriven.com/valorant/news/553/interview-with-paper-rexs-coach-alecks",
+      "publisherOrAuthor": "EsportsDriven / direct interview with alecks",
+      "published": "2022-10-22",
+      "sourceTier": "B",
+      "sourceType": "Pro Coach Interview",
+      "gameScope": "VALORANT",
+      "notes": [
+        "Alecks says PRX focuses on its own game first because opponents can change compositions and details",
+        "He still tries to identify opponent tendencies",
+        "He describes slowing PRX's tempo on the fly against a patient FPX style that punished mistakes"
+      ]
+    },
+    {
+      "id": "nfx-gamewith-own-game-2025",
+      "title": "NFX BlackWiz「あえて分析をしない選択肢を取った」｜NOEZ FOXX BlackWiz選手＆TRYコーチにインタビュー",
+      "url": "https://gamewith.jp/valorant/article/show/513225",
+      "publisherOrAuthor": "GameWith / interview with BlackWiz and TRY",
+      "published": "2025-08-08",
+      "sourceTier": "B",
+      "sourceType": "Pro Coach Interview",
+      "gameScope": "VALORANT / Japan Challengers",
+      "notes": [
+        "BlackWiz says over-preparing for opponent strategies hurt NFX when those strategies did not appear",
+        "TRY advised the team to show its prepared game and make the opponent respond",
+        "Use as evidence against overfitting to predicted opponent behavior"
+      ]
+    },
+    {
+      "id": "bonkar-prx-press-2026",
+      "title": "NRG mada「PRX戦では良い試合が見せられたと思う。次の試合でも同じことができるのであれば、心配することはない」",
+      "url": "https://valorantnews.jp/archives/108387",
+      "publisherOrAuthor": "Valorant News Japan / translated NRG post-match press conference",
+      "published": "2026-03-13",
+      "sourceTier": "B",
+      "sourceType": "Pro Coach Interview",
+      "gameScope": "VALORANT / international pro play",
+      "notes": [
+        "bonkar describes adapting to PRX's composition throughout rounds through team discussion",
+        "He also emphasizes staying calm and continuing NRG's own gameplay",
+        "Translated press-conference source; original conference is linked by the article"
+      ]
+    },
+    {
+      "id": "prx-zeta-unexpected-2025",
+      "title": "PRX alecks「今日のZETAは非常にアグレッシブで素晴らしかった」",
+      "url": "https://valorantnews.jp/archives/103112",
+      "publisherOrAuthor": "Valorant News Japan / translated PRX post-match press conference",
+      "published": "2025-08-05",
+      "sourceTier": "B",
+      "sourceType": "Pro Player Interview",
+      "gameScope": "VALORANT / VCT Pacific",
+      "notes": [
+        "Jinggg says ZETA played differently from its usual style and caught PRX off guard",
+        "alecks says PRX did not respond well to ZETA's aggressive play",
+        "Useful example that unexpected tempo/style changes can disrupt even top-level teams"
+      ]
+    },
+    {
+      "id": "upforge-plat-diamond-2026",
+      "title": "How to Climb from Platinum to Diamond in Valorant",
+      "url": "https://upforge.gg/blog/how-to-climb-platinum-to-diamond-valorant",
+      "publisherOrAuthor": "UpForge",
+      "published": "2026-03-10",
+      "sourceTier": "C",
+      "sourceType": "Coaching / Analysis",
+      "gameScope": "VALORANT / Platinum-Diamond ranked",
+      "notes": [
+        "Commercial coaching guide; not a representative rank-population study",
+        "Describes Platinum lobbies as inconsistent with over-peeks, solo swings and avoidable fights",
+        "Use only as rank-specific contextual cross-check, not as a core causal source"
+      ]
+    },
+    {
+      "id": "riot-data-phantom-vandal-2023",
+      "title": "VALORANT Data Drop: Phantom vs. Vandal",
+      "url": "https://playvalorant.com/en-us/news/dev/valorant-data-drop-phantom-vs-vandal/",
+      "publisherOrAuthor": "Riot Games / VALORANT Insights Team",
+      "published": "2023-05-15",
+      "sourceTier": "A",
+      "sourceType": "Official / Data Analysis",
+      "gameScope": "VALORANT / all ranks",
+      "notes": [
+        "Uses detailed queries from more than 4 million unrated and competitive matches across all ranks",
+        "Shows weapon outcomes vary by engagement distance and armor context",
+        "Phantom/Vandal-specific analysis; do not universalize to every weapon"
+      ]
+    },
+    {
+      "id": "riot-patch-3-movement-accuracy-2021",
+      "title": "VALORANT パッチノート 3.0",
+      "url": "https://playvalorant.com/ja-jp/news/game-updates/valorant-patch-notes-3-0/",
+      "publisherOrAuthor": "Riot Games",
+      "published": "2021",
+      "sourceTier": "A",
+      "sourceType": "Official / Mechanic",
+      "gameScope": "VALORANT",
+      "notes": [
+        "Official design/mechanic context for movement accuracy",
+        "Riot states the intent is to reward proactive and precise movement and reduce moving-fire effectiveness",
+        "Historic patch values are not treated as guaranteed current numeric values"
+      ]
+    },
+    {
+      "id": "riot-map-environments-2020",
+      "title": "『VALORANT』のマップにおける環境アート",
+      "url": "https://playvalorant.com/ja-jp/news/dev/the-art-of-valorant-map-environments/",
+      "publisherOrAuthor": "Riot Games / Lydia Zanotti",
+      "published": "2020-11-16",
+      "sourceTier": "A",
+      "sourceType": "Official / Design Context",
+      "gameScope": "VALORANT",
+      "notes": [
+        "Riot describes keeping angles and peeks visually clear",
+        "The map team intentionally considers environmental cues that can guide crosshair placement",
+        "Design-context evidence, not a controlled study of optimal crosshair placement"
+      ]
+    },
+    {
+      "id": "royalg-dm-dotesports-2026",
+      "title": "VALORANT coach explains why you’re using deathmatch wrong—and how you can improve",
+      "url": "https://dotesports.com/valorant/news/valorant-coach-explains-why-youre-using-deathmatch-wrong-and-how-you-can-improve",
+      "publisherOrAuthor": "Dot Esports / reporting advice from royalG",
+      "published": "2026-08-04",
+      "sourceTier": "B",
+      "sourceType": "Coaching / Analysis",
+      "gameScope": "VALORANT",
+      "notes": [
+        "royalG is described as a Cloud9 Training Grounds coach and top Radiant player",
+        "Advice separates sound use, first-bullet accuracy, peeking, crosshair placement and movement as trainable components",
+        "Secondary article summarizing coach advice; use below direct primary sources"
+      ]
+    },
+    {
+      "id": "yang-eye-aiming-2025",
+      "title": "The aiming advantages in experienced first-person shooter gamers: Evidence from eye movement patterns",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0747563225000202",
+      "publisherOrAuthor": "Yang et al. / Computers in Human Behavior",
+      "published": "2025-04",
+      "sourceTier": "A",
+      "sourceType": "Peer-reviewed Paper",
+      "gameScope": "FPS / general aiming applicability",
+      "doi": "10.1016/j.chb.2025.108573",
+      "notes": [
+        "63 participants: 28 experienced FPS players and 35 non-FPS players",
+        "Experienced FPS players showed faster execution and more efficient eye-movement patterns",
+        "Target distance and appearance latency affected performance",
+        "Not a VALORANT-specific experiment"
+      ]
+    },
+    {
+      "id": "donovan-kinematics-2022",
+      "title": "Assessment of human expertise and movement kinematics in first-person shooter games",
+      "url": "https://www.frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2022.979293/full",
+      "publisherOrAuthor": "Donovan et al. / Frontiers in Human Neuroscience",
+      "published": "2022-11-29",
+      "sourceTier": "A",
+      "sourceType": "Peer-reviewed Paper",
+      "gameScope": "FPS / Aim Lab / professional-level players",
+      "doi": "10.3389/fnhum.2022.979293",
+      "notes": [
+        "32 professional or semi-professional FPS players; 4 specialized in VALORANT",
+        "Shows a speed-accuracy tradeoff and task-dependent mouse movement kinematics",
+        "Statespace Labs/Aim Lab affiliation is a potential conflict-of-interest consideration",
+        "Aim Lab task evidence, not direct ranked VALORANT gunfight evidence"
+      ]
+    },
+    {
+      "id": "james-focus-aimlab-2023",
+      "title": "Impact of focus of attention on aiming performance in the first-person shooter videogame Aim Lab",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0288937",
+      "publisherOrAuthor": "Lamers James & O’Connor / PLOS ONE",
+      "published": "2023-07-25",
+      "sourceTier": "A",
+      "sourceType": "Peer-reviewed Paper",
+      "gameScope": "FPS / Aim Lab / aiming focus-of-attention",
+      "doi": "10.1371/journal.pone.0288937",
+      "notes": [
+        "37 participants split into higher and lower FPS-experience groups",
+        "Found no significant aiming-performance advantage for external focus over internal focus",
+        "Useful opposing evidence against overly simple universal mental-focus coaching claims",
+        "Not a VALORANT-specific experiment"
+      ]
+    },
+    {
+      "id": "yay-fundamentals-youtube-2020",
+      "title": "VALORANT Fundamentals from YAY - Crosshair Placement and Jiggling",
+      "url": "https://www.youtube.com/watch?v=2rUpglPIlQE",
+      "publisherOrAuthor": "yay",
+      "published": "2020-06-08",
+      "sourceTier": "A",
+      "sourceType": "Pro Practice",
+      "gameScope": "VALORANT",
+      "notes": [
+        "Direct pro-player educational source",
+        "Description explicitly frames crosshair placement, jiggling, movement and taking angles/fights as fundamentals",
+        "Older source; exact current mechanic details require current Riot cross-check"
+      ]
     }
   ]
 }
