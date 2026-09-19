@@ -71,6 +71,14 @@ for (const token of ['renderHomeDomains','renderDomainView','routeFromHash','sho
   if (!appSource.includes(token)) errors.push(`app.js: missing learning hub behavior ${token}`);
 }
 
+
+for (const token of ['article-jump-nav', 'source-disclosure', 'claims-section', 'cues-mistakes-section', 'practice-section', 'evidence-section']) {
+  if (!htmlSource.includes(token)) errors.push(`index.html: missing readability hook ${token}`);
+}
+for (const token of ['claim-evidence', 'claim-head', 'source-disclosure', 'Readability foundation reset']) {
+  if (!cssSource.includes(token)) errors.push(`styles.css: missing readability style ${token}`);
+}
+
 for (const token of ['renderClaimSourceRefs', 'sourceAnchorId', 'claim-source-link']) {
   if (!appSource.includes(token)) errors.push(`app.js: missing claim-to-source traceability hook ${token}`);
 }
