@@ -58,7 +58,7 @@ VALORANTをプレイしていて、エイム以外のゲーム理解・ミクロ
 - Concept詳細では選択中の大枠に属するConceptをSearchできる
 - ConceptごとにDefinition / Goal / Claims / Cues / Mistakes / Practice / Evidence / Related Conceptsを表示する
 - ClaimのEvidence strength / typeを表示する
-- Evidence metadataは本文より弱いVisual priorityとし、必要時に展開できるProgressive Disclosureを使う
+- Claim本文に加えて、信頼度・根拠の種類・出典数は常時確認できる。個別の出典対応だけProgressive Disclosureで開閉する
 - Concept記事には主要Sectionへのページ内Shortcutを置き、長い縦スクロールでも目的位置へ移動しやすくする
 - 記事本文の可読性を優先し、巨大見出し・過度な装飾・高密度な常時表示でPrimary Contentを圧迫しない
 - Source Tier / Source Type / Author / Date / Game Scopeを追跡できる
@@ -221,6 +221,7 @@ Theme preferenceのみBrowserのlocalStorageへ保存してよい。Knowledge Co
 - Domain内Search / Related Concept navigationが動く
 - ClaimとSourceを画面上で追跡できる
 - Missing / loading / error stateを持つ
+- Loadingが一定時間を超えた場合は永久待機せずErrorへ遷移し、再試行手段と失敗理由を表示する
 - Keyboard focusと主要Responsive Layoutが定義されている
 - ライト / ナイトモードの切替、OS初期設定、明示選択の保持が実装されている
 - Static validationでConcept file / Source ID参照が壊れていない
