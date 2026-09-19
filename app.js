@@ -69,7 +69,7 @@ const gameScopeLabels = {
 
 const els = {};
 const THEME_STORAGE_KEY = 'vkl-theme';
-const SITE_DATA_VERSION = '20260920-depth';
+const SITE_DATA_VERSION = '20260920-learning-path';
 const FETCH_TIMEOUT_MS = 6000;
 const systemThemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
@@ -233,17 +233,23 @@ function renderConceptList() {
   const items = state.concepts.filter(concept => {
     if (!allowed.has(concept.id)) return false;
     if (!state.query) return true;
+    const practiceText = Object.values(concept.practice || {}).flatMap(value => Array.isArray(value) ? value : [value]);
     const haystack = [
       concept.titleJa,
       concept.titleEn,
       ...(concept.aliases || []),
       concept.definition?.text,
+      ...(concept.goal || []),
+      ...(concept.subtypes || []).flatMap(item => [item.label, item.description]),
       ...(concept.claims || []).map(claim => claim.text),
       ...(concept.deepDive || []).flatMap(section => [
         section.title,
         section.summary,
         ...(section.items || [])
-      ])
+      ]),
+      ...(concept.cues || []),
+      ...(concept.mistakes || []),
+      ...practiceText
     ].filter(Boolean).join(' ').toLocaleLowerCase('ja');
     return haystack.includes(state.query);
   });
@@ -348,7 +354,7 @@ function renderDomainView(domain) {
 
     const label = document.createElement('span');
     label.className = 'domain-start-label';
-    label.textContent = '迷ったらここから';
+    label.textContent = 'まずここから';
 
     const title = document.createElement('strong');
     title.textContent = startConcept.titleJa;
@@ -360,7 +366,59 @@ function renderDomainView(domain) {
     nodes.push(starter);
   }
 
+  const learningOrder = (domain.learningOrderIds || [])
+    .map(id => state.concepts.find(concept => concept.id === id))
+    .filter(Boolean);
+
+  if (learningOrder.length > 1) {
+    const pathSection = document.createElement('section');
+    pathSection.className = 'learning-path';
+
+    const head = document.createElement('div');
+    head.className = 'domain-section-head';
+    const heading = document.createElement('h2');
+    heading.textContent = 'おすすめ学習順';
+    const description = document.createElement('p');
+    description.textContent = '一本道を強制せず、迷った時にこの順で読むと前提知識をつなげやすい。';
+    head.append(heading, description);
+
+    const list = document.createElement('ol');
+    list.className = 'learning-path-list';
+    learningOrder.forEach((concept, index) => {
+      const item = document.createElement('li');
+      item.className = 'learning-path-step';
+
+      const link = document.createElement('a');
+      link.href = `#${concept.id}`;
+
+      const number = document.createElement('span');
+      number.className = 'learning-path-number';
+      number.textContent = String(index + 1).padStart(2, '0');
+
+      const body = document.createElement('span');
+      body.className = 'learning-path-body';
+      const title = document.createElement('strong');
+      title.textContent = concept.titleJa;
+      const text = document.createElement('span');
+      text.textContent = concept.definition?.text || '';
+      body.append(title, text);
+
+      link.append(number, body);
+      item.append(link);
+      list.append(item);
+    });
+
+    pathSection.append(head, list);
+    nodes.push(pathSection);
+  }
+
   for (const section of domain.sections || []) {
+    const concepts = (section.conceptIds || [])
+      .filter(id => id !== domain.startConceptId)
+      .map(id => state.concepts.find(item => item.id === id))
+      .filter(Boolean);
+    if (!concepts.length) continue;
+
     const group = document.createElement('section');
     group.className = 'domain-section';
 
@@ -378,10 +436,7 @@ function renderDomainView(domain) {
     const list = document.createElement('div');
     list.className = 'domain-section-list';
 
-    for (const id of section.conceptIds || []) {
-      const concept = state.concepts.find(item => item.id === id);
-      if (!concept) continue;
-
+    for (const concept of concepts) {
       const link = document.createElement('a');
       link.className = 'domain-concept-row';
       link.href = `#${concept.id}`;
@@ -493,7 +548,7 @@ function renderConcept(concept) {
   renderSimpleList(els['concept-mistakes'], concept.mistakes || []);
   renderPractice(concept.practice || {});
   renderSources(concept);
-  renderRelated(concept.relatedConceptIds || []);
+  renderRelated(concept);
 
   document.title = `${concept.titleJa} | VALORANT Knowledge Lab`;
 }
@@ -717,7 +772,8 @@ function practiceLabel(key) {
   const labels = {
     vodQuestions: '試合動画で確認すること',
     decisionCheck: '判断チェック',
-    note: '補足'
+    note: '補足',
+    rankedFocus: '次の試合で1つやること'
   };
   return labels[key] || key.replace(/([a-z])([A-Z])/g, '$1 $2').toUpperCase();
 }
@@ -761,24 +817,68 @@ function renderSources(concept) {
   }));
 }
 
-function renderRelated(ids) {
-  const items = ids.map(id => {
-    const found = state.concepts.find(concept => concept.id === id);
-    if (found) {
+function renderRelated(concept) {
+  const domain = getDomain(state.activeDomainId);
+  const order = domain?.learningOrderIds || [];
+  const currentIndex = order.indexOf(concept.id);
+  const nextId = currentIndex >= 0 ? order[currentIndex + 1] : null;
+  const nextConcept = nextId ? state.concepts.find(item => item.id === nextId) : null;
+
+  const related = (concept.relatedConceptIds || [])
+    .map(id => state.concepts.find(item => item.id === id))
+    .filter(Boolean)
+    .filter(item => item.id !== nextConcept?.id);
+
+  const nodes = [];
+
+  if (nextConcept) {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'related-next';
+
+    const label = document.createElement('span');
+    label.className = 'related-next-label';
+    label.textContent = 'おすすめの次';
+
+    const link = document.createElement('a');
+    link.href = `#${nextConcept.id}`;
+    link.className = 'related-next-link';
+    link.dataset.relatedId = nextConcept.id;
+
+    const title = document.createElement('strong');
+    title.textContent = nextConcept.titleJa;
+    const text = document.createElement('span');
+    text.textContent = nextConcept.definition?.text || '';
+    link.append(title, text);
+
+    wrapper.append(label, link);
+    nodes.push(wrapper);
+  }
+
+  if (related.length) {
+    const group = document.createElement('div');
+    group.className = 'related-other';
+
+    const label = document.createElement('span');
+    label.className = 'related-other-label';
+    label.textContent = '関連する知識';
+
+    const links = document.createElement('div');
+    links.className = 'related-links';
+    for (const item of related) {
       const link = document.createElement('a');
-      link.href = `#${found.id}`;
+      link.href = `#${item.id}`;
       link.className = 'related-link';
-      link.dataset.relatedId = found.id;
-      link.textContent = found.titleJa;
-      return link;
+      link.dataset.relatedId = item.id;
+      link.textContent = item.titleJa;
+      links.append(link);
     }
-    const span = document.createElement('span');
-    span.className = 'related-missing';
-    span.textContent = `${id}（調査予定）`;
-    return span;
-  });
-  els['related-section'].hidden = items.length === 0;
-  els['related-concepts'].replaceChildren(...items);
+
+    group.append(label, links);
+    nodes.push(group);
+  }
+
+  els['related-section'].hidden = nodes.length === 0;
+  els['related-concepts'].replaceChildren(...nodes);
 }
 
 function formatStatus(status = '') {
