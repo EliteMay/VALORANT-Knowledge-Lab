@@ -15,20 +15,43 @@ VALORANTを「エイムだけ」ではなく、**判断・情報・連携・ポ�
 - 現在の要件: [REQUIREMENTS.md](REQUIREMENTS.md)
 - 調査・執筆ルール: [PROJECT_RULES.md](PROJECT_RULES.md)
 - コンテンツ構造: [docs/CONTENT_MAP.md](docs/CONTENT_MAP.md)
+- Content Schema: [docs/CONTENT_SCHEMA.md](docs/CONTENT_SCHEMA.md)
+- Visual Direction: [docs/DESIGN_DIRECTION.md](docs/DESIGN_DIRECTION.md)
 - 初回Research: [research/micro-fundamentals-01.md](research/micro-fundamentals-01.md)
 - Web制作共通ルール: [EliteMay/web-project-guide](https://github.com/EliteMay/web-project-guide)
 
 ## 現在の段階
 
-現在は **Research / Requirements Phase** です。
+現在は **Static Site MVP Implementation** です。
 
-最初の重点テーマ:
+サイトでは次の6Conceptを閲覧できます。
 
 1. ラーク
 2. アンカー
 3. カバー / トレード
+4. スペーシング
+5. クロスファイア
+6. ダブルスイング
 
-UIを先に作らず、まず「何を正しい情報として載せるか」「1記事をどう構成するか」「どう探せるようにするか」を固めます。
+Contentの正本は `data/concepts/*.json` と `data/sources.json` です。HTMLへ戦術本文を複製せず、`app.js` がJSONを読み込んで画面を生成します。
+
+## Web構成
+
+- `index.html` — Site shell
+- `styles.css` — Visual / Responsive
+- `app.js` — Search / Filter / Concept rendering / Source rendering
+- `data/concept-index.json` — Canonical Concept Dataから作るDerived manifest
+- `tests/validate-site.mjs` — Concept / Source参照とSite shellのStatic validation
+
+## ローカル確認
+
+JSONを `fetch()` するため、`file://` 直開きではなくHTTP経由で確認します。
+
+```powershell
+python -m http.server 8000
+```
+
+その後、`http://localhost:8000/` を開きます。
 
 ## Project Profiles
 
@@ -36,5 +59,5 @@ UIを先に作らず、まず「何を正しい情報として載せるか」「
 
 ## 採用Guide
 
-- web-project-guide: 1.22.0
-- Current mainには unreleased changes があるため、Version番号だけでなくCurrent Repositoryを優先する
+- Current `EliteMay/web-project-guide` のREADME / START_HERE / required Owner DocsをCurrent Revisionから確認して適用する
+- Version番号だけでなくCurrent Repositoryを優先する
