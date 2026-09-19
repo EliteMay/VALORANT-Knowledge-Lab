@@ -34,7 +34,7 @@
     {
       "id": "lurk-pattern-read",
       "text": "固定Routeをなぞるより、相手の担当Areaや過去Roundの傾向をTrackしてTimingを作ることが重要。",
-      "evidenceType": "Pro Practice",
+      "evidenceType": "Expert Practice / Analysis",
       "strength": "Supported",
       "sourceIds": [
         "nats-one-lurk-2023",
@@ -48,7 +48,7 @@
     {
       "id": "lurk-team-information",
       "text": "Lurk側とMain groupの情報共有は重要で、離れた場所で起きている状況を正確に同期する必要がある。",
-      "evidenceType": "Pro Practice",
+      "evidenceType": "Expert Practice / Analysis",
       "strength": "Supported",
       "sourceIds": [
         "nats-one-cypher-2023",
@@ -62,7 +62,7 @@
     {
       "id": "lurk-unpredictability",
       "text": "同じLurk patternを繰り返すと読まれやすくなるため、相手のAdaptationに合わせて変化させる。",
-      "evidenceType": "Pro Practice",
+      "evidenceType": "Expert Practice / Analysis",
       "strength": "Supported",
       "sourceIds": [
         "nats-one-lurk-2023"
@@ -87,7 +87,7 @@
     {
       "id": "lurk-team-pressure-overrotation",
       "text": "Lurkは単独で成立するのではなく、Main groupが十分なPressureを掛けて相手のRotationを動かしたときに価値が出る場合がある。",
-      "evidenceType": "Pro / Analyst Practice",
+      "evidenceType": "Expert Practice / Analysis",
       "strength": "Supported",
       "sourceIds": [
         "lothar-t1-tln-analysis",
