@@ -159,19 +159,17 @@ User-facing Top-level Learning Domains:
 
 1. ミクロ
 2. マクロ
-3. エイム・メカニクス
-4. ポジショニング・角度
-5. 情報・判断
-6. 武器・距離
-7. 連携
+3. エイム練習
+
+Homeではこの3つだけをPrimary Choiceとして表示する。ポジショニング・角度 / 情報・判断 / 武器・距離 / 連携等は、各Primary Domain内の小分類として扱う。
 
 1つのConceptは複数Domainへ所属できる。ピーク / 角度分離のように複数の学習目的へ関係する知識を無理に1分類へ固定しない。
 
-Learning Domainの所属関係は `data/domains.json` をCanonical Dataとし、各Concept JSONへ重複保存しない。
+Learning Domainの所属関係・最初に読むConcept・Domain内の小分類は `data/domains.json` をCanonical Dataとし、各Concept JSONへ重複保存しない。
 
 既存の information-map-control / team-coordination / defense / peek-duel 等はContent管理・記事内文脈用の細分類として維持できるが、Primary Home Navigationにはしない。
 
-撃ち合いを構成する主要軸として、Current Homeでは「ミクロ / マクロ / エイム・メカニクス / ポジショニング・角度 / 情報・判断 / 武器・距離 / 連携」を扱う。
+Current Homeでは「ミクロ / マクロ / エイム練習」の3択だけを出し、各Domain内で「まず読む1本」と小分類を提示する。
 
 アビリティ・セットアップも重要な将来Domain候補とする。ただしフラッシュ / スモーク / スタン / 索敵等の専用Conceptが十分に揃うまでは、空のPrimary Domainとして表示しない。
 
