@@ -13,7 +13,7 @@
   "status": "research-backed-draft",
   "updated": "2026-09-19",
   "definition": {
-    "text": "味方のContactに対して、同じThreatへすぐActionできる位置・視線・Timingを事前に作り、味方が倒された場合も相手をReset前にPunishできる状態を作ること。",
+    "text": "味方が敵と接敵したときに、同じ敵へすぐ反応できる位置・射線・タイミングを事前に作り、味方が倒されても相手が立て直す前に倒し返せる状態を作ること。",
     "evidenceType": "Site Synthesis",
     "strength": "Supported",
     "sourceIds": [
@@ -29,24 +29,24 @@
   "subtypes": [
     {
       "id": "trade-cover",
-      "label": "Trade cover",
-      "description": "味方のContact直後に同じThreatへRefragできる状態。"
+      "label": "トレードカバー",
+      "description": "味方が接敵した直後に、同じ敵を倒し返せる状態。"
     },
     {
       "id": "angle-cover",
-      "label": "Angle cover",
-      "description": "味方が処理できない別Danger angleを担当する。"
+      "label": "別角度のカバー",
+      "description": "味方が見られない別の危険な角度を担当する。"
     },
     {
       "id": "utility-cover",
-      "label": "Utility cover",
-      "description": "Flash / Recon / Smoke等で味方のActionを成立させる。"
+      "label": "アビリティでのカバー",
+      "description": "フラッシュ / 索敵 / スモークなどで味方の動きを成立させる。"
     }
   ],
   "claims": [
     {
       "id": "trade-pro-relevance",
-      "text": "Trading / teamfightingはプロチームでも継続的な改善対象になるFundamental。",
+      "text": "トレードや集団戦は、プロチームでも継続的な改善対象になる基礎要素。",
       "evidenceType": "Expert Practice / Analysis",
       "strength": "Supported",
       "sourceIds": [
@@ -59,7 +59,7 @@
     },
     {
       "id": "trade-spacing-context",
-      "text": "Trade spacingは単純な距離ではなく、Contact間の時間、同じThreatへのLine of sight、同じSpray / Utilityで同時にPunishされるRiskを合わせて考える。",
+      "text": "トレード時の間隔は単純な距離ではなく、接敵までの時間、同じ敵への射線、同じスプレーやアビリティで2人まとめて倒される危険を合わせて考える。",
       "evidenceType": "Coaching Heuristic",
       "strength": "Supported",
       "sourceIds": [
@@ -85,7 +85,7 @@
     },
     {
       "id": "trade-communication-general",
-      "text": "Tactical FPSでは、事実・Action中心のCommunicationとOpponent location / movementの共有がTeam coordinationに関係する。",
+      "text": "タクティカルFPSでは、事実と行動を中心にした報告や、敵の位置・移動の共有がチーム連携に関係する。",
       "evidenceType": "Academic General Principle",
       "strength": "Supported",
       "sourceIds": [
@@ -100,7 +100,7 @@
     },
     {
       "id": "trade-spacing-pro-analysis",
-      "text": "VCT-level match analysisでも、良いSpacingとTradingは相手のミスをPunishし、孤立したFightを減らすFundamentalとして評価されている。",
+      "text": "VCTレベルの試合分析でも、良いスペーシングとトレードは相手のミスに付け込み、孤立した撃ち合いを減らす基礎要素として評価されている。",
       "evidenceType": "Expert Practice / Analysis",
       "strength": "Supported",
       "sourceIds": [
@@ -114,7 +114,7 @@
     },
     {
       "id": "crossfire-doublepeek-related-fundamentals",
-      "text": "Spacingは単独Conceptではなく、well-timed double peekやcrossfire setupと組み合わさってTeam fightの形を作る。",
+      "text": "スペーシングは単独の考え方ではなく、タイミングの合ったダブルピークやクロスファイアの形と組み合わさって、チームでの撃ち合い方を作る。",
       "evidenceType": "Expert Practice / Analysis",
       "strength": "Supported",
       "sourceIds": [
@@ -128,27 +128,27 @@
     }
   ],
   "cues": [
-    "味方のFirst contact",
-    "同じThreatが見えるか",
-    "味方とのPath差",
-    "敵Utility",
-    "自分がWeapon readyか",
-    "敵がReset / escapeできるRoute"
+    "味方の最初の接敵",
+    "同じ敵が見えるか",
+    "味方との進行ルートの差",
+    "敵のアビリティ",
+    "自分がすぐ撃てる状態か",
+    "敵が立て直したり逃げたりできるルート"
   ],
   "mistakes": [
-    "味方のすぐ後ろにいるだけでTrade可能だと思う",
-    "同じSpray / Utilityで2人まとめてPunishされるほど重なる",
-    "遠すぎて敵にReset / repositionする時間を与える",
-    "味方がContactしてから初めてCrosshair / Angleを探す",
-    "カバーとBaitを混同する"
+    "味方のすぐ後ろにいるだけでトレード可能だと思う",
+    "同じスプレー / アビリティで2人まとめて倒されるほど重なる",
+    "遠すぎて敵に立て直しや位置変更の時間を与える",
+    "味方が接敵してから初めてクロスヘアを合わせたり見る角度を探す",
+    "カバーとベイト（味方を囮にする動き）を混同する"
   ],
   "practice": {
     "decisionCheck": [
-      "味方がContactした瞬間、同じThreatへすぐActionできるか？",
-      "同じEnemy actionで2人ともPunishされないか？",
-      "自分はWeapon readyで、別の不要なAngleを見ていないか？"
+      "味方が接敵した瞬間、同じ敵へすぐ反応できるか？",
+      "敵の1回の攻撃で2人とも倒されないか？",
+      "自分はすぐ撃てる状態で、不要な別角度を見ていないか？"
     ],
-    "note": "『1秒』等はDrill cueとして使えても公式固定Ruleとして表示しない。"
+    "note": "『1秒』などは練習の目安として使えても、公式の固定ルールとして表示しない。"
   },
   "relatedConceptIds": [
     "spacing",
