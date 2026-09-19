@@ -139,6 +139,65 @@
       "notes": [
         "Use for general team-process principles, not VALORANT-specific mechanics"
       ]
+    },
+    {
+      "id": "lothar-t1-tln-analysis",
+      "title": "Written Analysis of T1 vs TLN #VCTPacific",
+      "url": "https://www.vlr.gg/442451/written-analysis-of-t1-vs-tln-vctpacific",
+      "publisherOrAuthor": "LotharVLR (Jakub Szygulski)",
+      "published": null,
+      "sourceTier": "B",
+      "sourceType": "VCT Analyst Direct Analysis",
+      "gameScope": "VALORANT / VCT Pacific",
+      "notes": [
+        "Author has appeared on Riot/VCT broadcasts as a caster/analyst",
+        "Analysis states iZu's lurks were enabled by T1 pressure causing opponent over-rotations",
+        "Exact posting date not recorded; VLR page displays it as approximately one year old as of 2026-09"
+      ]
+    },
+    {
+      "id": "lothar-drx-ns-analysis",
+      "title": "Written summary and analysis: DRX vs NS",
+      "url": "https://www.vlr.gg/post/4463113/written-summary-and-analysis-drx-vs-ns",
+      "publisherOrAuthor": "LotharVLR (Jakub Szygulski)",
+      "published": null,
+      "sourceTier": "B",
+      "sourceType": "VCT Analyst Direct Analysis",
+      "gameScope": "VALORANT / VCT Pacific",
+      "notes": [
+        "Highlights great spacing, well-timed double peeks and efficient crossfire setups as DRX fundamentals",
+        "Also identifies poor spacing after engagements as an NS weakness",
+        "Match analysis is expert interpretation, not a controlled experiment"
+      ]
+    },
+    {
+      "id": "lothar-g2-edg-analysis",
+      "title": "Written Analysis of G2 vs EDG",
+      "url": "https://www.vlr.gg/455744/written-analysis-of-g2-vs-edg/",
+      "publisherOrAuthor": "LotharVLR (Jakub Szygulski)",
+      "published": null,
+      "sourceTier": "B",
+      "sourceType": "VCT Analyst Direct Analysis",
+      "gameScope": "VALORANT / international pro play",
+      "notes": [
+        "Attributes part of G2's success to better spacing and trading plus well-structured crossfires",
+        "Identifies EDG isolation/no-trade and spacing problems",
+        "Match analysis is expert interpretation, not a controlled experiment"
+      ]
+    },
+    {
+      "id": "riot-lothar-credential-2020",
+      "title": "VALORANT First Strike: Europe – Meet the Casters",
+      "url": "https://playvalorant.com/en-gb/news/esports/valorant-first-strike-europe-meet-the-casters/",
+      "publisherOrAuthor": "Riot Games",
+      "published": null,
+      "sourceTier": "A",
+      "sourceType": "Official Credential Context",
+      "gameScope": "VALORANT esports",
+      "notes": [
+        "Riot lists Jakub 'Lothar' Szygulski as a colour caster and notes his professional G2 player background",
+        "Credential/context source only; not tactical evidence"
+      ]
     }
   ]
 }
