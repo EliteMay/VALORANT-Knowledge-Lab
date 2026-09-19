@@ -1,0 +1,230 @@
+{
+  "schemaVersion": 1,
+  "id": "communication",
+  "titleJa": "コミュニケーション / コール",
+  "titleEn": "Communication / Calls",
+  "aliases": [
+    "コール",
+    "報告",
+    "報告の仕方",
+    "VC",
+    "チーム連携"
+  ],
+  "category": "team-coordination",
+  "status": "research-backed-draft",
+  "updated": "2026-09-20",
+  "definition": {
+    "text": "自分だけが持つ重要な情報・次にする行動・必要な支援を、味方が次の判断へ使える形で素早く共有し、チームの行動を合わせること。",
+    "evidenceType": "Site Synthesis",
+    "strength": "Supported",
+    "sourceIds": [
+      "tenz-aimlabs-communication",
+      "yay-aimlabs-teamplay",
+      "eldadi-communication-2025",
+      "rusk-callouts-2024"
+    ],
+    "siteSynthesis": true
+  },
+  "goal": [
+    "自分しか知らない重要情報をチーム全体の判断材料へ変える",
+    "無言のピーク・アビリティ・ローテーションを減らす",
+    "味方へ必要な支援を具体的に頼めるようにする",
+    "ラウンド中の音や重要情報を不要な会話で埋めない"
+  ],
+  "subtypes": [
+    {
+      "id": "fact",
+      "label": "事実のコール",
+      "description": "敵位置・人数・スパイクなど、自分が直接確認した重要情報を共有する。"
+    },
+    {
+      "id": "action",
+      "label": "行動のコール",
+      "description": "「引く」「出る」「戻る」など、自分が次にする行動を味方へ伝える。"
+    },
+    {
+      "id": "request",
+      "label": "支援の依頼",
+      "description": "フラッシュ・索敵・トレードなど、味方へしてほしい具体的な支援を伝える。"
+    },
+    {
+      "id": "plan",
+      "label": "作戦の更新",
+      "description": "新しい情報に合わせて、攻め先・ローテーション・待つ判断などチームの方向を揃える。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "communication-circulate-info",
+      "text": "TenZの教材では、高レベルのVALORANTで情報を味方間に継続的に循環させ、連携とアビリティの効果を高めることが重要だと説明されている。",
+      "evidenceType": "Expert Practice / Analysis",
+      "strength": "Supported",
+      "sourceIds": [
+        "tenz-aimlabs-communication"
+      ],
+      "siteSynthesis": false,
+      "notes": []
+    },
+    {
+      "id": "communication-specific-utility",
+      "text": "yayの教材では、簡潔で具体的な伝え方、自分が使うアビリティのコール、味方へアビリティ支援を頼むことが実戦課題として扱われている。",
+      "evidenceType": "Expert Practice / Analysis",
+      "strength": "Supported",
+      "sourceIds": [
+        "yay-aimlabs-teamplay"
+      ],
+      "siteSynthesis": false,
+      "notes": []
+    },
+    {
+      "id": "communication-expert-fact-action",
+      "text": "CS:GOのExpert Teamを比較した査読研究では、上級側で事実情報と行動関連の発話が中心となり、より頻繁かつ速いコミュニケーションが観察された。",
+      "evidenceType": "Academic General Principle",
+      "strength": "Supported",
+      "sourceIds": [
+        "eldadi-communication-2025"
+      ],
+      "siteSynthesis": true,
+      "notes": [
+        "VALORANT固有の実験ではなく、タクティカルFPSの一般原理として利用"
+      ]
+    },
+    {
+      "id": "communication-shared-knowledge",
+      "text": "査読研究では、敵位置や移動のコールが、各選手に分散している情報をチームで共有して協調する仕組みとして分析されている。",
+      "evidenceType": "Academic General Principle",
+      "strength": "Supported",
+      "sourceIds": [
+        "rusk-callouts-2024"
+      ],
+      "siteSynthesis": true,
+      "notes": [
+        "CS:GO対象の研究であり、VALORANT固有の最適な発話量を示すものではない"
+      ]
+    },
+    {
+      "id": "communication-not-more-is-better",
+      "text": "良いコミュニケーションを単純な発話量の多さとは扱わず、現在の判断や行動に必要な情報を簡潔に共有することを優先する。",
+      "evidenceType": "Site Synthesis",
+      "strength": "Supported",
+      "sourceIds": [
+        "yay-aimlabs-teamplay",
+        "eldadi-communication-2025",
+        "esports-team-systematic-review-2024"
+      ],
+      "siteSynthesis": true,
+      "notes": []
+    }
+  ],
+  "cues": [
+    "味方がまだ知らない重要情報があるか",
+    "その内容は確定した事実か、推測か",
+    "今伝えないと情報価値がすぐ下がるか",
+    "自分が次に出る・引く・移動することを味方が知っているか",
+    "味方へ頼みたいアビリティやトレードがあるか",
+    "重要なコールに対して短い確認が必要か",
+    "今は音を聞くため会話量を減らすべき場面か"
+  ],
+  "mistakes": [
+    "「A！」だけで敵人数・エージェント・スパイクなど必要情報を省きすぎる",
+    "見えていない敵まで「全員いる」と断定する",
+    "無言でピークしてからトレードがないと味方を責める",
+    "いつ・どこへ使ってほしいか言わず「フラッシュして」とだけ頼む",
+    "無言でローテーションしてチームの作戦を分裂させる",
+    "ラウンド中に前のミスを長く反省して現在の音やコールを埋める",
+    "重要な支援依頼へ無反応で、伝わったか分からない状態を作る"
+  ],
+  "practice": {
+    "rankedFocus": [
+      "味方と合わせられるアビリティは、使う直前に場所と意図を短く伝える",
+      "接敵したら可能な範囲で「敵情報 + 自分の次の行動」をセットで伝える"
+    ],
+    "vodQuestions": [
+      "自分しか知らない情報を必要な時に伝えた？",
+      "推測を確定情報のように言っていなかった？",
+      "自分のピークや移動を味方が事前に知っていた？",
+      "必要な支援を具体的に頼めた？",
+      "不要な会話で重要な音やコールを邪魔していなかった？"
+    ]
+  },
+  "relatedConceptIds": [
+    "info-decision-action",
+    "cover-trade",
+    "spacing",
+    "map-control",
+    "lurk",
+    "double-swing"
+  ],
+  "deepDive": [
+    {
+      "id": "trigger",
+      "title": "何をコールするか",
+      "summary": "味方が知らない重要な事実、自分の次の行動、必要な支援、作戦変更がある時に共有する。",
+      "items": [
+        "敵位置・スパイク・重要アビリティなど新しい事実を得た時",
+        "自分がピーク・後退・ローテーションなど味方へ影響する行動をする時",
+        "味方のアビリティやトレードが必要な時",
+        "新しい情報で最初の作戦を変える必要が出た時"
+      ],
+      "sourceIds": [
+        "tenz-aimlabs-communication",
+        "yay-aimlabs-teamplay",
+        "rusk-callouts-2024"
+      ],
+      "siteSynthesis": true
+    },
+    {
+      "id": "action",
+      "title": "事実 → 行動 / 依頼 → 確認 → 更新",
+      "summary": "味方が次に何を判断すればいいか分かるよう、必要な情報と意図だけを短くつなぐ。",
+      "items": [
+        "まず敵・場所・スパイクなど確認できた事実を伝える",
+        "必要なら「引く」「出る」「戻る」など自分の次の行動を足す",
+        "支援が必要なら誰に何をしてほしいか具体的に頼む",
+        "重要な依頼には短く返事して、伝わったかを確認する",
+        "状況が変われば古いコールへ固執せず新しい情報を上書きする"
+      ],
+      "sourceIds": [
+        "yay-aimlabs-teamplay",
+        "tenz-aimlabs-communication",
+        "eldadi-communication-2025"
+      ],
+      "siteSynthesis": true
+    },
+    {
+      "id": "conditions",
+      "title": "情報量ではなく判断価値を優先する",
+      "summary": "すべてを喋るのではなく、現在の行動を変える情報を優先し、音を聞く必要がある時は会話量を下げる。",
+      "items": [
+        "既に全員が画面で分かっている情報を繰り返し続けない",
+        "推測を伝える場合は確定情報と区別する",
+        "少人数戦や音情報が重要な時は、長い説明より短い重要情報を優先する",
+        "ラウンド中の責任追及や反省は現在の判断に使えないため後へ回す",
+        "チームごとにコール分担は異なるので、IGLだけが全情報を話す唯一の形とはしない"
+      ],
+      "sourceIds": [
+        "eldadi-communication-2025",
+        "rusk-callouts-2024",
+        "esports-team-systematic-review-2024"
+      ],
+      "siteSynthesis": true
+    },
+    {
+      "id": "example",
+      "title": "エントリーを無言で始めない",
+      "summary": "最初に入る選手と支援側が、移動・アビリティ・トレードのタイミングを共有して同じ行動へそろえる。",
+      "items": [
+        "先頭が「次の合図で入る」と伝える",
+        "支援側がフラッシュや索敵を合わせられるか返事する",
+        "先頭の移動に合わせて2人目がトレード可能な位置へ進む",
+        "侵入後に取れた領域や敵位置を短く更新する",
+        "無言で先頭だけが先行するより、複数の技能を同じタイミングへ合わせやすくなる"
+      ],
+      "sourceIds": [
+        "tenz-aimlabs-communication",
+        "yay-aimlabs-teamplay"
+      ],
+      "siteSynthesis": true
+    }
+  ]
+}
