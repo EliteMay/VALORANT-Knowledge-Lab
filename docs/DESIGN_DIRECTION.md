@@ -110,6 +110,7 @@ Current Learning Domains:
 - エイム・メカニクス
 - ポジショニング・角度
 - 情報・判断
+- 武器・距離
 - 連携
 
 HomeはMarketing Heroではなく、最初の学習判断を行うHubとして扱う。独立して選べる学習分野なのでDomainはCard表現を使うが、Domain内Conceptは比較しやすいListを基本にする。
