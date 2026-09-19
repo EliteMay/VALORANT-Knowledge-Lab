@@ -9,7 +9,8 @@ const state = {
 const categoryLabels = {
   'information-map-control': '情報・マップコントロール',
   'team-coordination': '味方との合わせ',
-  'defense': '守り'
+  'defense': '守り',
+  'peek-duel': '撃ち合い・ピーク'
 };
 
 const strengthLabels = {
