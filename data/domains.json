@@ -5,32 +5,101 @@
     {
       "id": "micro",
       "title": "ミクロ",
-      "description": "目の前の撃ち合い・位置取り・味方との合わせを強くする。",
+      "description": "数秒単位の判断と動きを改善する。ピーク、トレード、間隔、目の前の撃ち合いを扱う。",
       "examples": [
         "ピーク",
         "トレード",
         "スペーシング",
-        "クロスファイア"
+        "ダブルスイング"
+      ],
+      "conceptIds": [
+        "cover-trade",
+        "spacing",
+        "crossfire",
+        "double-swing",
+        "peek-angle-isolation",
+        "movement-shooting-cycle",
+        "anchor"
       ]
     },
     {
       "id": "macro",
       "title": "マクロ",
-      "description": "ラウンド全体の情報・配置・相手の傾向から次の動きを決める。",
+      "description": "ラウンド全体を見る。マップの使い方、守る場所、相手の傾向、次の展開を扱う。",
       "examples": [
         "ラーク",
         "アンカー",
         "相手への適応"
+      ],
+      "conceptIds": [
+        "lurk",
+        "anchor",
+        "unexpected-opponent"
       ]
     },
     {
-      "id": "aim-training",
-      "title": "エイム練習",
-      "description": "撃ち合いを安定させるために、クロスヘア・ピーク・停止・射撃を分けて鍛える。",
+      "id": "aim-mechanics",
+      "title": "エイム・メカニクス",
+      "description": "撃つ技術を分解して鍛える。クロスヘア、ピーク、停止、タップ・バースト・スプレーを扱う。",
       "examples": [
         "撃ち合いの構造",
         "ピーク",
         "移動・停止・射撃"
+      ],
+      "conceptIds": [
+        "gunfight-structure",
+        "peek-angle-isolation",
+        "movement-shooting-cycle"
+      ]
+    },
+    {
+      "id": "positioning",
+      "title": "ポジショニング・角度",
+      "description": "撃ち合う前の有利不利を作る。立ち位置、遮蔽物、角度分離、クロスファイアを扱う。",
+      "examples": [
+        "角度分離",
+        "クロスファイア",
+        "アンカー"
+      ],
+      "conceptIds": [
+        "anchor",
+        "spacing",
+        "crossfire",
+        "peek-angle-isolation",
+        "gunfight-structure"
+      ]
+    },
+    {
+      "id": "information-decision",
+      "title": "情報・判断",
+      "description": "見えた情報を次の行動へ変える。敵位置、相手の癖、ラウンド傾向、判断基準を扱う。",
+      "examples": [
+        "相手の癖",
+        "ラーク",
+        "撃ち合い前の情報"
+      ],
+      "conceptIds": [
+        "lurk",
+        "anchor",
+        "unexpected-opponent",
+        "gunfight-structure"
+      ]
+    },
+    {
+      "id": "teamplay",
+      "title": "連携",
+      "description": "一人の撃ち合いをチームの撃ち合いに変える。トレード、間隔、同時ピーク、クロスファイアを扱う。",
+      "examples": [
+        "トレード",
+        "スペーシング",
+        "クロスファイア",
+        "ダブルスイング"
+      ],
+      "conceptIds": [
+        "cover-trade",
+        "spacing",
+        "crossfire",
+        "double-swing"
       ]
     }
   ]
