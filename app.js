@@ -247,7 +247,7 @@ function selectConcept(id, updateHash) {
 function renderConcept(concept) {
   els['concept-category'].textContent = categoryLabels[concept.category] || concept.category;
   els['concept-title'].textContent = concept.titleJa;
-  els['concept-title-en'].textContent = `英語表記: ${concept.titleEn}${concept.aliases?.length ? ` / ${concept.aliases.join(' · ')}` : ''}`;
+  els['concept-title-en'].textContent = `英語名: ${concept.titleEn}`;
   els['concept-status'].textContent = formatStatus(concept.status);
   els['concept-definition'].textContent = concept.definition?.text || '';
 
@@ -411,7 +411,7 @@ function renderPractice(practice) {
 
 function practiceLabel(key) {
   const labels = {
-    vodQuestions: 'VODで確認すること',
+    vodQuestions: '試合動画で確認すること',
     decisionCheck: '判断チェック',
     note: '補足'
   };
@@ -463,7 +463,7 @@ function renderRelated(ids) {
       link.href = `#${found.id}`;
       link.className = 'related-link';
       link.dataset.relatedId = found.id;
-      link.textContent = `${found.titleJa}（${found.titleEn}）`;
+      link.textContent = found.titleJa;
       return link;
     }
     const span = document.createElement('span');

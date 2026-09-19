@@ -11,7 +11,7 @@
   "status": "research-backed-draft",
   "updated": "2026-09-19",
   "definition": {
-    "text": "複数人が同じZoneや進行経路を異なるAngleからCoverし、一方へのContactをもう一方のPunish timingへ変えるSetup。",
+    "text": "複数人が同じエリアや進行経路を異なる角度から見て、一方への接敵をもう一方が倒すタイミングにつなげる配置。",
     "evidenceType": "Site Synthesis",
     "strength": "Supported",
     "sourceIds": [
@@ -23,7 +23,7 @@
   "claims": [
     {
       "id": "crossfire-pro-fundamental",
-      "text": "Efficient / well-structured crossfireはVCT match analysisでTeam fundamentalsやRound successの要因として評価されている。",
+      "text": "効率的で形の良いクロスファイアは、VALORANTのプロ大会の試合分析で、チームの基礎やラウンド成功の要因として評価されている。",
       "evidenceType": "Expert Practice / Analysis",
       "strength": "Supported",
       "sourceIds": [
@@ -35,7 +35,7 @@
     },
     {
       "id": "crossfire-angle-not-fixed",
-      "text": "Crossfireを90°や180°など固定角度で定義せず、Enemyが同時に複数Angleを処理しにくいGeometryとして考える。",
+      "text": "クロスファイアを90°や180°など固定角度で定義せず、敵が同時に複数の角度を処理しにくい配置として考える。",
       "evidenceType": "Site Synthesis",
       "strength": "Context-dependent",
       "sourceIds": [
@@ -49,24 +49,24 @@
     }
   ],
   "cues": [
-    "Enemy entry path",
-    "味方のContact angle",
-    "Cover位置",
-    "Utilityで切られるLOS",
+    "敵の侵入経路",
+    "味方が接敵する角度",
+    "カバー位置",
+    "アビリティで切られる射線",
     "退路",
-    "Spike/Objective"
+    "スパイク / 目標"
   ],
   "mistakes": [
-    "片方だけ先にPeekしてSetupを解除する",
-    "2人のLineがほぼ同じ",
-    "ContactしてもPartnerから見えない",
-    "同じUtilityで両方無効化される"
+    "片方だけ先にピークしてクロスファイアの形を崩す",
+    "2人の射線がほぼ同じ",
+    "接敵しても味方から敵が見えない",
+    "同じアビリティで2人とも無効化される"
   ],
   "practice": {
     "vodQuestions": [
-      "Enemyから見て2人は別Angleとして処理する必要があったか？",
-      "最初のContactがPartnerのTriggerになったか？",
-      "どちらかが不要にSetupを解除していないか？"
+      "敵から見て2人を別々の角度として処理する必要があったか？",
+      "最初の接敵が味方が撃つきっかけになったか？",
+      "どちらかが不要にクロスファイアの形を崩していないか？"
     ]
   },
   "relatedConceptIds": [

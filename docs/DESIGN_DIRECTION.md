@@ -73,8 +73,8 @@ Do not copy:
 
 ## Language Contract
 
-- User-facing UIは日本語を基本にする
-- 英語はVALORANTの定着用語、英語表記の補助、選手・媒体名、外部Sourceの原題など必要な場所だけ残す
+- User-facing UIと本文は日本語を基本にし、英語を知らなくても意味が通ることを優先する
+- 英語はVALORANTの定着用語、英語表記の補助、選手・媒体名、外部Sourceの原題など必要な場所だけ残し、本文中で使う場合は日本語だけでも理解できる表現にする
 - Evidence strength / type / status / source type / game scopeなど内部Schemaの英語値は、画面では日本語へ変換する
 - 日本語だけ読んでも操作・状態・根拠の意味が理解できることを優先する
 

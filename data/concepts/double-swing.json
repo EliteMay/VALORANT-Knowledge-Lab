@@ -11,7 +11,7 @@
   "status": "research-backed-draft",
   "updated": "2026-09-19",
   "definition": {
-    "text": "2人が同時またはほぼ同時にCoverから出て同じFightを開始し、KillまたはTradeを狙うPlay。",
+    "text": "2人が同時またはほぼ同時に遮蔽物から出て同じ撃ち合いを始め、キルまたはトレードを狙う動き。",
     "evidenceType": "Site Synthesis",
     "strength": "Supported",
     "sourceIds": [
@@ -23,7 +23,7 @@
   "claims": [
     {
       "id": "doublepeek-welltimed-fundamental",
-      "text": "Well-timed double peeksはVCT match analysisでGood fundamentalsの一部として評価されている。",
+      "text": "タイミングの合ったダブルピークは、VALORANTのプロ大会の試合分析で、良い基礎動作の一部として評価されている。",
       "evidenceType": "Expert Practice / Analysis",
       "strength": "Supported",
       "sourceIds": [
@@ -34,7 +34,7 @@
     },
     {
       "id": "double-swing-no-fixed-timing",
-      "text": "Double Swingの正解Timingを固定秒数・固定msでは定義しない。",
+      "text": "ダブルスイングの正しいタイミングを、固定の秒数やミリ秒では定義しない。",
       "evidenceType": "Site Synthesis",
       "strength": "Supported",
       "sourceIds": [
@@ -48,24 +48,24 @@
     }
   ],
   "cues": [
-    "Partner readiness",
-    "同じThreatへのLOS",
+    "味方の準備状況",
+    "同じ敵への射線",
     "敵が孤立しているか",
-    "Utility timing",
+    "アビリティのタイミング",
     "人数状況",
-    "Weapon / Operator threat"
+    "武器状況 / オペレーターの脅威"
   ],
   "mistakes": [
-    "片方だけ先に出て2回の1v1になる",
-    "2人が同じLineへ重なる",
-    "UtilityとSwing timingがズレる",
-    "別Threatを見て同じFightになっていない"
+    "片方だけ先に出て2回の1対1になる",
+    "2人が同じ射線へ重なる",
+    "アビリティと出るタイミングがズレる",
+    "別の敵を見ていて同じ撃ち合いになっていない"
   ],
   "practice": {
     "vodQuestions": [
-      "2人のContactはOpponent視点で同時圧力になったか？",
-      "片方だけ先に処理されるGapがあったか？",
-      "同じSpray lineへ重なっていなかったか？"
+      "2人の接敵は敵視点で同時の圧力になったか？",
+      "片方だけ先に処理される時間差があったか？",
+      "同じスプレーの射線に重なっていなかったか？"
     ]
   },
   "relatedConceptIds": [
