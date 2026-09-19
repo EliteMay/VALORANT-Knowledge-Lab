@@ -546,6 +546,21 @@
         "Shows that movement accuracy remains weapon-class-specific and actively tuned",
         "Do not generalize shotgun values to rifles"
       ]
+    },
+    {
+      "id": "riot-patch-1-09",
+      "title": "VALORANT パッチノート 1.09",
+      "url": "https://playvalorant.com/ja-jp/news/game-updates/valorant-patch-notes-1-09/",
+      "publisherOrAuthor": "Riot Games",
+      "published": "2020-09-29",
+      "sourceTier": "A",
+      "sourceType": "Official / Mechanic",
+      "gameScope": "VALORANT",
+      "notes": [
+        "Historic official landing-accuracy update",
+        "Riot explicitly describes jump peeking as having utility while limiting how quickly full accuracy returns after landing",
+        "Historic exact values are not treated as current values"
+      ]
     }
   ]
 }
