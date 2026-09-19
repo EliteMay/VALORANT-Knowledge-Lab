@@ -12,7 +12,7 @@
   "updated": "2026-09-19",
   "definition": {
     "text": "Siteに残って敵のCommitを見極め、HoldまたはDelayし、簡単に完全なSite controlを渡さない守備役割。",
-    "evidenceType": "Pro Practice",
+    "evidenceType": "Expert Practice / Analysis",
     "strength": "Supported",
     "sourceIds": [
       "nats-one-cypher-2023",
@@ -45,7 +45,7 @@
     {
       "id": "anchor-isolate-fights",
       "text": "UtilityとPositioningを使い、可能なら複数人との同時Fightではなく連続した小さいFightへ分割する。",
-      "evidenceType": "Pro Practice",
+      "evidenceType": "Expert Practice / Analysis",
       "strength": "Supported",
       "sourceIds": [
         "nats-one-cypher-2023"
@@ -58,7 +58,7 @@
     {
       "id": "anchor-confirm-commit",
       "text": "敵が本当にSiteへCommitしているかを情報Utility等で確認してからDefense actionを選ぶ考え方がある。",
-      "evidenceType": "Pro Practice",
+      "evidenceType": "Expert Practice / Analysis",
       "strength": "Context-dependent",
       "sourceIds": [
         "nats-one-cypher-2023",
