@@ -1,39 +1,55 @@
 {
-  "schemaVersion": 2,
-  "updated": "2026-09-19",
+  "schemaVersion": 3,
+  "updated": "2026-09-20",
   "domains": [
     {
       "id": "micro",
       "title": "ミクロ",
       "prompt": "目の前の撃ち合い・立ち位置・味方との合わせを良くしたい",
-      "description": "数秒単位の判断を改善する。ピーク、トレード、間隔、クロスファイア、守りの位置取りを扱う。",
-      "startConceptId": "peek-angle-isolation",
-      "conceptIds": [
-        "peek-angle-isolation",
+      "description": "数秒単位の判断を改善する。撃ち合いの構造、立ち位置、ピーク、トレード、間隔、クロスファイア、守りをつなげて学ぶ。",
+      "startConceptId": "gunfight-structure",
+      "learningOrderIds": [
         "gunfight-structure",
+        "positioning",
+        "peek-angle-isolation",
         "cover-trade",
         "spacing",
         "crossfire",
         "double-swing",
-        "anchor",
-        "movement-shooting-cycle"
+        "anchor"
+      ],
+      "conceptIds": [
+        "gunfight-structure",
+        "positioning",
+        "crosshair-placement",
+        "peek-angle-isolation",
+        "movement-shooting-cycle",
+        "cover-trade",
+        "spacing",
+        "communication",
+        "crossfire",
+        "double-swing",
+        "anchor"
       ],
       "sections": [
         {
           "id": "micro-fight",
           "title": "撃ち合いを作る",
-          "description": "まず、どう出て・どの角度と戦うかを整理する。",
+          "description": "どこから戦い、どの角度を処理し、敵が見える前に何を準備するかを整理する。",
           "conceptIds": [
-            "peek-angle-isolation",
             "gunfight-structure",
+            "positioning",
+            "crosshair-placement",
+            "peek-angle-isolation",
             "movement-shooting-cycle"
           ]
         },
         {
           "id": "micro-team",
           "title": "味方と合わせる",
-          "description": "1人の撃ち合いを2人以上で有利にする。",
+          "description": "情報共有、トレード、間隔、複数人の射線とタイミングをつなげる。",
           "conceptIds": [
+            "communication",
             "cover-trade",
             "spacing",
             "crossfire",
@@ -41,10 +57,11 @@
           ]
         },
         {
-          "id": "micro-position",
+          "id": "micro-defense",
           "title": "守り・位置取り",
-          "description": "戦う場所と残る場所を考える。",
+          "description": "撃ち合う場所、残る場所、時間を稼ぐ役割を考える。",
           "conceptIds": [
+            "positioning",
             "anchor"
           ]
         }
@@ -53,37 +70,50 @@
     {
       "id": "macro",
       "title": "マクロ",
-      "prompt": "ラウンド全体・相手の癖・次の展開を読めるようになりたい",
-      "description": "ラウンド全体を見て、情報・配置・相手の傾向から次の行動を決める。",
-      "startConceptId": "unexpected-opponent",
-      "conceptIds": [
-        "unexpected-opponent",
+      "prompt": "ラウンド全体・情報・マップ・相手の変化から次の展開を決めたい",
+      "description": "情報を判断へ変え、味方と共有し、マップ上の領域と相手の傾向から次の行動を決める。",
+      "startConceptId": "info-decision-action",
+      "learningOrderIds": [
+        "info-decision-action",
+        "communication",
+        "map-control",
         "lurk",
+        "unexpected-opponent"
+      ],
+      "conceptIds": [
+        "info-decision-action",
+        "communication",
+        "map-control",
+        "lurk",
+        "unexpected-opponent",
         "anchor"
       ],
       "sections": [
         {
-          "id": "macro-read",
-          "title": "相手を読む",
-          "description": "定石ではなく、この試合で実際に見えた相手の傾向から考える。",
+          "id": "macro-decision",
+          "title": "判断の土台",
+          "description": "確定情報・推測・不明を分け、チームの判断へ変える。",
           "conceptIds": [
-            "unexpected-opponent"
+            "info-decision-action",
+            "communication"
           ]
         },
         {
           "id": "macro-space",
           "title": "情報とマップを使う",
-          "description": "離れた場所の情報や空いたエリアをラウンドに使う。",
+          "description": "どの領域を誰が使えるかを見て、取った空間をラウンドの選択肢へ変える。",
           "conceptIds": [
+            "map-control",
             "lurk"
           ]
         },
         {
-          "id": "macro-defense",
-          "title": "守りの全体判断",
-          "description": "どこに残るか、いつローテーションするかを考える。",
+          "id": "macro-adapt",
+          "title": "守りと相手への適応",
+          "description": "守る場所と時間を作りつつ、相手が実際に見せた傾向へ必要な分だけ適応する。",
           "conceptIds": [
-            "anchor"
+            "anchor",
+            "unexpected-opponent"
           ]
         }
       ]
@@ -91,37 +121,45 @@
     {
       "id": "aim-training",
       "title": "エイム練習",
-      "prompt": "クロスヘア・止まり方・撃ち方を分解して練習したい",
-      "description": "撃ち合いを感覚だけでなく、ピーク・停止・射撃・振り返りに分けて鍛える。",
-      "startConceptId": "movement-shooting-cycle",
-      "conceptIds": [
-        "movement-shooting-cycle",
+      "prompt": "クロスヘア・ピーク・止まり方・撃ち方を分解して練習したい",
+      "description": "撃ち合いを最終フリックだけで考えず、接敵前の照準、角度処理、移動、停止、射撃まで順に分解する。",
+      "startConceptId": "gunfight-structure",
+      "learningOrderIds": [
+        "gunfight-structure",
+        "crosshair-placement",
         "peek-angle-isolation",
-        "gunfight-structure"
+        "movement-shooting-cycle"
+      ],
+      "conceptIds": [
+        "gunfight-structure",
+        "crosshair-placement",
+        "peek-angle-isolation",
+        "movement-shooting-cycle"
       ],
       "sections": [
         {
-          "id": "aim-shoot",
-          "title": "止まる・撃つ",
-          "description": "移動から停止、タップ・バースト・スプレーまでを整理する。",
+          "id": "aim-understand",
+          "title": "まず撃ち合いを分解する",
+          "description": "負けた理由をエイム全体で片付けず、どの段階に問題があるか整理する。",
           "conceptIds": [
-            "movement-shooting-cycle"
+            "gunfight-structure"
           ]
         },
         {
-          "id": "aim-peek",
+          "id": "aim-precontact",
           "title": "撃つ前を整える",
-          "description": "敵が見える前のクロスヘアとピークを整理する。",
+          "description": "敵が見える前のクロスヘアと、処理する角度を準備する。",
           "conceptIds": [
+            "crosshair-placement",
             "peek-angle-isolation"
           ]
         },
         {
-          "id": "aim-review",
-          "title": "撃ち合いを分解する",
-          "description": "負けた理由をエイムだけで終わらせず、要素ごとに振り返る。",
+          "id": "aim-shoot",
+          "title": "止まる・撃つ",
+          "description": "移動から停止、タップ・バースト・スプレーまでを一つの流れとして整理する。",
           "conceptIds": [
-            "gunfight-structure"
+            "movement-shooting-cycle"
           ]
         }
       ]
