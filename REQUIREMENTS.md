@@ -41,14 +41,25 @@ VALORANTをプレイしていて、エイム以外のゲーム理解・ミクロ
 1. ラーク
 2. アンカー
 3. カバー / トレード
+4. スペーシング
+5. クロスファイア
+6. ダブルスイング / Double Peek
 
-初回3テーマを完成させた後、隣接Conceptへ拡張する。
+初回6テーマをSite MVPとして閲覧可能にし、その後隣接Conceptへ拡張する。
+
+### Initial Web Surface
+
+- Static HTML / CSS / JavaScriptで動作する
+- Concept一覧をSearch / Category Browseできる
+- ConceptごとにDefinition / Goal / Claims / Cues / Mistakes / Practice / Evidence / Related Conceptsを表示する
+- ClaimのEvidence strength / typeを表示する
+- Source Tier / Source Type / Author / Date / Game Scopeを追跡できる
+- Concept URLは `#concept-id` で直接共有できる
+- DesktopをPrimaryにしつつMobileでも主要ContentとNavigationを失わない
+- Account / Auth / Backend / Cloud DBをMVPへ追加しない
 
 ## 5. Later Content Candidates
 
-- スペーシング
-- クロスファイア
-- ダブルスイング / Refrag
 - Default / Map Control
 - ローテーション判断
 - Anti-lurk
@@ -158,6 +169,7 @@ Canonical Contentから検索Index等を再生成可能にし、Derived Indexを
 - Community opinionだけで重要な戦術Ruleを確定しない
 - Exact NumberのHeuristicを普遍的なゲーム仕様として断定しない
 - Contradictionや例外を都合よく削除しない
+- Site表示用のHTML / JSへContent本文を複製し、Canonical JSONと二重管理しない
 
 ## 13. Non-goals for Initial MVP
 
@@ -166,7 +178,7 @@ Canonical Contentから検索Index等を再生成可能にし、Derived Indexを
 - Tracker / Match history機能
 - Login / Cloud sync
 - AI Coachによる自動判定
-- 見た目を先に完成させること
+- 見た目だけをContent品質より優先すること
 
 ## 14. Completion Conditions for Research Foundation
 
@@ -177,8 +189,18 @@ Canonical Contentから検索Index等を再生成可能にし、Derived Indexを
 - Source間の一致 / 条件差 / 未確定を記録できる
 - 実装担当が独自判断で内容を捏造せずContent化できる
 
-## 15. Open Items
+## 15. Completion Conditions for Static Site MVP
+
+- 6ConceptをCanonical JSONから表示できる
+- Search / Category Browse / Related Concept navigationが動く
+- ClaimとSourceを画面上で追跡できる
+- Missing / loading / error stateを持つ
+- Keyboard focusと主要Responsive Layoutが定義されている
+- Static validationでConcept file / Source ID参照が壊れていない
+- 最終状態をBrowser / Screenshotで確認する。確認できない場合はUnverifiedとして明示する
+
+## 16. Open Items
 
 Blocking Decision: None.
 
-UI / Visual Directionは、Content structureが固まった後にCurrent Researchを行って決める。
+Visual Directionは [docs/DESIGN_DIRECTION.md](docs/DESIGN_DIRECTION.md) をCurrent Design Contractとする。
