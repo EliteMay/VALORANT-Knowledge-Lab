@@ -43,7 +43,9 @@ const sourceTypeLabels = {
   'Official Credential Context': '公式プロフィール確認',
   'Pro Player Interview': 'プロ選手インタビュー',
   'Terminology Reference': '用語参照',
-  'Official / Mechanic': '公式仕様・ゲーム仕様'
+  'Official / Mechanic': '公式仕様・ゲーム仕様',
+  'Official / Data Analysis': '公式データ分析',
+  'Official / Design Context': '公式設計資料'
 };
 
 const gameScopeLabels = {
@@ -53,7 +55,13 @@ const gameScopeLabels = {
   'VALORANT / VCT Pacific': 'VALORANT / VCT Pacific',
   'VALORANT / international pro play': 'VALORANT / 国際プロシーン',
   'VALORANT esports': 'VALORANT eスポーツ',
-  'Professional Counter-Strike / general esports teamwork applicability': 'Counter-Strikeプロ / eスポーツの連携全般'
+  'Professional Counter-Strike / general esports teamwork applicability': 'Counter-Strikeプロ / eスポーツの連携全般',
+  'VALORANT / Japan Challengers': 'VALORANT / 日本Challengers',
+  'VALORANT / all ranks': 'VALORANT / 全ランク',
+  'VALORANT / Platinum-Diamond ranked': 'VALORANT / プラチナ〜ダイヤ帯',
+  'FPS / general aiming applicability': 'FPS全般 / エイム研究',
+  'FPS / Aim Lab / professional-level players': 'FPS全般 / Aim Lab / プロ級選手',
+  'FPS / Aim Lab / aiming focus-of-attention': 'FPS全般 / Aim Lab / エイム時の注意研究'
 };
 
 const els = {};
