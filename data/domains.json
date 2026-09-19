@@ -86,6 +86,20 @@
       ]
     },
     {
+      "id": "weapon-range",
+      "title": "武器・距離",
+      "description": "武器の得意距離と相手との条件から、どんな撃ち合いを作るか考える。",
+      "examples": [
+        "ファントム / ヴァンダル",
+        "近距離 / 中距離 / 遠距離",
+        "タップ / バースト / スプレー"
+      ],
+      "conceptIds": [
+        "gunfight-structure",
+        "movement-shooting-cycle"
+      ]
+    },
+    {
       "id": "teamplay",
       "title": "連携",
       "description": "一人の撃ち合いをチームの撃ち合いに変える。トレード、間隔、同時ピーク、クロスファイアを扱う。",
