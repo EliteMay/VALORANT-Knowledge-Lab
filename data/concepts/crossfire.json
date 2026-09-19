@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "id": "crossfire",
+  "titleJa": "クロスファイア",
+  "titleEn": "Crossfire",
+  "aliases": [
+    "cross fire",
+    "挟み撃ち"
+  ],
+  "category": "team-coordination",
+  "status": "research-backed-draft",
+  "updated": "2026-09-19",
+  "definition": {
+    "text": "複数人が同じZoneや進行経路を異なるAngleからCoverし、一方へのContactをもう一方のPunish timingへ変えるSetup。",
+    "evidenceType": "Site Synthesis",
+    "strength": "Supported",
+    "sourceIds": [
+      "lothar-drx-ns-analysis",
+      "lothar-g2-edg-analysis"
+    ],
+    "siteSynthesis": true
+  },
+  "claims": [
+    {
+      "id": "crossfire-pro-fundamental",
+      "text": "Efficient / well-structured crossfireはVCT match analysisでTeam fundamentalsやRound successの要因として評価されている。",
+      "evidenceType": "VCT Analyst Practice",
+      "strength": "Supported",
+      "sourceIds": [
+        "lothar-drx-ns-analysis",
+        "lothar-g2-edg-analysis"
+      ],
+      "siteSynthesis": true,
+      "notes": []
+    },
+    {
+      "id": "crossfire-angle-not-fixed",
+      "text": "Crossfireを90°や180°など固定角度で定義せず、Enemyが同時に複数Angleを処理しにくいGeometryとして考える。",
+      "evidenceType": "Site Synthesis",
+      "strength": "Context-dependent",
+      "sourceIds": [
+        "lothar-drx-ns-analysis",
+        "lothar-g2-edg-analysis"
+      ],
+      "siteSynthesis": true,
+      "notes": [
+        "Exact angle is not established by current primary evidence"
+      ]
+    }
+  ],
+  "cues": [
+    "Enemy entry path",
+    "味方のContact angle",
+    "Cover位置",
+    "Utilityで切られるLOS",
+    "退路",
+    "Spike/Objective"
+  ],
+  "mistakes": [
+    "片方だけ先にPeekしてSetupを解除する",
+    "2人のLineがほぼ同じ",
+    "ContactしてもPartnerから見えない",
+    "同じUtilityで両方無効化される"
+  ],
+  "practice": {
+    "vodQuestions": [
+      "Enemyから見て2人は別Angleとして処理する必要があったか？",
+      "最初のContactがPartnerのTriggerになったか？",
+      "どちらかが不要にSetupを解除していないか？"
+    ]
+  },
+  "relatedConceptIds": [
+    "spacing",
+    "cover-trade",
+    "double-swing",
+    "site-hold"
+  ]
+}
