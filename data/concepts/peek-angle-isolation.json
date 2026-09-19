@@ -21,7 +21,8 @@
       "yay-fundamentals-youtube-2020",
       "yay-aimlabs-crosshair",
       "riot-peeking-netcode",
-      "riot-map-environments-2020"
+      "riot-map-environments-2020",
+      "royalg-peeking-youtube-2023"
     ],
     "siteSynthesis": true
   },
@@ -55,11 +56,25 @@
       "evidenceType": "Expert Practice / Analysis",
       "strength": "Supported",
       "sourceIds": [
-        "yay-fundamentals-youtube-2020"
+        "yay-fundamentals-youtube-2020",
+        "royalg-peeking-youtube-2023"
       ],
       "siteSynthesis": false,
       "notes": [
         "Direct pro educational source; terminology summarized into Japanese"
+      ]
+    },
+    {
+      "id": "peek-purpose-and-isolation",
+      "text": "ピークの方法を先に決めるのではなく、何を得たいかを決め、同時に複数の相手へ体をさらさないように撃ち合いを分けることが重要。",
+      "evidenceType": "Expert Practice / Analysis",
+      "strength": "Supported",
+      "sourceIds": [
+        "royalg-peeking-youtube-2023"
+      ],
+      "siteSynthesis": false,
+      "notes": [
+        "Direct coach/player source; do not convert the video's heuristics into fixed geometry rules"
       ]
     },
     {
