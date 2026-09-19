@@ -44,6 +44,10 @@ const appSource = fs.readFileSync(path.join(root, 'app.js'), 'utf8');
 const htmlSource = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 const cssSource = fs.readFileSync(path.join(root, 'styles.css'), 'utf8');
 
+if (!/\[hidden\]\s*\{\s*display:\s*none\s*!important;?\s*\}/.test(cssSource)) {
+  errors.push('styles.css: missing hidden state contract');
+}
+
 
 const knownConceptIds = new Set(index.concepts.map(entry => entry.id));
 const domainIds = new Set();
