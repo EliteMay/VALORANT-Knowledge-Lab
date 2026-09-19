@@ -100,7 +100,7 @@ Current site is difficult to use and difficult to read.
 **Compact Documentation / Progressive Disclosure**
 
 - Home: ミクロ / マクロ / エイム練習の3択だけをPrimary Choiceとして表示
-- Domain: Conceptを短い説明付きListで比較
+- Domain: 「まずここから」→おすすめ学習順→テーマ別Concept List。順序は案内であり強制しない
 - Concept: Sidebar + readable main column
 - Article内: 重要ポイント / 見る・失敗 / 練習 / 根拠へのshortcut
 - Claim: 本文をPrimaryにしつつ、信頼度 / 根拠の種類 / 出典数は常時表示。個別Source対応だけ「対応する出典を見る」で展開
@@ -143,7 +143,7 @@ Main flow:
 
 Home
 → Learning Domain
-→ Domain Concept List
+→ Start Concept / Recommended Learning Path / Theme Browse
 → Concept
 → Definition / Goal
 → Key Claims
@@ -168,7 +168,7 @@ Secondary group examples:
 - 止まる・撃つ
 - 撃つ前を整える
 
-HomeはMarketing Heroではなく、最初の学習判断を行うHubとして扱う。Homeで7分類を比較させず3択へ絞り、Domain内では「迷ったらここから」→小分類→Conceptの順に案内する。
+HomeはMarketing Heroではなく、最初の学習判断を行うHubとして扱う。Homeで細分類を増やさず3択へ絞り、Domain内では「まずここから」→おすすめ学習順→テーマ別Conceptの順に案内する。Concept末尾では選択中DomainのRecommended NextをPrimaryにし、その他の既存記事を関連知識として分ける。
 
 ## Accessibility / Responsive
 
@@ -177,3 +177,13 @@ HomeはMarketing Heroではなく、最初の学習判断を行うHubとして�
 - Body textのcontrastを確保する
 - MobileではNavigationを本文上に移動し、Concept listを横スクロールにしない
 - Motionは最小限。prefers-reduced-motionを尊重する
+
+
+## Learning Path Update — 2026-09-20
+
+- Current Content: 15 Concepts
+- Domain Recommended Pathはカードの集合ではなく、縦方向の順序が読み取れるCompact Listにする
+- Start Conceptをテーマ別一覧へ重複表示しない
+- Recommended NextとRelated Conceptsを視覚的に分ける
+- 未実装Concept IDをUser-facing UIへ表示しない
+- Deep DiveはTrigger → Action → Conditions → Exampleの読書順を優先し、2列Dashboardではなく1列のSequential layoutを使う
