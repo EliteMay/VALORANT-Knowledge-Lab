@@ -160,5 +160,80 @@
     "spacing",
     "crossfire",
     "double-swing"
+  ],
+  "deepDive": [
+    {
+      "id": "trigger",
+      "title": "いつこの考え方を使うか",
+      "summary": "撃ち合いで負けた時、単に『エイムが悪い』で終わらせず原因を分けたい時に使う。",
+      "items": [
+        "同じような撃ち合いで何度も負けている時",
+        "デスマッチでは当たるのにランクでは撃ち合いが安定しない時",
+        "敵が見えてから慌ててクロスヘアを動かすことが多い時",
+        "味方と一緒に動いているのに孤立した1対1になっている時"
+      ],
+      "sourceIds": [
+        "yay-aimlabs-crosshair",
+        "royalg-dm-dotesports-2026",
+        "lothar-drx-ns-analysis"
+      ],
+      "siteSynthesis": true
+    },
+    {
+      "id": "action",
+      "title": "撃ち合いを4段階で分ける",
+      "summary": "接敵前→接敵時→射撃中→接敵後に分けて、どこで不利が生まれたかを見る。",
+      "items": [
+        "接敵前: 敵情報、角度、遮蔽物、クロスヘア、味方位置を確認する",
+        "接敵時: 相手を見つけた瞬間の移動状態とピークのタイミングを見る",
+        "射撃中: 最初の弾、タップ・バースト・スプレー、精度回復を確認する",
+        "接敵後: リピーク、位置変更、トレード、下がる判断を見直す"
+      ],
+      "sourceIds": [
+        "yay-fundamentals-youtube-2020",
+        "riot-peeking-netcode",
+        "riot-patch-9-10",
+        "riot-data-phantom-vandal-2023"
+      ],
+      "siteSynthesis": true
+    },
+    {
+      "id": "conditions",
+      "title": "同じエイムでも条件で難しさが変わる",
+      "summary": "撃ち合い結果はマウス操作だけでは決まらない。",
+      "items": [
+        "武器と距離が変われば、同じクロスヘア位置でも有利不利が変わる",
+        "移動中か停止中かで射撃精度が変わる",
+        "角度の数が多いほど、敵を見つけてからの修正量が増える",
+        "味方がトレード可能なら、個人の1対1ではなくチームの撃ち合いへ変えられる",
+        "視認と目の動きの効率もFPS一般ではパフォーマンス差に関係している"
+      ],
+      "sourceIds": [
+        "riot-data-phantom-vandal-2023",
+        "riot-patch-3-movement-accuracy-2021",
+        "yang-eye-aiming-2025",
+        "donovan-kinematics-2022",
+        "lothar-g2-edg-analysis"
+      ],
+      "siteSynthesis": true
+    },
+    {
+      "id": "example",
+      "title": "VODでの分解例",
+      "summary": "『撃ち負けた』を一つずつ原因候補へ分ける。",
+      "items": [
+        "敵が出る前に3つの角度へクロスヘアを迷わせていた → 接敵前の問題",
+        "敵を見つけた瞬間まだ移動していた → 接敵時の問題",
+        "中距離で外した後も精度回復を待たず撃ち続けた → 射撃中の問題",
+        "位置が割れた後に同じ場所からもう一度出た → 接敵後の問題",
+        "このように分けると、次の練習対象を『エイム全部』ではなく1項目に絞れる"
+      ],
+      "sourceIds": [
+        "royalg-dm-dotesports-2026",
+        "riot-patch-9-10",
+        "riot-patch-4-0"
+      ],
+      "siteSynthesis": true
+    }
   ]
 }
