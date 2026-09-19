@@ -58,6 +58,9 @@ VALORANTをプレイしていて、エイム以外のゲーム理解・ミクロ
 - Concept詳細では選択中の大枠に属するConceptをSearchできる
 - ConceptごとにDefinition / Goal / Claims / Cues / Mistakes / Practice / Evidence / Related Conceptsを表示する
 - ClaimのEvidence strength / typeを表示する
+- Evidence metadataは本文より弱いVisual priorityとし、必要時に展開できるProgressive Disclosureを使う
+- Concept記事には主要Sectionへのページ内Shortcutを置き、長い縦スクロールでも目的位置へ移動しやすくする
+- 記事本文の可読性を優先し、巨大見出し・過度な装飾・高密度な常時表示でPrimary Contentを圧迫しない
 - Source Tier / Source Type / Author / Date / Game Scopeを追跡できる
 - Concept URLは `#concept-id` で直接共有できる
 - DesktopをPrimaryにしつつMobileでも主要ContentとNavigationを失わない
