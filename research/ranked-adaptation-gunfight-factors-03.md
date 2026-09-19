@@ -591,3 +591,71 @@ Peek名を先に選ぶのではなく、
 - Wallからの距離とPerspective advantageのCurrent VALORANT verification
 - Angle isolationのPro VOD example
 - Peek後のStop / Shoot / Re-movementのCurrent mechanic
+
+
+---
+
+# Loop 3 — Movement / Shooting
+
+## New Core Evidence
+
+### royalG — Peeking purpose / isolation
+
+Source: `royalg-peeking-youtube-2023`
+
+Direct high-Radiant coach/player guide. The video structure explicitly covers:
+
+- having a purpose before the peek;
+- considering the enemy perspective;
+- isolating fights;
+- preparing to fight.
+
+Project use:
+
+- strengthens the current Peek / Angle Isolation concept;
+- supports purpose-first peeking rather than treating a named peek type as universally correct.
+
+Boundary:
+
+- do not turn the video's heuristics into universal exact wall-distance or angle rules.
+
+### Riot Patch 11.08 — Tap / Burst / Spray selection
+
+Source: `riot-patch-11-08`
+
+Riot states that tap-strafing had been generally the most viable rifle style on PC and that the goal was to make the choice among tapping, bursting and spraying a more meaningful situational optimization.
+
+The patch specifically targeted rifle spray viability at close and mid range.
+
+Project use:
+
+- supports a dedicated Movement / Shooting concept;
+- supports teaching shooting style as context-dependent rather than one universal pattern.
+
+Boundary:
+
+- recoil numbers are patch-specific;
+- the cited rifle section is PC-specific;
+- no universal fixed distance is adopted for tap / burst / spray.
+
+## Loop 3 Decision
+
+Promoted to current Site:
+
+- `movement-shooting-cycle` — 移動・停止・射撃
+
+Current safe claims:
+
+- movement state affects accuracy;
+- tap / burst / spray choice is situational;
+- firing again before recovery can accumulate inaccuracy;
+- spray value depends on range / weapon context;
+- movement, first-bullet accuracy, peeking and crosshair placement can be practiced as separate components.
+
+Still not safe as universal rules:
+
+- fixed meter thresholds for tap / burst / spray;
+- always strafe after exactly N bullets;
+- always spray at close range;
+- always tap at long range;
+- a fixed counter-strafe timing requirement.

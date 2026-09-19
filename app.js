@@ -9,7 +9,8 @@ const state = {
 const categoryLabels = {
   'information-map-control': '情報・マップコントロール',
   'team-coordination': '味方との合わせ',
-  'defense': '守り'
+  'defense': '守り',
+  'peek-duel': '撃ち合い・ピーク'
 };
 
 const strengthLabels = {
@@ -59,6 +60,7 @@ const gameScopeLabels = {
   'VALORANT / Japan Challengers': 'VALORANT / 日本Challengers',
   'VALORANT / all ranks': 'VALORANT / 全ランク',
   'VALORANT / Platinum-Diamond ranked': 'VALORANT / プラチナ〜ダイヤ帯',
+  'VALORANT / PC': 'VALORANT / PC版',
   'FPS / general aiming applicability': 'FPS全般 / エイム研究',
   'FPS / Aim Lab / professional-level players': 'FPS全般 / Aim Lab / プロ級選手',
   'FPS / Aim Lab / aiming focus-of-attention': 'FPS全般 / Aim Lab / エイム時の注意研究'

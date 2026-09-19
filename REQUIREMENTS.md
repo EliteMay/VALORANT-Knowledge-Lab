@@ -44,8 +44,12 @@ VALORANTをプレイしていて、エイム以外のゲーム理解・ミクロ
 4. スペーシング
 5. クロスファイア
 6. ダブルスイング / Double Peek
+7. 定石外の相手への対応
+8. 撃ち合いの構造
+9. ピーク / 角度分離
+10. 移動・停止・射撃
 
-初回6テーマをSite MVPとして閲覧可能にし、その後隣接Conceptへ拡張する。
+初回6テーマを基盤とし、プラチナ〜ダイヤ帯で実戦上重要な「定石外対応」と「撃ち合い」の4テーマを追加した10ConceptをCurrent Siteとして閲覧可能にする。
 
 ### Initial Web Surface
 
@@ -63,11 +67,7 @@ VALORANTをプレイしていて、エイム以外のゲーム理解・ミクロ
 
 ## 5. Later Content Candidates
 
-- 定石外・予想外の相手への対応
 - 相手の癖・ラウンド傾向の読み方
-- 撃ち合いを構成する要素
-- ピーク選択 / 角度分離
-- 移動 → 停止 → 射撃 → 再移動
 - 武器 × 距離 × アーマー
 - オフアングル / リピーク / 位置変更
 - Default / Map Control
@@ -203,7 +203,7 @@ Theme preferenceのみBrowserのlocalStorageへ保存してよい。Knowledge Co
 
 ## 15. Completion Conditions for Static Site MVP
 
-- 6ConceptをCanonical JSONから表示できる
+- 10ConceptをCanonical JSONから表示できる
 - Search / Category Browse / Related Concept navigationが動く
 - ClaimとSourceを画面上で追跡できる
 - Missing / loading / error stateを持つ

@@ -43,6 +43,13 @@ const appSource = fs.readFileSync(path.join(root, 'app.js'), 'utf8');
 const htmlSource = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 const cssSource = fs.readFileSync(path.join(root, 'styles.css'), 'utf8');
 
+const conceptCategories = new Set(index.concepts.map(entry => readJson(entry.path).category).filter(Boolean));
+for (const category of conceptCategories) {
+  if (!htmlSource.includes(`data-category="${category}"`)) {
+    errors.push(`index.html: missing category filter ${category}`);
+  }
+}
+
 for (const token of ['renderClaimSourceRefs', 'sourceAnchorId', 'claim-source-link']) {
   if (!appSource.includes(token)) errors.push(`app.js: missing claim-to-source traceability hook ${token}`);
 }

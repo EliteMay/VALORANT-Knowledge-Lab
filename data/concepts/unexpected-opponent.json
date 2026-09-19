@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "id": "unexpected-opponent",
+  "titleJa": "定石外の相手への対応",
+  "titleEn": "Opponent Adaptation",
+  "aliases": [
+    "相手の癖",
+    "予想外の動き",
+    "変な動き対策",
+    "アンチアグレッション"
+  ],
+  "category": "information-map-control",
+  "status": "research-backed-draft",
+  "updated": "2026-09-19",
+  "definition": {
+    "text": "定石やランク帯の「普通」を前提に決め打ちせず、その試合で相手が実際に繰り返している行動を観測し、自分の基本形を壊さない範囲で対策する考え方。",
+    "evidenceType": "Site Synthesis",
+    "strength": "Supported",
+    "sourceIds": [
+      "nats-one-lurk-2023",
+      "yay-aimlabs-gamesense",
+      "alecks-esportsdriven-2022",
+      "nfx-gamewith-own-game-2025",
+      "bonkar-prx-press-2026"
+    ],
+    "siteSynthesis": true
+  },
+  "goal": [
+    "定石どおりに動かない相手でも判断基準を失わない",
+    "その試合で実際に繰り返されている癖だけを対策する",
+    "1回だけの予想外行動へ過剰反応しない",
+    "相手対策に寄せすぎて自分の勝ち筋を壊すのを防ぐ"
+  ],
+  "claims": [
+    {
+      "id": "opponent-track-real-tendencies",
+      "text": "「普通ならこうするはず」より、その試合で相手が実際に見せた配置・アビリティ・行動の傾向をラウンドごとに更新して読む。",
+      "evidenceType": "Expert Practice / Analysis",
+      "strength": "Supported",
+      "sourceIds": [
+        "nats-one-lurk-2023",
+        "yay-aimlabs-gamesense"
+      ],
+      "siteSynthesis": true,
+      "notes": [
+        "Independent expert cross-check: nAts and yay both emphasize opponent tendencies/patterns"
+      ]
+    },
+    {
+      "id": "opponent-dont-overfit-prep",
+      "text": "相手対策を細かく作りすぎると、予想した動きを相手がしなかった時に自分たちの基本形まで崩れることがある。",
+      "evidenceType": "Expert Practice / Analysis",
+      "strength": "Supported",
+      "sourceIds": [
+        "nfx-gamewith-own-game-2025",
+        "alecks-esportsdriven-2022"
+      ],
+      "siteSynthesis": true,
+      "notes": [
+        "NFX describes this failure directly; alecks independently explains limits of opponent-specific preparation"
+      ]
+    },
+    {
+      "id": "opponent-adapt-without-losing-base",
+      "text": "適応は毎ラウンド全部を変えることではない。相手に合わせて必要な部分を変えながら、自分たちの得意な形や基本方針は維持する。",
+      "evidenceType": "Expert Practice / Analysis",
+      "strength": "Supported",
+      "sourceIds": [
+        "bonkar-prx-press-2026",
+        "alecks-esportsdriven-2022",
+        "nfx-gamewith-own-game-2025"
+      ],
+      "siteSynthesis": true,
+      "notes": []
+    },
+    {
+      "id": "opponent-unexpected-style-can-disrupt",
+      "text": "普段と違う急なテンポや攻め方は、プロレベルでも相手の準備を外して対応を遅らせることがある。",
+      "evidenceType": "Expert Practice / Analysis",
+      "strength": "Context-dependent",
+      "sourceIds": [
+        "prx-zeta-unexpected-2025"
+      ],
+      "siteSynthesis": false,
+      "notes": [
+        "Single match example; do not generalize frequency or effectiveness"
+      ]
+    },
+    {
+      "id": "opponent-one-off-not-pattern",
+      "text": "1回だけ見た行動をすぐ固定パターンとして扱わず、繰り返し・ラウンド状況・相手の変更を見て対策の強さを調整する。",
+      "evidenceType": "Site Synthesis",
+      "strength": "Context-dependent",
+      "sourceIds": [
+        "nats-one-lurk-2023",
+        "yay-aimlabs-gamesense",
+        "nfx-gamewith-own-game-2025"
+      ],
+      "siteSynthesis": true,
+      "notes": [
+        "No universal repetition count is adopted"
+      ]
+    }
+  ],
+  "cues": [
+    "同じ場所からの前詰めが繰り返されているか",
+    "最初の接敵後にもう一度ピークする癖があるか",
+    "情報を見せた時のローテーションが毎回速いか",
+    "同じ変則ポジションを繰り返しているか",
+    "同じアビリティの使い方やタイミングが続いているか",
+    "ラウンドを落とした後に急にテンポが変わるか",
+    "こちらのフェイクや圧力に相手が毎回どう反応するか"
+  ],
+  "mistakes": [
+    "相手の行動を「意味不明」で終わらせて観測しない",
+    "1回だけの前詰めを見て残りのラウンド全部その場所だけ待つ",
+    "相手の癖を読むことに集中しすぎて自分たちの基本形を捨てる",
+    "一度作った対策を相手が変化した後も続ける",
+    "「このランクなら必ずこうする」とランク帯だけで行動を決めつける"
+  ],
+  "practice": {
+    "decisionCheck": [
+      "今の読みは「相手が実際に見せた事実」か、それとも「普通はこうする」という予想か？",
+      "この行動は1回だけか、複数ラウンドで繰り返されているか？",
+      "対策したことで自分たちの基本形まで崩していないか？",
+      "相手が行動を変えた時に、古い対策を解除できたか？"
+    ],
+    "note": "試合動画では、各ラウンドにつき「相手が実際にしたこと」を1つだけ書き、予想と事実を分けて振り返る。"
+  },
+  "relatedConceptIds": [
+    "lurk",
+    "peek-angle-isolation",
+    "gunfight-structure",
+    "cover-trade"
+  ]
+}
