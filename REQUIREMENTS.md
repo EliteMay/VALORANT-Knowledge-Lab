@@ -54,7 +54,8 @@ VALORANTをプレイしていて、エイム以外のゲーム理解・ミクロ
 ### Initial Web Surface
 
 - Static HTML / CSS / JavaScriptで動作する
-- Concept一覧をSearch / Category Browseできる
+- Homeで大枠の学習分野を選び、その分野に属するConcept一覧から記事へ進める
+- Concept詳細では選択中の大枠に属するConceptをSearchできる
 - ConceptごとにDefinition / Goal / Claims / Cues / Mistakes / Practice / Evidence / Related Conceptsを表示する
 - ClaimのEvidence strength / typeを表示する
 - Source Tier / Source Type / Author / Date / Game Scopeを追跡できる
@@ -131,37 +132,45 @@ Source同士が食い違う場合は多数決で消さず、Map / Agent / Compos
 
 ## 9. Primary User Flow
 
-### 学びたいConceptが決まっている
+### 通常の入口
 
-Search / Concept Index
+Home
+→ 大枠の学習分野を選ぶ
+→ その分野のConcept一覧
 → Concept Page
-→ Trigger / Cues / Action
-→ Mistakes / Exceptions
-→ Practice
+→ 判断材料 / 失敗 / 練習 / 根拠
 → Related Concept
 
-### 何を学ぶべきか分からない
+### 共有URL / 学びたいConceptが決まっている
 
-Situation / CategoryからBrowse
-→ 関連Conceptを比較
+Concept Deep Link
 → Concept Page
-→ Practice / VOD Review
+→ 選択中の大枠に属するConcept一覧
+→ Related Concept
 
-Searchは壊れた分類の代替ではなく、Browseと併用する。
+Searchは壊れた分類の代替ではなく、選択中の大枠で目的のConceptへ早く到達する補助として使う。
 
-## 10. Initial Information Architecture
+## 10. Information Architecture
 
-暫定Top-level:
+User-facing Top-level Learning Domains:
 
-- 情報・Map Control
-- 味方との合わせ
-- 守り・Anchor / Retake
-- Peek・Duel選択
-- Mid-round判断
-- Communication
-- 振り返り・練習
+1. ミクロ
+2. マクロ
+3. エイム・メカニクス
+4. ポジショニング・角度
+5. 情報・判断
+6. 武器・距離
+7. 連携
 
-Glossaryは補助導線として利用できるが、サイト全体を用語辞典構造にはしない。
+1つのConceptは複数Domainへ所属できる。ピーク / 角度分離のように複数の学習目的へ関係する知識を無理に1分類へ固定しない。
+
+Learning Domainの所属関係は `data/domains.json` をCanonical Dataとし、各Concept JSONへ重複保存しない。
+
+既存の information-map-control / team-coordination / defense / peek-duel 等はContent管理・記事内文脈用の細分類として維持できるが、Primary Home Navigationにはしない。
+
+撃ち合いを構成する主要軸として、Current Homeでは「ミクロ / マクロ / エイム・メカニクス / ポジショニング・角度 / 情報・判断 / 武器・距離 / 連携」を扱う。
+
+アビリティ・セットアップも重要な将来Domain候補とする。ただしフラッシュ / スモーク / スタン / 索敵等の専用Conceptが十分に揃うまでは、空のPrimary Domainとして表示しない。
 
 ## 11. Data / Storage
 
@@ -204,7 +213,9 @@ Theme preferenceのみBrowserのlocalStorageへ保存してよい。Knowledge Co
 ## 15. Completion Conditions for Static Site MVP
 
 - 10ConceptをCanonical JSONから表示できる
-- Search / Category Browse / Related Concept navigationが動く
+- Home → Learning Domain → Conceptの主要導線が動く
+- 全Current Conceptが少なくとも1つのLearning Domainから到達できる
+- Domain内Search / Related Concept navigationが動く
 - ClaimとSourceを画面上で追跡できる
 - Missing / loading / error stateを持つ
 - Keyboard focusと主要Responsive Layoutが定義されている

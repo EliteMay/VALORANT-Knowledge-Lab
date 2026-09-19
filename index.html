@@ -30,7 +30,7 @@
       <span class="brand-mark" aria-hidden="true"></span>
       <div>
         <p class="eyebrow">根拠から学ぶ戦術知識</p>
-        <a class="brand-name" href="#lurk" aria-label="VALORANT Knowledge Lab ホーム">VALORANT KNOWLEDGE LAB</a>
+        <a class="brand-name" href="#home" aria-label="VALORANT Knowledge Lab ホーム">VALORANT KNOWLEDGE LAB</a>
       </div>
     </div>
     <div class="header-actions">
@@ -52,28 +52,22 @@
   </header>
 
   <div class="app-shell">
-    <aside class="sidebar" aria-label="知識項目ナビゲーション">
+    <aside id="sidebar" class="sidebar" aria-label="知識項目ナビゲーション" hidden>
+      <a id="sidebar-domain-link" class="sidebar-back" href="#home">← 分野一覧へ</a>
+
       <div class="sidebar-intro">
-        <p class="section-kicker">知識一覧</p>
-        <h1>知識でラウンドを読む。</h1>
-        <p>プロ・コーチ・公式・論文を照合し、判断に使える形へ整理した非公式リファレンス。</p>
+        <p class="section-kicker">選択中の分野</p>
+        <h1 id="sidebar-domain-title">知識一覧</h1>
+        <p id="sidebar-domain-description">この分野の知識を表示します。</p>
       </div>
 
       <label class="search-field" for="concept-search">
-        <span>知識を検索</span>
+        <span>この分野から検索</span>
         <div class="search-box">
           <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m21 21-4.35-4.35m2.35-5.65a8 8 0 1 1-16 0 8 8 0 0 1 16 0Z"/></svg>
-          <input id="concept-search" type="search" placeholder="ラーク / ピーク / トレード / 定石外" autocomplete="off">
+          <input id="concept-search" type="search" placeholder="知識名や内容を検索" autocomplete="off">
         </div>
       </label>
-
-      <div class="category-filter" aria-label="カテゴリ絞り込み">
-        <button type="button" class="filter-chip is-active" data-category="all">すべて</button>
-        <button type="button" class="filter-chip" data-category="information-map-control">情報・マップ</button>
-        <button type="button" class="filter-chip" data-category="team-coordination">味方との合わせ</button>
-        <button type="button" class="filter-chip" data-category="defense">守り</button>
-        <button type="button" class="filter-chip" data-category="peek-duel">撃ち合い・ピーク</button>
-      </div>
 
       <nav class="concept-nav" aria-label="知識項目一覧">
         <div id="concept-list" class="concept-list" aria-live="polite"></div>
@@ -81,7 +75,7 @@
       </nav>
 
       <footer class="sidebar-footer">
-        <p>非公式・ファン制作。Riot Gamesとは無関係です。</p>
+        <a href="#home">ホームへ戻る</a>
         <a href="https://github.com/EliteMay/VALORANT-Knowledge-Lab" target="_blank" rel="noreferrer">GitHub / 出典</a>
       </footer>
     </aside>
@@ -98,6 +92,27 @@
         <p>GitHub PagesなどHTTP経由で開いてください。ローカルで確認する場合は簡易HTTPサーバーを使えます。</p>
         <button type="button" id="retry-button" class="action-button">再読み込み</button>
       </div>
+
+
+      <section id="home-view" class="home-view" hidden>
+        <header class="home-heading">
+          <p class="section-kicker">学習ホーム</p>
+          <h1>どこを強くする？</h1>
+          <p>いきなり細かい用語から探さず、まず伸ばしたい分野を選ぶ。1つの知識が複数の分野に入ることもあります。</p>
+        </header>
+        <div id="domain-grid" class="domain-grid" aria-label="学習分野"></div>
+        <p class="home-note">アビリティを使った撃ち合いも今後の大枠候補です。専用の知識が揃ってから追加します。</p>
+      </section>
+
+      <section id="domain-view" class="domain-view" hidden>
+        <a class="overview-back" href="#home">← ホームへ戻る</a>
+        <header class="domain-heading">
+          <p class="section-kicker">学習分野</p>
+          <h1 id="domain-title"></h1>
+          <p id="domain-description"></p>
+        </header>
+        <div id="domain-concept-list" class="domain-concept-list"></div>
+      </section>
 
       <article id="concept-view" class="concept-view" hidden>
         <header class="concept-header">

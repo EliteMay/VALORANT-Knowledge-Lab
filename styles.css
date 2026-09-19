@@ -150,6 +150,163 @@ html[data-theme="dark"] .theme-icon-sun { display: block; }
   min-height: calc(100vh - 72px);
 }
 
+
+.app-shell.overview-mode {
+  display: block;
+  min-height: calc(100vh - 72px);
+}
+
+.home-view,
+.domain-view {
+  width: min(calc(100% - clamp(2rem, 8vw, 7rem)), 1120px);
+  margin: 0 auto;
+  padding: clamp(3rem, 7vw, 6rem) 0;
+}
+
+.home-heading,
+.domain-heading {
+  max-width: 760px;
+  margin-bottom: clamp(2rem, 5vw, 3.5rem);
+}
+
+.home-heading h1,
+.domain-heading h1 {
+  margin: .55rem 0 1rem;
+  font-size: clamp(2.7rem, 6vw, 5.4rem);
+  line-height: .95;
+  letter-spacing: -.065em;
+}
+
+.home-heading > p:last-child,
+.domain-heading > p:last-child {
+  margin: 0;
+  max-width: 64ch;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.domain-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid #aaa69f;
+}
+
+.domain-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) 28px;
+  gap: 1rem;
+  min-height: 190px;
+  padding: 1.5rem 1.4rem;
+  text-decoration: none;
+  border-bottom: 1px solid #aaa69f;
+}
+.domain-card:nth-child(odd) { border-right: 1px solid #aaa69f; }
+.domain-card:hover {
+  background: rgba(255,70,85,.045);
+  box-shadow: inset 4px 0 0 var(--accent);
+}
+.domain-number {
+  color: var(--accent-dark);
+  font-family: var(--mono);
+  font-size: .72rem;
+  font-weight: 900;
+  padding-top: .2rem;
+}
+.domain-card h2 {
+  margin: 0 0 .55rem;
+  font-size: clamp(1.35rem, 2.5vw, 2rem);
+  letter-spacing: -.035em;
+}
+.domain-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .86rem;
+}
+.domain-examples {
+  margin-top: .8rem !important;
+  color: var(--ink) !important;
+  font-size: .75rem !important;
+  font-weight: 700;
+}
+.domain-count {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: .66rem;
+}
+.domain-arrow {
+  align-self: start;
+  justify-self: end;
+  color: var(--accent-dark);
+  font-size: 1.25rem;
+}
+
+.home-note {
+  max-width: 70ch;
+  margin: 1.4rem 0 0;
+  color: var(--muted);
+  font-size: .78rem;
+}
+
+.overview-back,
+.sidebar-back {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: .78rem;
+  font-weight: 700;
+}
+.overview-back:hover,
+.sidebar-back:hover { color: var(--accent-dark); }
+
+.domain-heading { margin-top: 2rem; }
+
+.domain-concept-list {
+  border-top: 1px solid #aaa69f;
+}
+.domain-concept-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 32px;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.4rem 0;
+  text-decoration: none;
+  border-bottom: 1px solid #c7c2bb;
+}
+.domain-concept-row:hover {
+  padding-left: .8rem;
+  padding-right: .4rem;
+  background: rgba(255,70,85,.045);
+}
+.domain-concept-row h2 {
+  margin: 0 0 .35rem;
+  font-size: 1.08rem;
+}
+.domain-concept-row p {
+  max-width: 75ch;
+  margin: 0;
+  color: var(--muted);
+  font-size: .84rem;
+}
+.domain-concept-row > span {
+  color: var(--accent-dark);
+  font-size: 1.15rem;
+  text-align: right;
+}
+
+.sidebar-back {
+  margin: 0 .35rem 1rem;
+  color: #aeb9c2;
+}
+.sidebar-footer {
+  display: grid;
+  gap: .45rem;
+}
+
 .sidebar {
   position: sticky;
   top: 72px;
@@ -489,6 +646,12 @@ button:focus-visible, a:focus-visible, input:focus-visible {
   .brand-name { font-size: .85rem; }
   .eyebrow { font-size: .58rem; }
   .app-shell { display: block; }
+  .home-view, .domain-view { width: min(calc(100% - 2rem), 680px); padding: 2.8rem 0; }
+  .domain-grid { grid-template-columns: 1fr; }
+  .domain-card:nth-child(odd) { border-right: 0; }
+  .domain-card { min-height: 0; padding: 1.25rem .25rem; }
+  .domain-card:hover { padding-left: .75rem; }
+  .domain-concept-row { padding: 1.15rem 0; }
   .sidebar {
     position: static;
     height: auto;
@@ -613,3 +776,22 @@ html[data-theme="dark"] .related-link:hover {
 html[data-theme="dark"] .related-missing { color: #8c9aa4; }
 html[data-theme="dark"] .concept-signal span { background: #314654; }
 html[data-theme="dark"] .action-button { background: #162632; }
+
+
+html[data-theme="dark"] .home-heading > p:last-child,
+html[data-theme="dark"] .domain-heading > p:last-child,
+html[data-theme="dark"] .domain-card p,
+html[data-theme="dark"] .domain-count,
+html[data-theme="dark"] .home-note,
+html[data-theme="dark"] .domain-concept-row p,
+html[data-theme="dark"] .overview-back { color: #9dabb5; }
+
+html[data-theme="dark"] .domain-grid,
+html[data-theme="dark"] .domain-card,
+html[data-theme="dark"] .domain-concept-list,
+html[data-theme="dark"] .domain-concept-row { border-color: #354754; }
+
+html[data-theme="dark"] .domain-card:hover,
+html[data-theme="dark"] .domain-concept-row:hover { background: rgba(255,70,85,.075); }
+
+html[data-theme="dark"] .domain-examples { color: #dce4e9 !important; }

@@ -6,6 +6,22 @@
 
 用語をABC順に並べることより、実際のGame SituationからConceptへ辿れることを優先する。
 
+## Home Learning Domains
+
+Homeでは細かい記事分類を直接見せず、まず次の大枠から学習目的を選ぶ。
+
+- ミクロ
+- マクロ
+- エイム・メカニクス
+- ポジショニング・角度
+- 情報・判断
+- 武器・距離
+- 連携
+
+1つのConceptは複数Domainへ所属できる。既存の細分類は記事の文脈整理に使い、HomeのPrimary Navigationとは分離する。
+
+「アビリティ・セットアップ」は重要な将来Domain候補だが、専用Conceptが十分に揃うまでは空カテゴリとして表示しない。
+
 ## Initial Taxonomy
 
 ### 1. 情報・Map Control

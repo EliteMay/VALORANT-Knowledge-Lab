@@ -4,7 +4,7 @@ Date: 2026-09-19
 
 ## Target Type
 
-- Primary Task: VALORANTの戦術Conceptを探し、定義 → 判断材料 → 失敗 → 練習 → 根拠の順に読む
+- Primary Task: Homeで伸ばしたい大枠を選び、その分野からVALORANTの戦術Conceptへ入り、判断材料 → 失敗 → 練習 → 根拠の順に読む
 - Content Model: Structured knowledge / reference + evidence
 - Audience: 基礎ルールを理解済みで、知識面を伸ばしたいVALORANTプレイヤー
 - Usage Frequency: Ranked前後やVOD Review時に繰り返し使う
@@ -62,8 +62,8 @@ Do not copy:
 ## Design Direction Contract
 
 - Design Concept: Tactical Field Manual
-- Layout Type: Desktopはleft navigation + reading pane、Mobileはstacked navigation + article
-- Navigation Type: Search + category filter + concept list
+- Layout Type: Home / Domainはfull-width learning hub、Concept詳細はDesktopでleft navigation + reading pane、Mobileはstacked navigation + article
+- Navigation Type: Home domain hub → domain concept list → concept detail。Concept詳細ではdomain-scoped Search + concept list
 - Content Density: Medium。VLRより緩く、一般Blogより高密度
 - Typography: 本文可読性優先。見出しのみ太く直線的にする
 - Color Rule: dark navy / warm off-whiteを基盤、VALORANTを想起させるred accentは重要箇所だけ。Night modeでは本文面をdeep navyへ反転し、pure blackは使わず階層をborder / surface差で維持する
@@ -92,7 +92,9 @@ Do not copy:
 
 Main flow:
 
-Search / Category
+Home
+→ Learning Domain
+→ Domain Concept List
 → Concept
 → Definition / Goal
 → Key Claims
@@ -100,6 +102,18 @@ Search / Category
 → Practice
 → Evidence / Sources
 → Related Concepts
+
+Current Learning Domains:
+
+- ミクロ
+- マクロ
+- エイム・メカニクス
+- ポジショニング・角度
+- 情報・判断
+- 武器・距離
+- 連携
+
+HomeはMarketing Heroではなく、最初の学習判断を行うHubとして扱う。独立して選べる学習分野なのでDomainはCard表現を使うが、Domain内Conceptは比較しやすいListを基本にする。
 
 ## Accessibility / Responsive
 
