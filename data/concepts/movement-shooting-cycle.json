@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "id": "movement-shooting-cycle",
+  "titleJa": "移動・停止・射撃",
+  "titleEn": "Movement / Shooting Cycle",
+  "aliases": [
+    "ストッピング",
+    "タップ撃ち",
+    "バースト撃ち",
+    "スプレー撃ち",
+    "射撃リズム"
+  ],
+  "category": "peek-duel",
+  "status": "research-backed-draft",
+  "updated": "2026-09-19",
+  "definition": {
+    "text": "角度へ出るための移動、正確に撃つための停止、距離と武器に合った射撃方法の選択を一つの流れとして扱い、必要なら射撃後に位置を変えるまで含めて考える。",
+    "evidenceType": "Site Synthesis",
+    "strength": "Supported",
+    "sourceIds": [
+      "riot-patch-9-10",
+      "riot-patch-11-08",
+      "riot-patch-0-50",
+      "riot-data-phantom-vandal-2023",
+      "royalg-dm-dotesports-2026"
+    ],
+    "siteSynthesis": true
+  },
+  "goal": [
+    "移動中のまま精密射撃を始める失敗を減らす",
+    "距離や武器に合わない撃ち方を固定で使うのを防ぐ",
+    "タップ・バースト・スプレーを状況で選び分ける",
+    "撃ち合い練習を「エイム」一語ではなく移動・停止・射撃に分けて振り返る"
+  ],
+  "subtypes": [
+    {
+      "id": "move",
+      "label": "移動",
+      "description": "角度へ出る、相手の狙いをずらす、遮蔽物へ戻るために位置を変える段階。"
+    },
+    {
+      "id": "stop",
+      "label": "停止",
+      "description": "武器が正確に撃てる移動状態へ入るために速度を落とす段階。"
+    },
+    {
+      "id": "shoot",
+      "label": "射撃",
+      "description": "距離・武器・敵人数に合わせてタップ、バースト、スプレーのどれを使うか選ぶ段階。"
+    },
+    {
+      "id": "reset",
+      "label": "立て直し",
+      "description": "外した後や最初の射撃後に、撃ち続けるか、精度回復を待つか、位置を変えるかを判断する段階。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "movement-state-affects-rifle-accuracy",
+      "text": "ライフルは移動状態によって射撃精度が変わり、Riotは歩き・走り中の精度低下を継続的に調整している。",
+      "evidenceType": "Official / Mechanic",
+      "strength": "Confirmed",
+      "sourceIds": [
+        "riot-patch-3-movement-accuracy-2021",
+        "riot-patch-9-10"
+      ],
+      "siteSynthesis": true,
+      "notes": [
+        "Exact values are patch-specific"
+      ]
+    },
+    {
+      "id": "shooting-style-is-situational",
+      "text": "タップ・バースト・スプレーのどれか一つを常に正解とは扱わない。Riotも射撃方法を状況に応じて選ぶ意味を強める方針で調整している。",
+      "evidenceType": "Official / Mechanic",
+      "strength": "Confirmed",
+      "sourceIds": [
+        "riot-patch-11-08"
+      ],
+      "siteSynthesis": true,
+      "notes": [
+        "Patch 11.08 is PC-specific for the cited rifle changes"
+      ]
+    },
+    {
+      "id": "refire-before-recovery-adds-error",
+      "text": "武器の精度が回復しきる前に次の射撃を重ねるとブレが蓄積する仕組みがあり、撃ち直す間隔は精度に関係する。",
+      "evidenceType": "Official / Mechanic",
+      "strength": "Confirmed",
+      "sourceIds": [
+        "riot-patch-0-50",
+        "riot-patch-4-0"
+      ],
+      "siteSynthesis": true,
+      "notes": [
+        "Underlying recovery concept is official; historic exact recovery values are not presented as current"
+      ]
+    },
+    {
+      "id": "spray-range-and-weapon-context",
+      "text": "スプレー撃ちは距離と武器で価値が変わる。Riotの公式データと調整方針では、近距離や一部の中距離でスプレーを使う余地がある一方、遠距離まで同じように使う前提にはなっていない。",
+      "evidenceType": "Official / Mechanic",
+      "strength": "Supported",
+      "sourceIds": [
+        "riot-data-phantom-vandal-2023",
+        "riot-patch-11-08"
+      ],
+      "siteSynthesis": true,
+      "notes": [
+        "Data Drop focuses on Phantom/Vandal; do not generalize exact ranges to every weapon"
+      ]
+    },
+    {
+      "id": "mechanics-can-be-practiced-separately",
+      "text": "撃ち合い練習では、最初の一発、ピーク、クロスヘア、移動などを分けて一つずつ練習対象にすると、何を直すか明確にできる。",
+      "evidenceType": "Coaching Heuristic",
+      "strength": "Supported",
+      "sourceIds": [
+        "royalg-dm-dotesports-2026"
+      ],
+      "siteSynthesis": true,
+      "notes": [
+        "Secondary report of royalG coaching advice"
+      ]
+    }
+  ],
+  "cues": [
+    "最初の弾を撃った瞬間にまだ動いていなかったか",
+    "相手までの距離と自分の武器",
+    "最初の数発が外れた後に撃ち続ける必要があるか",
+    "遮蔽物へ戻って精度を立て直せるか",
+    "相手が一人か、連続で複数人と戦う可能性があるか",
+    "味方がトレードできるか",
+    "今の撃ち方がタップ・バースト・スプレーのどれになっているか"
+  ],
+  "mistakes": [
+    "移動したまま中遠距離の精密射撃を始める",
+    "近距離でも必ず単発だけ、遠距離でも必ずスプレーだけと固定する",
+    "最初の数発を外した後も精度回復を考えず撃ち続ける",
+    "射撃方法を武器や距離ではなく癖だけで決める",
+    "デスマッチでキル数だけを追い、移動や最初の一発の練習目的を失う"
+  ],
+  "practice": {
+    "vodQuestions": [
+      "最初の弾を撃った瞬間、自分は止まっていたか？",
+      "その距離で選んだ撃ち方は、武器の特性と合っていたか？",
+      "外した後に撃ち続けた理由はあったか？",
+      "精度を立て直すために一度待つ、または遮蔽物へ戻る選択肢はあったか？",
+      "負けた原因はクロスヘアではなく、移動・停止・射撃方法のどこかではなかったか？"
+    ],
+    "note": "練習では1試合につき「最初の一発」「停止」「射撃方法」など一つだけ確認対象を決める。"
+  },
+  "relatedConceptIds": [
+    "gunfight-structure",
+    "peek-angle-isolation",
+    "cover-trade",
+    "spacing"
+  ]
+}
