@@ -99,7 +99,7 @@ Current site is difficult to use and difficult to read.
 
 **Compact Documentation / Progressive Disclosure**
 
-- Home: 7 Domainをcompactな選択単位として表示
+- Home: ミクロ / マクロ / エイム練習の3択だけをPrimary Choiceとして表示
 - Domain: Conceptを短い説明付きListで比較
 - Concept: Sidebar + readable main column
 - Article内: 重要ポイント / 見る・失敗 / 練習 / 根拠へのshortcut
@@ -152,17 +152,23 @@ Home
 → Evidence / Sources
 → Related Concepts
 
-Current Learning Domains:
+Current Primary Learning Domains:
 
 - ミクロ
 - マクロ
-- エイム・メカニクス
-- ポジショニング・角度
-- 情報・判断
-- 武器・距離
-- 連携
+- エイム練習
 
-HomeはMarketing Heroではなく、最初の学習判断を行うHubとして扱う。独立して選べる学習分野なのでDomainはCard表現を使うが、Domain内Conceptは比較しやすいListを基本にする。
+Secondary group examples:
+
+- 撃ち合いを作る
+- 味方と合わせる
+- 守り・位置取り
+- 相手を読む
+- 情報とマップを使う
+- 止まる・撃つ
+- 撃つ前を整える
+
+HomeはMarketing Heroではなく、最初の学習判断を行うHubとして扱う。Homeで7分類を比較させず3択へ絞り、Domain内では「迷ったらここから」→小分類→Conceptの順に案内する。
 
 ## Accessibility / Responsive
 

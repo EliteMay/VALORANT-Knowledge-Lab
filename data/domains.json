@@ -1,119 +1,129 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "updated": "2026-09-19",
   "domains": [
     {
       "id": "micro",
       "title": "ミクロ",
-      "description": "数秒単位の判断と動きを改善する。ピーク、トレード、間隔、目の前の撃ち合いを扱う。",
-      "examples": [
-        "ピーク",
-        "トレード",
-        "スペーシング",
-        "ダブルスイング"
-      ],
+      "prompt": "目の前の撃ち合い・立ち位置・味方との合わせを良くしたい",
+      "description": "数秒単位の判断を改善する。ピーク、トレード、間隔、クロスファイア、守りの位置取りを扱う。",
+      "startConceptId": "peek-angle-isolation",
       "conceptIds": [
+        "peek-angle-isolation",
+        "gunfight-structure",
         "cover-trade",
         "spacing",
         "crossfire",
         "double-swing",
-        "peek-angle-isolation",
-        "movement-shooting-cycle",
-        "anchor"
+        "anchor",
+        "movement-shooting-cycle"
+      ],
+      "sections": [
+        {
+          "id": "micro-fight",
+          "title": "撃ち合いを作る",
+          "description": "まず、どう出て・どの角度と戦うかを整理する。",
+          "conceptIds": [
+            "peek-angle-isolation",
+            "gunfight-structure",
+            "movement-shooting-cycle"
+          ]
+        },
+        {
+          "id": "micro-team",
+          "title": "味方と合わせる",
+          "description": "1人の撃ち合いを2人以上で有利にする。",
+          "conceptIds": [
+            "cover-trade",
+            "spacing",
+            "crossfire",
+            "double-swing"
+          ]
+        },
+        {
+          "id": "micro-position",
+          "title": "守り・位置取り",
+          "description": "戦う場所と残る場所を考える。",
+          "conceptIds": [
+            "anchor"
+          ]
+        }
       ]
     },
     {
       "id": "macro",
       "title": "マクロ",
-      "description": "ラウンド全体を見る。マップの使い方、守る場所、相手の傾向、次の展開を扱う。",
-      "examples": [
-        "ラーク",
-        "アンカー",
-        "相手への適応"
-      ],
+      "prompt": "ラウンド全体・相手の癖・次の展開を読めるようになりたい",
+      "description": "ラウンド全体を見て、情報・配置・相手の傾向から次の行動を決める。",
+      "startConceptId": "unexpected-opponent",
       "conceptIds": [
-        "lurk",
-        "anchor",
-        "unexpected-opponent"
-      ]
-    },
-    {
-      "id": "aim-mechanics",
-      "title": "エイム・メカニクス",
-      "description": "撃つ技術を分解して鍛える。クロスヘア、ピーク、停止、タップ・バースト・スプレーを扱う。",
-      "examples": [
-        "撃ち合いの構造",
-        "ピーク",
-        "移動・停止・射撃"
-      ],
-      "conceptIds": [
-        "gunfight-structure",
-        "peek-angle-isolation",
-        "movement-shooting-cycle"
-      ]
-    },
-    {
-      "id": "positioning",
-      "title": "ポジショニング・角度",
-      "description": "撃ち合う前の有利不利を作る。立ち位置、遮蔽物、角度分離、クロスファイアを扱う。",
-      "examples": [
-        "角度分離",
-        "クロスファイア",
-        "アンカー"
-      ],
-      "conceptIds": [
-        "anchor",
-        "spacing",
-        "crossfire",
-        "peek-angle-isolation",
-        "gunfight-structure"
-      ]
-    },
-    {
-      "id": "information-decision",
-      "title": "情報・判断",
-      "description": "見えた情報を次の行動へ変える。敵位置、相手の癖、ラウンド傾向、判断基準を扱う。",
-      "examples": [
-        "相手の癖",
-        "ラーク",
-        "撃ち合い前の情報"
-      ],
-      "conceptIds": [
-        "lurk",
-        "anchor",
         "unexpected-opponent",
+        "lurk",
+        "anchor"
+      ],
+      "sections": [
+        {
+          "id": "macro-read",
+          "title": "相手を読む",
+          "description": "定石ではなく、この試合で実際に見えた相手の傾向から考える。",
+          "conceptIds": [
+            "unexpected-opponent"
+          ]
+        },
+        {
+          "id": "macro-space",
+          "title": "情報とマップを使う",
+          "description": "離れた場所の情報や空いたエリアをラウンドに使う。",
+          "conceptIds": [
+            "lurk"
+          ]
+        },
+        {
+          "id": "macro-defense",
+          "title": "守りの全体判断",
+          "description": "どこに残るか、いつローテーションするかを考える。",
+          "conceptIds": [
+            "anchor"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aim-training",
+      "title": "エイム練習",
+      "prompt": "クロスヘア・止まり方・撃ち方を分解して練習したい",
+      "description": "撃ち合いを感覚だけでなく、ピーク・停止・射撃・振り返りに分けて鍛える。",
+      "startConceptId": "movement-shooting-cycle",
+      "conceptIds": [
+        "movement-shooting-cycle",
+        "peek-angle-isolation",
         "gunfight-structure"
-      ]
-    },
-    {
-      "id": "weapon-range",
-      "title": "武器・距離",
-      "description": "武器の得意距離と相手との条件から、どんな撃ち合いを作るか考える。",
-      "examples": [
-        "ファントム / ヴァンダル",
-        "近距離 / 中距離 / 遠距離",
-        "タップ / バースト / スプレー"
       ],
-      "conceptIds": [
-        "gunfight-structure",
-        "movement-shooting-cycle"
-      ]
-    },
-    {
-      "id": "teamplay",
-      "title": "連携",
-      "description": "一人の撃ち合いをチームの撃ち合いに変える。トレード、間隔、同時ピーク、クロスファイアを扱う。",
-      "examples": [
-        "トレード",
-        "スペーシング",
-        "クロスファイア",
-        "ダブルスイング"
-      ],
-      "conceptIds": [
-        "cover-trade",
-        "spacing",
-        "crossfire",
-        "double-swing"
+      "sections": [
+        {
+          "id": "aim-shoot",
+          "title": "止まる・撃つ",
+          "description": "移動から停止、タップ・バースト・スプレーまでを整理する。",
+          "conceptIds": [
+            "movement-shooting-cycle"
+          ]
+        },
+        {
+          "id": "aim-peek",
+          "title": "撃つ前を整える",
+          "description": "敵が見える前のクロスヘアとピークを整理する。",
+          "conceptIds": [
+            "peek-angle-isolation"
+          ]
+        },
+        {
+          "id": "aim-review",
+          "title": "撃ち合いを分解する",
+          "description": "負けた理由をエイムだけで終わらせず、要素ごとに振り返る。",
+          "conceptIds": [
+            "gunfight-structure"
+          ]
+        }
       ]
     }
   ]

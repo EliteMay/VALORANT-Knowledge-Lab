@@ -299,17 +299,24 @@ function renderHomeDomains() {
     number.textContent = String(index + 1).padStart(2, '0');
 
     const body = document.createElement('div');
+
     const title = document.createElement('h2');
     title.textContent = domain.title;
-    const description = document.createElement('p');
-    description.textContent = domain.description;
-    const examples = document.createElement('p');
-    examples.className = 'domain-examples';
-    examples.textContent = (domain.examples || []).join(' ・ ');
+
+    const prompt = document.createElement('p');
+    prompt.className = 'domain-prompt';
+    prompt.textContent = domain.prompt || domain.description;
+
+    const startConcept = state.concepts.find(concept => concept.id === domain.startConceptId);
+    const first = document.createElement('p');
+    first.className = 'domain-first';
+    first.textContent = startConcept ? `最初に読む → ${startConcept.titleJa}` : '';
+
     const count = document.createElement('span');
     count.className = 'domain-count';
     count.textContent = `${conceptsForDomain(domain).length}件の知識`;
-    body.append(title, description, examples, count);
+
+    body.append(title, prompt, first, count);
 
     const arrow = document.createElement('span');
     arrow.className = 'domain-arrow';
@@ -325,25 +332,74 @@ function renderHomeDomains() {
 function renderDomainView(domain) {
   els['domain-title'].textContent = domain.title;
   els['domain-description'].textContent = domain.description;
-  const nodes = conceptsForDomain(domain).map(concept => {
-    const link = document.createElement('a');
-    link.className = 'domain-concept-row';
-    link.href = `#${concept.id}`;
 
-    const body = document.createElement('div');
-    const title = document.createElement('h2');
-    title.textContent = concept.titleJa;
+  const startConcept = state.concepts.find(concept => concept.id === domain.startConceptId);
+  const nodes = [];
+
+  if (startConcept) {
+    const starter = document.createElement('a');
+    starter.className = 'domain-start-card';
+    starter.href = `#${startConcept.id}`;
+
+    const label = document.createElement('span');
+    label.className = 'domain-start-label';
+    label.textContent = '迷ったらここから';
+
+    const title = document.createElement('strong');
+    title.textContent = startConcept.titleJa;
+
     const description = document.createElement('p');
-    description.textContent = concept.definition?.text || '';
-    body.append(title, description);
+    description.textContent = startConcept.definition?.text || '';
 
-    const arrow = document.createElement('span');
-    arrow.setAttribute('aria-hidden', 'true');
-    arrow.textContent = '→';
+    starter.append(label, title, description);
+    nodes.push(starter);
+  }
 
-    link.append(body, arrow);
-    return link;
-  });
+  for (const section of domain.sections || []) {
+    const group = document.createElement('section');
+    group.className = 'domain-section';
+
+    const head = document.createElement('div');
+    head.className = 'domain-section-head';
+
+    const heading = document.createElement('h2');
+    heading.textContent = section.title;
+
+    const description = document.createElement('p');
+    description.textContent = section.description || '';
+
+    head.append(heading, description);
+
+    const list = document.createElement('div');
+    list.className = 'domain-section-list';
+
+    for (const id of section.conceptIds || []) {
+      const concept = state.concepts.find(item => item.id === id);
+      if (!concept) continue;
+
+      const link = document.createElement('a');
+      link.className = 'domain-concept-row';
+      link.href = `#${concept.id}`;
+
+      const body = document.createElement('div');
+      const title = document.createElement('h3');
+      title.textContent = concept.titleJa;
+      const text = document.createElement('p');
+      text.textContent = concept.definition?.text || '';
+      body.append(title, text);
+
+      const arrow = document.createElement('span');
+      arrow.setAttribute('aria-hidden', 'true');
+      arrow.textContent = '→';
+
+      link.append(body, arrow);
+      list.append(link);
+    }
+
+    group.append(head, list);
+    nodes.push(group);
+  }
+
   els['domain-concept-list'].replaceChildren(...nodes);
 }
 
