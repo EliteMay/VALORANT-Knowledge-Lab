@@ -156,5 +156,77 @@
     "double-swing",
     "utility-follow-up",
     "communication"
+  ],
+  "deepDive": [
+    {
+      "id": "trigger",
+      "title": "いつカバー / トレードを作るか",
+      "summary": "味方が先に敵と接触する可能性が高い場面では、接敵後ではなく接敵前から準備する。",
+      "items": [
+        "エントリー役がチョークを抜ける時",
+        "角を順番にクリアして進む時",
+        "味方が情報を取るためにピークする時",
+        "リテイクやサイト取りで、先頭が倒される可能性を前提に進む時"
+      ],
+      "sourceIds": [
+        "boaster-dotesports-2026",
+        "kaizens-trade-spacing-2026",
+        "lothar-g2-edg-analysis"
+      ],
+      "siteSynthesis": true
+    },
+    {
+      "id": "action",
+      "title": "トレード可能な形を作る",
+      "summary": "味方が倒されてから走り出すのではなく、同じ敵へすぐ反応できる射線・距離・準備を先に作る。",
+      "items": [
+        "先頭の味方が接敵した瞬間に、自分も同じ敵を見られる位置へいる",
+        "クロスヘアを別の不要な角度へ置かず、同じ脅威へすぐ撃てる状態を作る",
+        "近すぎて同じスプレーやアビリティを受けないように、少し違うラインを作る",
+        "必要なら『右を見る』『フラッシュ後に出る』など短い行動コールで同期する",
+        "トレード担当ではなく別角度カバーやアビリティ支援を担当する場合は、その役割を明確にする"
+      ],
+      "sourceIds": [
+        "kaizens-trade-spacing-2026",
+        "eldadi-communication-2025",
+        "rusk-callouts-2024",
+        "esports-team-systematic-review-2024"
+      ],
+      "siteSynthesis": true
+    },
+    {
+      "id": "conditions",
+      "title": "距離だけでは決まらない",
+      "summary": "正しい間隔は固定メートルではなく、同じ敵へ反応できるかと同時に倒されないかで決まる。",
+      "items": [
+        "近すぎると同じスプレー・アビリティ・ボディブロックで2人まとめて不利になる",
+        "遠すぎると敵がリロード・位置変更・クロスヘア再配置する時間を与える",
+        "角を曲がると射線が切れるため、見た目の距離が近くてもトレード不能になる",
+        "オペレーターや強いアビリティがある時は、同じタイミングで同じ場所へ出ない方が良いこともある"
+      ],
+      "sourceIds": [
+        "kaizens-trade-spacing-2026",
+        "lothar-drx-ns-analysis",
+        "lothar-g2-edg-analysis"
+      ],
+      "siteSynthesis": true
+    },
+    {
+      "id": "example",
+      "title": "実戦イメージ",
+      "summary": "先頭が1人倒されても、敵が立て直す前に2人目が同じ敵を処理できる形。",
+      "items": [
+        "先頭が角をクリアして敵と接触する",
+        "2人目は同じ敵へすぐ射線が通るが、先頭と完全には重ならない位置にいる",
+        "先頭が倒されても敵がカバーへ戻る前に2人目が撃てる",
+        "結果として1人のデスをそのまま人数不利にせず、交換に変えられる"
+      ],
+      "sourceIds": [
+        "lothar-g2-edg-analysis",
+        "thwifo-vlr-xset-2021",
+        "kaizens-trade-spacing-2026"
+      ],
+      "siteSynthesis": true
+    }
   ]
 }
