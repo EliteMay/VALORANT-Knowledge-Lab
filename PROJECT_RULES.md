@@ -67,7 +67,7 @@ Evidenceが足りない場合は「不明」を正常Outcomeとして許可す�
 本文またはResearch recordで次を区別する。
 
 - Official / Mechanic
-- Pro Practice
+- Expert Practice / Analysis
 - Academic General Principle
 - Coaching Heuristic
 - Community Observation
