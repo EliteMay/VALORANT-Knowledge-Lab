@@ -24,18 +24,25 @@ VALORANTを「エイムだけ」ではなく、**判断・情報・連携・ポ�
 
 現在は **Static Site MVP Implementation** です。
 
-サイトでは次の10Conceptを閲覧できます。
+サイトでは次の15Conceptを閲覧できます。
 
-1. ラーク
-2. アンカー
-3. カバー / トレード
-4. スペーシング
-5. クロスファイア
-6. ダブルスイング
-7. 定石外の相手への対応
-8. 撃ち合いの構造
-9. ピーク / 角度分離
-10. 移動・停止・射撃
+1. 撃ち合いの構造
+2. ポジショニング
+3. クロスヘア配置 / プリエイム
+4. ピーク / 角度分離
+5. 移動・停止・射撃
+6. カバー / トレード
+7. スペーシング
+8. クロスファイア
+9. ダブルスイング
+10. アンカー
+11. 情報 → 判断 → 実行
+12. コミュニケーション / コール
+13. マップコントロール
+14. ラーク
+15. 定石外の相手への対応
+
+Homeは「ミクロ / マクロ / エイム練習」の3択を維持し、Domain内で「まずここから」→おすすめ学習順→テーマ別Browseへ進みます。
 
 Contentの正本は `data/concepts/*.json` と `data/sources.json` です。HTMLへ戦術本文を複製せず、`app.js` がJSONを読み込んで画面を生成します。
 
@@ -43,7 +50,7 @@ Contentの正本は `data/concepts/*.json` と `data/sources.json` です。HTML
 
 - `index.html` — Site shell
 - `styles.css` — Visual / Responsive
-- `app.js` — Search / Filter / Concept rendering / Source rendering
+- `app.js` — Domain learning path / Search / Concept rendering / Evidence / Next-step navigation
 - `data/concept-index.json` — Canonical Concept Dataから作るDerived manifest
 - `tests/validate-site.mjs` — Concept / Source参照とSite shellのStatic validation
 

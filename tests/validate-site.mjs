@@ -11,6 +11,8 @@ const errors = [];
 const warnings = [];
 const conceptIds = new Set();
 
+if (index.concepts.length !== 15) errors.push(`data/concept-index.json: expected 15 concepts, got ${index.concepts.length}`);
+
 for (const entry of index.concepts) {
   const fullPath = path.join(root, entry.path);
   if (!fs.existsSync(fullPath)) {
@@ -19,7 +21,7 @@ for (const entry of index.concepts) {
   }
   const concept = JSON.parse(fs.readFileSync(fullPath, 'utf8'));
   conceptIds.add(concept.id);
-  for (const field of ['id','titleJa','titleEn','category','definition','claims','cues','mistakes','practice']) {
+  for (const field of ['id','titleJa','titleEn','category','definition','goal','claims','cues','mistakes','practice']) {
     if (concept[field] == null) errors.push(`${entry.path}: missing ${field}`);
   }
   if (concept.id !== entry.id) errors.push(`${entry.path}: index id ${entry.id} != concept id ${concept.id}`);
@@ -91,6 +93,17 @@ for (const domain of domains.domains || []) {
   if (!domain.startConceptId || !knownConceptIds.has(domain.startConceptId)) {
     errors.push(`data/domains.json: invalid startConceptId for ${domain.id}`);
   }
+  if (!Array.isArray(domain.learningOrderIds) || domain.learningOrderIds.length < 2) {
+    errors.push(`data/domains.json: missing learningOrderIds for ${domain.id}`);
+  } else {
+    if (domain.learningOrderIds[0] !== domain.startConceptId) {
+      errors.push(`data/domains.json: learning order for ${domain.id} must start with startConceptId`);
+    }
+    for (const conceptId of domain.learningOrderIds) {
+      if (!knownConceptIds.has(conceptId)) errors.push(`data/domains.json: unknown learning-order concept ${conceptId} in ${domain.id}`);
+      if (!domain.conceptIds.includes(conceptId)) errors.push(`data/domains.json: learning-order concept ${conceptId} is outside ${domain.id}`);
+    }
+  }
   if (!Array.isArray(domain.sections) || domain.sections.length === 0) {
     errors.push(`data/domains.json: missing sections for ${domain.id}`);
   }
@@ -103,13 +116,13 @@ for (const domain of domains.domains || []) {
     }
   }
 }
-for (const token of ['domain-start-card','domain-section','domain-prompt','domain-first']) {
+for (const token of ['domain-start-card','domain-section','domain-prompt','domain-first','learning-path','related-next']) {
   if (!appSource.includes(token) && !cssSource.includes(token)) errors.push(`site: missing guided learning hook ${token}`);
 }
 for (const token of ['home-view','domain-grid','domain-view','domain-concept-list','sidebar-domain-link']) {
   if (!htmlSource.includes(token)) errors.push(`index.html: missing learning hub hook ${token}`);
 }
-for (const token of ['renderHomeDomains','renderDomainView','routeFromHash','showHomeView','showDomainView']) {
+for (const token of ['renderHomeDomains','renderDomainView','routeFromHash','showHomeView','showDomainView','learningOrderIds']) {
   if (!appSource.includes(token)) errors.push(`app.js: missing learning hub behavior ${token}`);
 }
 
@@ -155,7 +168,7 @@ for (const token of ['html[data-theme="dark"]', '.theme-toggle', '.theme-icon-su
 for (const token of ['根拠から学ぶ戦術知識', '知識一覧', '重要ポイント', 'このページの根拠']) {
   if (!htmlSource.includes(token)) errors.push(`index.html: missing Japanese-first UI label ${token}`);
 }
-for (const token of ['strengthLabels', 'evidenceTypeLabels', 'sourceTypeLabels', 'gameScopeLabels', '根拠付き・草案']) {
+for (const token of ['strengthLabels', 'evidenceTypeLabels', 'sourceTypeLabels', 'gameScopeLabels', '根拠付き・草案', '次の試合で1つやること']) {
   if (!appSource.includes(token)) errors.push(`app.js: missing Japanese metadata mapping ${token}`);
 }
 
@@ -189,3 +202,8 @@ if (errors.length) {
 }
 
 console.log(`PASS: ${index.concepts.length} concepts, ${sources.sources.length} sources, site shell present.`);
+
+
+if (appSource.includes('（調査予定）')) {
+  errors.push('app.js: internal planned concept IDs must not be shown to users');
+}

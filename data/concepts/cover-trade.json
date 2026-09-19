@@ -11,7 +11,7 @@
   ],
   "category": "team-coordination",
   "status": "research-backed-draft",
-  "updated": "2026-09-19",
+  "updated": "2026-09-20",
   "definition": {
     "text": "味方が敵と接敵したときに、同じ敵へすぐ反応できる位置・射線・タイミングを事前に作り、味方が倒されても相手が立て直す前に倒し返せる状態を作ること。",
     "evidenceType": "Site Synthesis",
@@ -155,7 +155,8 @@
     "crossfire",
     "double-swing",
     "utility-follow-up",
-    "communication"
+    "communication",
+    "positioning"
   ],
   "deepDive": [
     {
@@ -228,5 +229,11 @@
       ],
       "siteSynthesis": true
     }
+  ],
+  "goal": [
+    "味方の接敵を孤立した1対1で終わらせない",
+    "味方が倒されても相手が立て直す前に倒し返せる形を作る",
+    "接敵前から射線・距離・タイミングを準備する",
+    "同じ射撃やアビリティで2人まとめて倒される位置関係を避ける"
   ]
 }

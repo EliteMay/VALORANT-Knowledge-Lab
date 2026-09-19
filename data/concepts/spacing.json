@@ -9,7 +9,7 @@
   ],
   "category": "team-coordination",
   "status": "research-backed-draft",
-  "updated": "2026-09-19",
+  "updated": "2026-09-20",
   "definition": {
     "text": "味方と同じ撃ち合いへすぐ加われるだけ近く、かつ同じスプレーやアビリティでまとめて倒されにくい位置関係を作ること。",
     "evidenceType": "Site Synthesis",
@@ -76,7 +76,9 @@
     "cover-trade",
     "crossfire",
     "double-swing",
-    "utility-follow-up"
+    "utility-follow-up",
+    "positioning",
+    "communication"
   ],
   "deepDive": [
     {
@@ -146,5 +148,11 @@
       ],
       "siteSynthesis": true
     }
+  ],
+  "goal": [
+    "味方と同じ撃ち合いへすぐ参加できる間隔を作る",
+    "近すぎて同じ射撃やアビリティでまとめて倒されるのを避ける",
+    "角や通路で射線が切れてトレード不能になるのを減らす",
+    "クロスファイアやダブルスイングにつながる位置関係を作る"
   ]
 }

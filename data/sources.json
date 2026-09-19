@@ -592,6 +592,119 @@
         "Spray changes targeted close and mid-range rifle fights",
         "Exact recoil values are patch-specific"
       ]
+    },
+    {
+      "id": "riot-tac-cycle-2020",
+      "title": "How we balance VALORANT",
+      "url": "https://playvalorant.com/en-gb/news/dev/how-we-balance-valorant/",
+      "publisherOrAuthor": "Riot Games / David Cole",
+      "published": "2020-06-26",
+      "sourceTier": "A",
+      "sourceType": "Official / Design Context",
+      "gameScope": "VALORANT",
+      "notes": [
+        "Riot defines the tactical cycle as Intel → Plan → Execute → Repeat",
+        "Intel explicitly includes opponent location, prior events, map territory ownership, agents, abilities and weapons",
+        "Use as stable game-design context rather than current patch-specific mechanic data"
+      ]
+    },
+    {
+      "id": "tenz-aimlabs-positioning",
+      "title": "TenZ Course Lesson 5 - Positioning",
+      "url": "https://preview.aimlabs.com/courses/7qomjBJ1VziOMBejmvHQ0a/lessons/5hsQq3qbzhLqwfSq9cSPN5?gameTag=VALORANT",
+      "publisherOrAuthor": "Aimlabs / lesson taught by TenZ",
+      "published": "2022-10-26",
+      "sourceTier": "B",
+      "sourceType": "Pro Practice",
+      "gameScope": "VALORANT",
+      "notes": [
+        "Lesson covers good and bad positioning, off-angles, movement choices, changing positions and VOD review",
+        "Platform-hosted pro lesson summary; use for practice principles, not universal exact geometry"
+      ]
+    },
+    {
+      "id": "tenz-aimlabs-communication",
+      "title": "TenZ Course Lesson 6 - Communication & Teamwork",
+      "url": "https://preview.aimlabs.com/courses/7qomjBJ1VziOMBejmvHQ0a?gameTag=VALORANT",
+      "publisherOrAuthor": "Aimlabs / lesson taught by TenZ",
+      "published": "2022-10-26",
+      "sourceTier": "B",
+      "sourceType": "Pro Practice",
+      "gameScope": "VALORANT",
+      "notes": [
+        "Lesson 6 emphasizes continuously circulating information, coordination and using communication to improve team utility",
+        "Course page is used because the lesson summary is published there"
+      ]
+    },
+    {
+      "id": "tenz-aimlabs-decision",
+      "title": "TenZ Course Lesson 7 - Decision Making",
+      "url": "https://aimlabs.com/courses/7qomjBJ1VziOMBejmvHQ0a/lessons/6nEVEGYegRhLRJhDHnSSzW",
+      "publisherOrAuthor": "Aimlabs / lesson taught by TenZ",
+      "published": "2022-10-26",
+      "sourceTier": "B",
+      "sourceType": "Pro Practice",
+      "gameScope": "VALORANT",
+      "notes": [
+        "Lesson covers decisiveness, quickly communicating decisions, trigger discipline, baiting enemy utility and comparing ability value",
+        "Use as expert practice, not as proof of a single universal decision formula"
+      ]
+    },
+    {
+      "id": "tenz-aimlabs-map-control",
+      "title": "TenZ Course Lesson 8 - Map Control",
+      "url": "https://aimlabs.com/courses/7qomjBJ1VziOMBejmvHQ0a/lessons/2RJoKnR3XZkNWrAe4NGlnR",
+      "publisherOrAuthor": "Aimlabs / lesson taught by TenZ",
+      "published": "2022-10-26",
+      "sourceTier": "B",
+      "sourceType": "Pro Practice",
+      "gameScope": "VALORANT",
+      "notes": [
+        "Macro-focused lesson covering good map control, lowering risk, creating opportunities, defaulting, set strategies, hits and fakes",
+        "Use as expert practice; exact map and composition choices remain context-dependent"
+      ]
+    },
+    {
+      "id": "tenz-aimlabs-aim",
+      "title": "TenZ Course Lesson 4 - Aim",
+      "url": "https://aimlabs.com/courses/7qomjBJ1VziOMBejmvHQ0a/lessons/48OoScMyHoZKBNlQfzfmQ9?gameTag=VALORANT%2F1000",
+      "publisherOrAuthor": "Aimlabs / lesson taught by TenZ",
+      "published": "2022-10-26",
+      "sourceTier": "B",
+      "sourceType": "Pro Practice",
+      "gameScope": "VALORANT",
+      "notes": [
+        "Lesson covers crosshair placement, tap/burst/spray selection, weapon-dependent play, duels and angle clearing",
+        "Use alongside Riot mechanic/design sources for claims that depend on game systems"
+      ]
+    },
+    {
+      "id": "yay-aimlabs-teamplay",
+      "title": "yay Course Lesson 5 - Teamplay",
+      "url": "https://aimlabs.com/courses/5Pm481fQj3Z6K7SYTuCZmg/lessons/3pBgaLCQoUCJLhysb9mKVG?gameTag=VALORANT%2F1000",
+      "publisherOrAuthor": "Aimlabs / lesson taught by yay",
+      "published": null,
+      "sourceTier": "B",
+      "sourceType": "Pro Practice",
+      "gameScope": "VALORANT",
+      "notes": [
+        "Lesson covers concise and specific communication, calling utility usage and asking teammates for utility",
+        "Ranked challenge explicitly focuses on communication quality and requesting support"
+      ]
+    },
+    {
+      "id": "riot-patch-4-04-positioning",
+      "title": "VALORANT Patch Notes 4.04",
+      "url": "https://playvalorant.com/en-us/news/game-updates/valorant-patch-notes-4-04/",
+      "publisherOrAuthor": "Riot Games",
+      "published": "2022-03-01",
+      "sourceTier": "A",
+      "sourceType": "Official / Design Context",
+      "gameScope": "VALORANT",
+      "notes": [
+        "Map changes explicitly discuss isolating fights, anchoring space, cover, threat angles and predictable peeks",
+        "Use as official map-design evidence that geometry and cover alter fight conditions; not as a universal positioning prescription"
+      ]
     }
   ]
 }

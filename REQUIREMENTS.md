@@ -36,27 +36,32 @@ VALORANTをプレイしていて、エイム以外のゲーム理解・ミクロ
 - Patch / 時期依存情報と比較的安定した原理を区別する
 - AI SynthesisをOriginal Evidenceと混同しない
 
-### Initial Learning Topics
+### Current Learning Topics
 
-1. ラーク
-2. アンカー
-3. カバー / トレード
-4. スペーシング
-5. クロスファイア
-6. ダブルスイング / Double Peek
-7. 定石外の相手への対応
-8. 撃ち合いの構造
-9. ピーク / 角度分離
-10. 移動・停止・射撃
+1. 撃ち合いの構造
+2. ポジショニング
+3. クロスヘア配置 / プリエイム
+4. ピーク / 角度分離
+5. 移動・停止・射撃
+6. カバー / トレード
+7. スペーシング
+8. クロスファイア
+9. ダブルスイング
+10. アンカー
+11. 情報 → 判断 → 実行
+12. コミュニケーション / コール
+13. マップコントロール
+14. ラーク
+15. 定石外の相手への対応
 
-初回6テーマを基盤とし、プラチナ〜ダイヤ帯で実戦上重要な「定石外対応」と「撃ち合い」の4テーマを追加した10ConceptをCurrent Siteとして閲覧可能にする。
+Current Siteは15Conceptを閲覧可能にする。新規5Conceptは、既存10Conceptとの重複を避け、プロ教材・Riot公式・査読研究等を照合したResearch-backed Draftとして追加する。
 
 ### Initial Web Surface
 
 - Static HTML / CSS / JavaScriptで動作する
-- Homeで大枠の学習分野を選び、その分野に属するConcept一覧から記事へ進める
+- Homeで大枠の学習分野を選び、その分野の「まずここから」→おすすめ学習順→テーマ別Concept一覧から記事へ進める
 - Concept詳細では選択中の大枠に属するConceptをSearchできる
-- ConceptごとにDefinition / Goal / Claims / Deep Dive / Cues / Mistakes / Practice / Evidence / Related Conceptsを表示する
+- ConceptごとにDefinition / Goal / Claims / Deep Dive / Cues / Mistakes / Practice / Evidence / Recommended Next / Related Conceptsを表示する
 - ClaimのEvidence strength / typeを表示する
 - Claim本文に加えて、信頼度・根拠の種類・出典数は常時確認できる。個別の出典対応だけProgressive Disclosureで開閉する
 - Concept記事には主要Sectionへのページ内Shortcutを置き、長い縦スクロールでも目的位置へ移動しやすくする
@@ -71,20 +76,17 @@ VALORANTをプレイしていて、エイム以外のゲーム理解・ミクロ
 
 ## 5. Later Content Candidates
 
-- 相手の癖・ラウンド傾向の読み方
-- 武器 × 距離 × アーマー
-- オフアングル / リピーク / 位置変更
-- Default / Map Control
+- 武器 × 距離 × アーマーの深掘り
 - ローテーション判断
 - Anti-lurk
-- Retake / Hold
+- Retake / Post-plant
 - 人数有利・人数不利
-- Peek選択
 - Utility follow-up
-- 情報からActionへの変換
-- Call / Communication
-- Mid-round decision
-- VOD Review
+- Mid-round decisionのScenario化
+- Deathmatch / Range / Aim Trainerの練習レイヤー
+- VOD Reviewの専用レイヤー
+
+Default、オフアングル、リピーク、位置変更は、現時点ではそれぞれマップコントロール / ポジショニングのDeep Diveとして扱い、重複記事を増やさない。
 
 この一覧は固定Navigationではなく、ResearchとContent増加に応じてTaxonomyを見直せる候補とする。
 
@@ -141,7 +143,7 @@ Source同士が食い違う場合は多数決で消さず、Map / Agent / Compos
 
 Home
 → 大枠の学習分野を選ぶ
-→ その分野のConcept一覧
+→ まず読むConcept / おすすめ学習順 / テーマ別一覧
 → Concept Page
 → 判断材料 / 失敗 / 練習 / 根拠
 → Related Concept
@@ -167,11 +169,11 @@ Homeではこの3つだけをPrimary Choiceとして表示する。ポジショ�
 
 1つのConceptは複数Domainへ所属できる。ピーク / 角度分離のように複数の学習目的へ関係する知識を無理に1分類へ固定しない。
 
-Learning Domainの所属関係・最初に読むConcept・Domain内の小分類は `data/domains.json` をCanonical Dataとし、各Concept JSONへ重複保存しない。
+Learning Domainの所属関係・最初に読むConcept・おすすめ学習順・Domain内の小分類は `data/domains.json` をCanonical Dataとし、各Concept JSONへ重複保存しない。
 
 既存の information-map-control / team-coordination / defense / peek-duel 等はContent管理・記事内文脈用の細分類として維持できるが、Primary Home Navigationにはしない。
 
-Current Homeでは「ミクロ / マクロ / エイム練習」の3択だけを出し、各Domain内で「まず読む1本」と小分類を提示する。
+Current Homeでは「ミクロ / マクロ / エイム練習」の3択だけを出す。各Domain内では「まず読む1本」→おすすめ学習順→テーマ別Concept一覧を提示し、一本道を強制せず迷った時の順序を提供する。
 
 アビリティ・セットアップも重要な将来Domain候補とする。ただしフラッシュ / スモーク / スタン / 索敵等の専用Conceptが十分に揃うまでは、空のPrimary Domainとして表示しない。
 
@@ -215,11 +217,11 @@ Theme preferenceのみBrowserのlocalStorageへ保存してよい。Knowledge Co
 
 ## 15. Completion Conditions for Static Site MVP
 
-- 10ConceptをCanonical JSONから表示できる
-- Current 10ConceptすべてにDeep Diveがあり、Trigger / Action / Conditions・Exceptions / Example相当の情報を確認できる
+- 15ConceptをCanonical JSONから表示できる
+- Current 15ConceptすべてにDeep Diveがあり、Trigger / Action / Conditions・Exceptions / Example相当の情報を確認できる
 - Home → Learning Domain → Conceptの主要導線が動く
 - 全Current Conceptが少なくとも1つのLearning Domainから到達できる
-- Domain内Search / Related Concept navigationが動く
+- Domain内Search / おすすめ学習順 / Recommended Next / Related Concept navigationが動く
 - ClaimとSourceを画面上で追跡できる
 - Missing / loading / error stateを持つ
 - Loadingが一定時間を超えた場合は永久待機せずErrorへ遷移し、再試行手段と失敗理由を表示する

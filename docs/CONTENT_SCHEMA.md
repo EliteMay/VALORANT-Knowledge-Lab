@@ -107,7 +107,7 @@ Current MetaやAgent mechanicへ依存するClaimではPatch / date applicabilit
 }
 ```
 
-Current 10 Conceptでは原則として次を含める。
+Current 15 Conceptでは原則として次を含める。
 
 - Trigger — いつ使う / いつ判断するか
 - Action — 具体的にどう動くか
@@ -118,3 +118,18 @@ Deep DiveもEvidence traceabilityの対象とし、`sourceIds` を持つ。
 複数Evidenceを学習用に整理した文章は `siteSynthesis: true` にする。
 
 短くするためにResearch上の条件・例外・判断手順を削除しない。
+
+
+## Learning Domain Metadata
+
+`data/domains.json` はConcept本文とは別に、User-facingな学習導線を管理する。
+
+主要Field:
+
+- `id` / `title` / `description`
+- `startConceptId` — Domainで最初に案内するConcept
+- `learningOrderIds` — 迷った時のRecommended Path。唯一の正解や強制順序ではない
+- `conceptIds` — Domainから到達可能なConcept
+- `sections` — テーマ別Browse用の小分類
+
+Conceptの前提関係を各Concept JSONへ重複保存せず、Domainごとの案内順は `data/domains.json` をCanonical Dataとする。

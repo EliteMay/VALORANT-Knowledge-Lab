@@ -1,0 +1,223 @@
+{
+  "schemaVersion": 1,
+  "id": "map-control",
+  "titleJa": "マップコントロール",
+  "titleEn": "Map Control",
+  "aliases": [
+    "エリアコントロール",
+    "スペース管理",
+    "領域管理",
+    "デフォルト"
+  ],
+  "category": "information-map-control",
+  "status": "research-backed-draft",
+  "updated": "2026-09-20",
+  "definition": {
+    "text": "重要な領域を自分たちが利用・通過・監視しやすい状態にしながら、相手がそこを自由に使うことを制限し、その領域を次の作戦へつなげる考え方。",
+    "evidenceType": "Site Synthesis",
+    "strength": "Supported",
+    "sourceIds": [
+      "riot-tac-cycle-2020",
+      "tenz-aimlabs-map-control",
+      "riot-patch-4-04-positioning"
+    ],
+    "siteSynthesis": true
+  },
+  "goal": [
+    "敵が自由に動ける範囲を減らす",
+    "自分たちが選べる攻め・守りの選択肢を増やす",
+    "取った領域を放置せず、設置・ローテーション・フェイク・ラークなどへ変換する",
+    "一度確認した場所を永久に安全だと思い込まない"
+  ],
+  "subtypes": [
+    {
+      "id": "contest",
+      "label": "争う",
+      "description": "重要な領域へ入る前に、敵が持っている射線やアビリティへ圧力をかける段階。"
+    },
+    {
+      "id": "take",
+      "label": "取る",
+      "description": "敵を退かせたり安全確認したりして、自分たちが利用できる領域を増やす段階。"
+    },
+    {
+      "id": "hold",
+      "label": "維持する",
+      "description": "人・情報アビリティ・罠・射線などで相手の再侵入を検知または制限する段階。"
+    },
+    {
+      "id": "convert",
+      "label": "次へつなげる",
+      "description": "取った領域を設置、別サイトへの移動、フェイク、ラークなど実際のラウンド利益へ変える段階。"
+    }
+  ],
+  "claims": [
+    {
+      "id": "map-control-risk-options",
+      "text": "TenZはマップコントロールをマクロの課題として扱い、領域を取ることでリスクを下げ、次の選択肢を増やせると説明している。",
+      "evidenceType": "Expert Practice / Analysis",
+      "strength": "Supported",
+      "sourceIds": [
+        "tenz-aimlabs-map-control"
+      ],
+      "siteSynthesis": false,
+      "notes": []
+    },
+    {
+      "id": "map-control-territory-intel",
+      "text": "Riotの戦術循環では、どちらのチームがマップ上のどの領域を持っているかが判断材料の一つとして明示されている。",
+      "evidenceType": "Official / Mechanic",
+      "strength": "Confirmed",
+      "sourceIds": [
+        "riot-tac-cycle-2020"
+      ],
+      "siteSynthesis": false,
+      "notes": []
+    },
+    {
+      "id": "map-control-geometry-matters",
+      "text": "Riotのマップ調整では、遮蔽物や通路形状を変えることで、領域を保持する価値、角度の分離、サイト内で戦う選択肢が変わると説明されている。",
+      "evidenceType": "Official / Mechanic",
+      "strength": "Confirmed",
+      "sourceIds": [
+        "riot-patch-4-04-positioning"
+      ],
+      "siteSynthesis": true,
+      "notes": []
+    },
+    {
+      "id": "map-control-default-conversion",
+      "text": "TenZの教材では、デフォルトやセットプレー、サイトへ最後まで入るかフェイクするかの判断がマップコントロールと同じ学習単位で扱われている。",
+      "evidenceType": "Expert Practice / Analysis",
+      "strength": "Supported",
+      "sourceIds": [
+        "tenz-aimlabs-map-control"
+      ],
+      "siteSynthesis": false,
+      "notes": []
+    },
+    {
+      "id": "map-control-not-just-occupy",
+      "text": "マップコントロールは単にその場所へ1人立つことではなく、情報・射線・アビリティ・再侵入への備えを使って、その領域を実際に利用できる状態を保つことまで含めて考える。",
+      "evidenceType": "Site Synthesis",
+      "strength": "Supported",
+      "sourceIds": [
+        "riot-tac-cycle-2020",
+        "tenz-aimlabs-map-control",
+        "riot-patch-4-04-positioning"
+      ],
+      "siteSynthesis": true,
+      "notes": [
+        "一つの万能な保持方法を定義しない"
+      ]
+    }
+  ],
+  "cues": [
+    "今、自分たちが安全に使える領域はどこか",
+    "相手が自由に使える領域はどこか",
+    "最後に確認してから時間が経ち、再侵入され得る場所はどこか",
+    "次の設置・ローテーション・フェイクに必要な重要領域はどこか",
+    "その領域を取るために必要な人数・情報・アビリティ",
+    "取った後に誰または何で再侵入を確認するか",
+    "残り時間に対して取りに行く価値があるか"
+  ],
+  "mistakes": [
+    "一度クリアした場所をラウンド終了まで安全だと思う",
+    "5人で1つの通路に固まり、他の重要領域を完全に空ける",
+    "領域を取ること自体が目的になり、その後の作戦へつなげない",
+    "キルを取らないと領域を取れないと思い込む",
+    "相手のアビリティや武器を無視して毎回同じ取り方をする",
+    "デフォルトを何もせず待つことだと考える"
+  ],
+  "practice": {
+    "decisionCheck": [
+      "今どこを自分たちが使える？",
+      "どこを相手が自由に使える？",
+      "どこが最後に確認してから古い情報になっている？",
+      "次に必要な領域はどこ？",
+      "取った後に何へつなげる？"
+    ],
+    "vodQuestions": [
+      "ラウンドが崩れた直前、どの領域を失っていたか？",
+      "取った領域を維持する手段はあったか？",
+      "領域を取った後、実際の設置・移動・フェイクへ変換できたか？"
+    ]
+  },
+  "relatedConceptIds": [
+    "info-decision-action",
+    "lurk",
+    "communication",
+    "anchor",
+    "unexpected-opponent"
+  ],
+  "deepDive": [
+    {
+      "id": "trigger",
+      "title": "いつ領域を取りに行くか",
+      "summary": "次の作戦に必要な移動経路・情報・圧力を作るため、重要な領域を相手へ自由に使わせたくない時。",
+      "items": [
+        "サイトへ入る前に主要な入口や中間地点を使える状態にしたい時",
+        "守備側で相手の侵入経路を監視し、簡単なローテーションを防ぎたい時",
+        "別サイトへ移動するため安全な経路が必要な時",
+        "相手の守備人数やアビリティを動かして次の判断材料を増やしたい時"
+      ],
+      "sourceIds": [
+        "tenz-aimlabs-map-control",
+        "riot-tac-cycle-2020"
+      ],
+      "siteSynthesis": true
+    },
+    {
+      "id": "action",
+      "title": "争う → 取る → 維持する → 次へつなげる",
+      "summary": "領域を一度踏むだけで終わらず、取得後の再侵入と、その領域から得るラウンド利益まで考える。",
+      "items": [
+        "敵の射線やアビリティへ圧力をかけて領域を争う",
+        "安全確認や撃ち合いで敵を退かせ、自分たちが利用できる状態へする",
+        "人・射線・情報アビリティ・罠などで相手の再侵入を確認できる形を作る",
+        "設置、移動、フェイク、ラークなど次の作戦へ領域を変換する",
+        "相手が取り返したら、必要に応じて再確認して情報を更新する"
+      ],
+      "sourceIds": [
+        "tenz-aimlabs-map-control",
+        "riot-patch-4-04-positioning",
+        "riot-tac-cycle-2020"
+      ],
+      "siteSynthesis": true
+    },
+    {
+      "id": "conditions",
+      "title": "必要な領域はラウンドごとに変わる",
+      "summary": "広く取れば常に正しいわけではなく、マップ・構成・残り時間・相手の武器とアビリティによって価値が変わる。",
+      "items": [
+        "セットプレーでは一部の領域を捨て、短時間でサイトへ圧力を集中する選択もある",
+        "デフォルトでは複数方向へ圧力を残し、相手の反応や情報を集める価値が上がる",
+        "残り時間が少ない時は領域を増やすより最終行動へ変換する必要がある",
+        "相手のオペレーターや遅延アビリティが見えている場所では同じ取り方を前提にしない",
+        "取得済みでも監視手段がなく時間が経てば、情報は古くなる"
+      ],
+      "sourceIds": [
+        "tenz-aimlabs-map-control",
+        "riot-tac-cycle-2020"
+      ],
+      "siteSynthesis": true
+    },
+    {
+      "id": "example",
+      "title": "デフォルトから攻め先を決める",
+      "summary": "複数方向へ圧力を残して相手の反応を見た後、取れた領域と使わせたアビリティを材料に最終行動を選ぶ。",
+      "items": [
+        "A側・中央・B側へ最低限の圧力と情報取りを分散する",
+        "相手がどこへ人数やアビリティを使ったか観測する",
+        "使える領域を維持しながら、弱くなった場所や安全な経路を確認する",
+        "その情報からサイトへ入る、反対側へ移る、フェイクするなどを選ぶ",
+        "決めた後は残り時間を使い切る前に最終行動へ移る"
+      ],
+      "sourceIds": [
+        "tenz-aimlabs-map-control",
+        "riot-tac-cycle-2020"
+      ],
+      "siteSynthesis": true
+    }
+  ]
+}

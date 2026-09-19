@@ -1496,7 +1496,7 @@ html[data-theme="dark"] .domain-card:hover {
 /* Deep learning sections */
 .deep-dive-list {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: .8rem;
 }
 
@@ -1590,5 +1590,132 @@ html[data-theme="dark"] .deep-dive-sources {
 @media (max-width: 760px) {
   .deep-dive-list {
     grid-template-columns: 1fr;
+  }
+}
+
+
+/* Guided learning path + next-step navigation */
+.learning-path {
+  padding: 1.7rem 0 2rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.learning-path-list {
+  display: grid;
+  gap: 0;
+  margin: .9rem 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.learning-path-step {
+  margin: 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.learning-path-step a {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: .8rem;
+  align-items: start;
+  padding: .85rem .15rem;
+  text-decoration: none;
+}
+
+.learning-path-step a:hover {
+  background: rgba(255,70,85,.045);
+}
+
+.learning-path-number {
+  color: var(--accent-dark);
+  font-family: var(--mono);
+  font-size: .72rem;
+  font-weight: 800;
+  line-height: 1.6;
+}
+
+.learning-path-body {
+  display: grid;
+  gap: .18rem;
+}
+
+.learning-path-body strong {
+  font-size: .9rem;
+}
+
+.learning-path-body > span {
+  color: var(--muted);
+  font-size: .76rem;
+  line-height: 1.55;
+}
+
+.related-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.related-next,
+.related-other {
+  display: grid;
+  gap: .45rem;
+}
+
+.related-next-label,
+.related-other-label {
+  color: var(--muted);
+  font-size: .68rem;
+  font-weight: 800;
+}
+
+.related-next-link {
+  display: grid;
+  gap: .22rem;
+  padding: .85rem .95rem;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  text-decoration: none;
+}
+
+.related-next-link strong {
+  font-size: .9rem;
+}
+
+.related-next-link span {
+  color: var(--muted);
+  font-size: .76rem;
+  line-height: 1.55;
+}
+
+.related-next-link:hover {
+  border-color: var(--accent);
+}
+
+.related-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+}
+
+html[data-theme="dark"] .learning-path-step,
+html[data-theme="dark"] .related-next-link {
+  border-color: #344754;
+}
+
+html[data-theme="dark"] .learning-path-body > span,
+html[data-theme="dark"] .related-next-link span,
+html[data-theme="dark"] .related-next-label,
+html[data-theme="dark"] .related-other-label {
+  color: #b9c5cd;
+}
+
+html[data-theme="dark"] .learning-path-number,
+html[data-theme="dark"] .related-next-link:hover {
+  color: #ff6b76;
+}
+
+@media (max-width: 760px) {
+  .learning-path-step a {
+    grid-template-columns: 36px minmax(0, 1fr);
   }
 }
