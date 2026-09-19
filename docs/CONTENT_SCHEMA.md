@@ -25,6 +25,7 @@ Search indexや一覧用Dataは将来このCanonical Dataから生成する。
 - `goal`
 - `claims`
 - `practice`
+- `deepDive` — Trigger / Action / Conditions / Example等の詳しい判断Content
 - `relatedConceptIds`
 
 ## Claim
@@ -85,3 +86,35 @@ Sourceがその文章を直接述べたように見せない。
 Current MetaやAgent mechanicへ依存するClaimではPatch / date applicabilityを追加する。
 
 安定したTeamwork原理や歴史的Pro explanationも利用できるが、Current mechanicの証明にはしない。
+
+
+## Deep Dive
+
+短い定義やClaimだけでは、実戦判断に必要な条件差が落ちるため、Current Conceptは原則として `deepDive` を持つ。
+
+```json
+{
+  "deepDive": [
+    {
+      "id": "trigger",
+      "title": "いつ使うか",
+      "summary": "この判断が必要になる状況。",
+      "items": ["具体的な条件1", "具体的な条件2"],
+      "sourceIds": ["source-id"],
+      "siteSynthesis": true
+    }
+  ]
+}
+```
+
+Current 10 Conceptでは原則として次を含める。
+
+- Trigger — いつ使う / いつ判断するか
+- Action — 具体的にどう動くか
+- Conditions / Exceptions — 条件で何が変わるか
+- Example — 実戦やVODでどう見えるか
+
+Deep DiveもEvidence traceabilityの対象とし、`sourceIds` を持つ。
+複数Evidenceを学習用に整理した文章は `siteSynthesis: true` にする。
+
+短くするためにResearch上の条件・例外・判断手順を削除しない。
