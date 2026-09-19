@@ -9,7 +9,7 @@
   ],
   "category": "team-coordination",
   "status": "research-backed-draft",
-  "updated": "2026-09-19",
+  "updated": "2026-09-20",
   "definition": {
     "text": "複数人が同じエリアや進行経路を異なる角度から見て、一方への接敵をもう一方が倒すタイミングにつなげる配置。",
     "evidenceType": "Site Synthesis",
@@ -73,7 +73,9 @@
     "spacing",
     "cover-trade",
     "double-swing",
-    "site-hold"
+    "site-hold",
+    "positioning",
+    "communication"
   ],
   "deepDive": [
     {
@@ -140,5 +142,11 @@
       ],
       "siteSynthesis": true
     }
+  ],
+  "goal": [
+    "敵へ複数の角度を同時に処理させる",
+    "人数有利を1人ずつの撃ち合いで失うのを防ぐ",
+    "味方同士の立ち位置と接敵タイミングを組み合わせる",
+    "相手が一方へ照準を向けた瞬間をもう一方の撃ち合いへ変える"
   ]
 }
