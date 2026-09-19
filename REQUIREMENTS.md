@@ -159,13 +159,16 @@ User-facing Top-level Learning Domains:
 3. エイム・メカニクス
 4. ポジショニング・角度
 5. 情報・判断
-6. 連携
+6. 武器・距離
+7. 連携
 
 1つのConceptは複数Domainへ所属できる。ピーク / 角度分離のように複数の学習目的へ関係する知識を無理に1分類へ固定しない。
 
 既存の information-map-control / team-coordination / defense / peek-duel 等はContent管理・記事内文脈用の細分類として維持できるが、Primary Home Navigationにはしない。
 
-アビリティを使った撃ち合いは重要な将来Domain候補とする。ただしFlash / Smoke / Stun / Recon等の専用Conceptが十分に揃うまでは、空のPrimary Domainとして表示しない。
+撃ち合いを構成する主要軸として、Current Homeでは「ミクロ / マクロ / エイム・メカニクス / ポジショニング・角度 / 情報・判断 / 武器・距離 / 連携」を扱う。
+
+アビリティ・セットアップも重要な将来Domain候補とする。ただしフラッシュ / スモーク / スタン / 索敵等の専用Conceptが十分に揃うまでは、空のPrimary Domainとして表示しない。
 
 ## 11. Data / Storage
 
