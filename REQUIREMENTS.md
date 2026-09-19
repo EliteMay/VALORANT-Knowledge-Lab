@@ -101,7 +101,7 @@ Source同士が食い違う場合は多数決で消さず、Map / Agent / Compos
 サイト本文では次を区別する。
 
 - `Official / Mechanic` — Riot等で確認できる仕様
-- `Pro Practice` — プロ本人・チーム関係者の実践・説明
+- `Expert Practice / Analysis` — プロ選手・Coach・IGL・VCT Analyst等の直接解説 / 実戦分析
 - `Academic General Principle` — VALORANT以外を含む研究から言える一般原理
 - `Coaching Heuristic` — 実践用の目安
 - `Site Synthesis` — 複数Evidenceを整理してサイト側でまとめた内容
