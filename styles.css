@@ -1341,3 +1341,94 @@ html[data-theme="dark"] .claim-summary-meta span {
 html[data-theme="dark"] .source-heading-row {
   border-top-color: #2c3d49;
 }
+
+
+/* Three-path home hierarchy */
+.domain-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .8rem;
+}
+.domain-card {
+  min-height: 220px;
+  grid-template-columns: 28px minmax(0,1fr) 18px;
+  padding: 1.25rem;
+  border: 1px solid var(--line);
+}
+.domain-card:nth-child(odd) { border-right: 1px solid var(--line); }
+.domain-card h2 {
+  margin-bottom: .55rem;
+  font-size: 1.28rem;
+}
+.domain-prompt {
+  color: var(--ink) !important;
+  font-size: .88rem !important;
+  line-height: 1.6;
+  font-weight: 700;
+}
+.domain-first {
+  margin-top: 1rem !important;
+  color: var(--accent-dark) !important;
+  font-size: .78rem !important;
+  font-weight: 800;
+}
+.domain-count { margin-top: .75rem; }
+
+.domain-start-card {
+  display: block;
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--accent);
+  border-left-width: 4px;
+  background: rgba(255,70,85,.04);
+  text-decoration: none;
+}
+.domain-start-label {
+  display: block;
+  margin-bottom: .35rem;
+  color: var(--accent-dark);
+  font-size: .68rem;
+  font-weight: 900;
+}
+.domain-start-card strong {
+  display: block;
+  font-size: 1.05rem;
+}
+.domain-start-card p {
+  margin: .35rem 0 0;
+  color: var(--muted);
+  font-size: .82rem;
+  line-height: 1.6;
+}
+
+.domain-section {
+  margin-top: 1.6rem;
+}
+.domain-section-head {
+  margin-bottom: .6rem;
+}
+.domain-section-head h2 {
+  margin: 0 0 .2rem;
+  font-size: 1rem;
+}
+.domain-section-head p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .78rem;
+}
+.domain-section-list {
+  display: grid;
+  gap: .4rem;
+}
+.domain-concept-row h3 {
+  margin: 0 0 .2rem;
+  font-size: .95rem;
+}
+
+html[data-theme="dark"] .domain-start-card {
+  background: rgba(255,70,85,.07);
+}
+
+@media (max-width: 900px) {
+  .domain-grid { grid-template-columns: 1fr; }
+  .domain-card { min-height: 0; }
+}
